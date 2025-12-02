@@ -10,7 +10,7 @@ import os
 
 # Page configuration
 st.set_page_config(
-    page_title="Homebrew Recipe Builder",
+    page_title="Joe's Homebrew Recipe Builder",
     page_icon="🍺",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -64,32 +64,147 @@ def calculate_abv(og, fg):
     return round(abv, 2)
 
 
+def export_recipe_to_csv(recipe):
+    """Convert a recipe to CSV format"""
+    import io
+    csv_data = []
+    
+    # Add header info
+    csv_data.append(["Recipe Name", recipe['name']])
+    csv_data.append(["Style", recipe.get('style', 'N/A')])
+    csv_data.append(["Batch Size (L)", recipe.get('batch_size', 'N/A')])
+    csv_data.append(["Brewer", recipe.get('brewer', 'N/A')])
+    csv_data.append(["Brew Date", recipe.get('brew_date', 'N/A')])
+    csv_data.append([])  # Empty row
+    
+    # Add statistics
+    csv_data.append(["RECIPE STATISTICS"])
+    csv_data.append(["Original Gravity", recipe.get('og', 'N/A')])
+    csv_data.append(["Final Gravity", recipe.get('fg', 'N/A')])
+    csv_data.append(["ABV (%)", recipe.get('abv', 'N/A')])
+    csv_data.append([])  # Empty row
+    
+    # Add grain bill
+    if recipe.get('grain_bill'):
+        csv_data.append(["GRAIN BILL"])
+        csv_data.append(["Grain Type", "Weight (kg)", "Lovibond"])
+        for grain in recipe['grain_bill']:
+            csv_data.append([grain.get('type', grain.get('name', 'N/A')), 
+                           grain.get('weight', grain.get('scaled_amount', 'N/A')), 
+                           grain.get('lovibond', '')])
+        csv_data.append([])  # Empty row
+    
+    # Add hop schedule
+    if recipe.get('hop_schedule'):
+        csv_data.append(["HOP SCHEDULE"])
+        csv_data.append(["Variety", "Weight (g)", "Time (min)", "Alpha Acid (%)"])
+        for hop in recipe['hop_schedule']:
+            csv_data.append([hop.get('variety', 'N/A'), 
+                           hop.get('weight', hop.get('scaled_amount', 'N/A')), 
+                           hop.get('time', 'N/A'),
+                           hop.get('alpha_acid', '')])
+        csv_data.append([])  # Empty row
+    
+    # Add other ingredients if present
+    if recipe.get('other_ingredients'):
+        csv_data.append(["OTHER INGREDIENTS"])
+        csv_data.append(["Ingredient", "Amount", "Unit"])
+        for ingredient in recipe['other_ingredients']:
+            csv_data.append([ingredient['name'], ingredient['amount'], ingredient['unit']])
+        csv_data.append([])  # Empty row
+    
+    # Add yeast and fermentation
+    csv_data.append(["YEAST & FERMENTATION"])
+    csv_data.append(["Yeast", recipe.get('yeast', 'N/A')])
+    csv_data.append(["Fermentation Temperature", recipe.get('fermentation_temp', recipe.get('fermentation_info', 'N/A'))])
+    if recipe.get('mash_temp'):
+        csv_data.append(["Mash Temperature", recipe.get('mash_temp', 'N/A')])
+    csv_data.append([])  # Empty row
+    
+    # Add water volumes
+    if recipe.get('mash_volume') or recipe.get('sparge_volume') or recipe.get('pre_boil_volume') or recipe.get('final_volume'):
+        csv_data.append(["WATER VOLUMES"])
+        csv_data.append(["Mash Volume (L)", recipe.get('mash_volume', 'N/A')])
+        csv_data.append(["Sparge Volume (L)", recipe.get('sparge_volume', 'N/A')])
+        if recipe.get('pre_boil_volume'):
+            csv_data.append(["Pre-boil Volume (L)", recipe.get('pre_boil_volume', 'N/A')])
+        csv_data.append(["Final Expected Volume (L)", recipe.get('final_volume', 'N/A')])
+        if recipe.get('mash_volume') and recipe.get('sparge_volume') and recipe.get('final_volume'):
+            total = recipe['mash_volume'] + recipe['sparge_volume']
+            csv_data.append(["Total Water (L)", total])
+            csv_data.append(["Expected Loss (L)", total - recipe['final_volume']])
+        csv_data.append([])  # Empty row
+    
+    # Add notes
+    if recipe.get('notes'):
+        csv_data.append(["NOTES"])
+        csv_data.append([recipe['notes']])
+    
+    # Convert to CSV string
+    csv_buffer = io.StringIO()
+    for row in csv_data:
+        csv_buffer.write(','.join(str(cell) for cell in row) + '\n')
+    return csv_buffer.getvalue()
+
+
 def main():
-    st.title("🍺 Homebrew Recipe Builder")
-    st.markdown("Create and save your custom beer recipes")
+    st.title("🍺 Joe's Homebrew Recipe Builder")
     
     # Sidebar navigation
     with st.sidebar:
         st.header("Navigation")
         page = st.radio(
             "Select Page",
-            ["Create Recipe", "View Recipes", "Recipe Library", "Brewing Calculator", "Recipe Scaler"]
+            ["Home", "Recipe Builder", "View Recipes", "Brewing Calculator"]
         )
         
         st.markdown("---")
-        st.markdown("### About")
-        st.info("Design your perfect homebrew recipe with precision and ease.")
     
-    if page == "Create Recipe":
-        create_recipe_page()
+    if page == "Home":
+        home_page()
+    elif page == "Recipe Builder":
+        recipe_scaler_page()
     elif page == "View Recipes":
         view_recipes_page()
-    elif page == "Recipe Library":
-        recipe_library_page()
     elif page == "Brewing Calculator":
         calculator_page()
-    elif page == "Recipe Scaler":
-        recipe_scaler_page()
+
+
+def home_page():
+    """Landing page with app description and page overview"""
+    
+    # Hero Section
+    st.markdown("<div style='text-align: center; padding: 2rem 0;'>", unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    
+    # Recipe Builder
+    st.markdown("### 📏 Recipe Builder")
+    st.markdown("""
+    Build and scale beer recipes to your desired batch size.
+    Enter ingredients from existing recipes and the app will scale the amounts to your needs, or create new ones from scratch.
+    """)
+    
+    # View Recipes
+    st.markdown("### 📚 View Recipes")
+    st.markdown("""
+    Browse and manage all your saved recipes. View complete recipe details and 
+    export any recipe as a CSV file for safe keeping.
+    """)
+    
+    # Brewing Calculator
+    st.markdown("### 🧮 Brewing Calculator")
+    st.markdown("""
+    Essential brewing calculators for recipe planning and brew day calculations:
+    - **ABV Calculator** - Estimate alcohol content from gravity readings
+    - **Priming Sugar Calculator** - Calculate priming sugar accounting for dissolved CO2
+    - **Gravity Temperature Correction** - Adjust hydrometer readings for temperature
+    """)
+    
+    # Call to Action
+    st.markdown("<div style='text-align: center; padding: 2rem 0;'>", unsafe_allow_html=True)
+    st.markdown("### Select a page from the sidebar to get started! 🍻")
+    st.markdown("</div>", unsafe_allow_html=True)
 
 
 def create_recipe_page():
@@ -242,6 +357,25 @@ def create_recipe_page():
     
     st.markdown("---")
     
+    # Water Volumes Section
+    st.subheader("💧 Water Volumes")
+    
+    wcol1, wcol2, wcol3 = st.columns(3)
+    
+    with wcol1:
+        mash_volume = st.number_input("Mash Volume (liters)", min_value=0.0, max_value=100.0, value=15.0, step=0.5)
+    
+    with wcol2:
+        sparge_volume = st.number_input("Sparge Volume (liters)", min_value=0.0, max_value=100.0, value=15.0, step=0.5)
+    
+    with wcol3:
+        final_volume = st.number_input("Final Expected Volume (liters)", min_value=0.0, max_value=100.0, value=batch_size, step=0.5)
+    
+    total_water = mash_volume + sparge_volume
+    st.info(f"💧 Total Water: **{total_water:.1f} liters** | Expected Loss: **{total_water - final_volume:.1f} liters**")
+    
+    st.markdown("---")
+    
     # Recipe Calculations
     if st.session_state.grain_bill:
         st.subheader("📊 Recipe Statistics")
@@ -295,11 +429,14 @@ def create_recipe_page():
                 'brewer': brewer,
                 'batch_size': batch_size,
                 'efficiency': efficiency,
-                'brew_date': str(brew_date),
+                'brew_date': brew_date.strftime('%d/%m/%Y'),
                 'grain_bill': st.session_state.grain_bill,
                 'hop_schedule': st.session_state.hop_schedule,
                 'yeast': yeast,
                 'fermentation_temp': fermentation_temp,
+                'mash_volume': mash_volume,
+                'sparge_volume': sparge_volume,
+                'final_volume': final_volume,
                 'og': og if st.session_state.grain_bill else 0,
                 'fg': fg,
                 'abv': abv if st.session_state.grain_bill else 0,
@@ -350,34 +487,100 @@ def view_recipes_page():
                 st.markdown(f"**OG:** {recipe.get('og', 'N/A')}")
                 st.markdown(f"**FG:** {recipe.get('fg', 'N/A')}")
                 st.markdown(f"**ABV:** {recipe.get('abv', 'N/A')}%")
-                st.markdown(f"**IBU:** {recipe.get('ibu', 'N/A')}")
-                st.markdown(f"**SRM:** {recipe.get('srm', 'N/A')}")
             
             if recipe.get('grain_bill'):
                 st.markdown("**Grain Bill:**")
                 grain_df = pd.DataFrame(recipe['grain_bill'])
-                st.dataframe(grain_df[['type', 'weight']], use_container_width=True)
+                grain_df_display = grain_df[['type', 'weight']].copy()
+                grain_df_display.columns = ['Grain Type', 'Weight (kg)']
+                st.dataframe(grain_df_display, use_container_width=True, hide_index=True)
             
             if recipe.get('hop_schedule'):
                 st.markdown("**Hop Schedule:**")
                 hop_df = pd.DataFrame(recipe['hop_schedule'])
-                st.dataframe(hop_df[['variety', 'weight', 'time']], use_container_width=True)
+                hop_df_display = hop_df[['variety', 'weight', 'time']].copy()
+                hop_df_display.columns = ['Variety', 'Weight (g)', 'Time (min)']
+                st.dataframe(hop_df_display, use_container_width=True, hide_index=True)
+            
+            # Water Volumes Table
+            if recipe.get('mash_volume') or recipe.get('sparge_volume') or recipe.get('pre_boil_volume') or recipe.get('final_volume'):
+                st.markdown("**Water Volumes:**")
+                water_data = []
+                if recipe.get('mash_volume'):
+                    mash_vol = recipe.get('mash_volume')
+                    water_data.append({"Parameter": "Mash Volume", "Volume (L)": f"{mash_vol:.1f}" if isinstance(mash_vol, (int, float)) else str(mash_vol)})
+                if recipe.get('sparge_volume'):
+                    sparge_vol = recipe.get('sparge_volume')
+                    water_data.append({"Parameter": "Sparge Volume", "Volume (L)": f"{sparge_vol:.1f}" if isinstance(sparge_vol, (int, float)) else str(sparge_vol)})
+                if recipe.get('pre_boil_volume'):
+                    pre_boil_vol = recipe.get('pre_boil_volume')
+                    water_data.append({"Parameter": "Pre-boil Volume", "Volume (L)": f"{pre_boil_vol:.1f}" if isinstance(pre_boil_vol, (int, float)) else str(pre_boil_vol)})
+                if recipe.get('final_volume'):
+                    final_vol = recipe.get('final_volume')
+                    water_data.append({"Parameter": "Final Volume", "Volume (L)": f"{final_vol:.1f}" if isinstance(final_vol, (int, float)) else str(final_vol)})
+                if water_data:
+                    water_df = pd.DataFrame(water_data)
+                    st.dataframe(water_df, use_container_width=True, hide_index=True)
+            
+            # Mash & Boil Table
+            if recipe.get('mash_temp') or recipe.get('mash_time') or recipe.get('boil_temp') or recipe.get('boil_time'):
+                st.markdown("**Mash & Boil:**")
+                mash_boil_data = []
+                
+                # Mash row
+                mash_temp = recipe.get('mash_temp')
+                mash_time = recipe.get('mash_time')
+                mash_temp_str = f"{mash_temp:.1f}" if isinstance(mash_temp, (int, float)) else (str(mash_temp) if mash_temp else "N/A")
+                mash_time_str = str(mash_time) if mash_time else "N/A"
+                mash_boil_data.append({"Step": "Mash", "Temperature (°C)": mash_temp_str, "Time (min)": mash_time_str})
+                
+                # Boil row
+                boil_temp = recipe.get('boil_temp')
+                boil_time = recipe.get('boil_time')
+                boil_temp_str = f"{boil_temp:.1f}" if isinstance(boil_temp, (int, float)) else (str(boil_temp) if boil_temp else "N/A")
+                boil_time_str = str(boil_time) if boil_time else "N/A"
+                mash_boil_data.append({"Step": "Boil", "Temperature (°C)": boil_temp_str, "Time (min)": boil_time_str})
+                
+                mash_boil_df = pd.DataFrame(mash_boil_data)
+                st.dataframe(mash_boil_df, use_container_width=True, hide_index=True)
+            
+            # Fermentation Table
+            if recipe.get('fermentation_temp') or recipe.get('fermentation_days'):
+                st.markdown("**Fermentation:**")
+                
+                ferm_temp = recipe.get('fermentation_temp')
+                ferm_days = recipe.get('fermentation_days')
+                ferm_temp_str = f"{ferm_temp:.1f}" if isinstance(ferm_temp, (int, float)) else (str(ferm_temp) if ferm_temp else "N/A")
+                ferm_days_str = str(ferm_days) if ferm_days else "N/A"
+                
+                fermentation_data = [{"Temperature (°C)": ferm_temp_str, "Duration (days)": ferm_days_str}]
+                fermentation_df = pd.DataFrame(fermentation_data)
+                st.dataframe(fermentation_df, use_container_width=True, hide_index=True)
             
             if recipe.get('notes'):
                 st.markdown(f"**Notes:** {recipe['notes']}")
             
-            if st.button(f"Delete Recipe", key=f"delete_{idx}"):
-                st.session_state.recipes.pop(idx)
-                with open('data/recipes/recipes.json', 'w') as f:
-                    json.dump(st.session_state.recipes, f, indent=2)
-                st.rerun()
-
-
-def recipe_library_page():
-    st.header("📖 Recipe Library")
-    st.markdown("Browse popular homebrew recipes for inspiration")
-    
-    st.info("Coming soon: A curated collection of classic and award-winning homebrew recipes!")
+            st.markdown("---")
+            
+            # Action buttons
+            btn_col1, btn_col2 = st.columns(2)
+            
+            with btn_col1:
+                csv_string = export_recipe_to_csv(recipe)
+                st.download_button(
+                    label="📥 Export as CSV",
+                    data=csv_string,
+                    file_name=f"{recipe['name'].replace(' ', '_').lower()}.csv",
+                    mime="text/csv",
+                    key=f"export_{idx}"
+                )
+            
+            with btn_col2:
+                if st.button(f"🗑️ Delete Recipe", key=f"delete_{idx}"):
+                    st.session_state.recipes.pop(idx)
+                    with open('data/recipes/recipes.json', 'w') as f:
+                        json.dump(st.session_state.recipes, f, indent=2)
+                    st.rerun()
 
 
 def calculator_page():
@@ -385,7 +588,7 @@ def calculator_page():
     
     calc_type = st.selectbox(
         "Select Calculator",
-        ["ABV Calculator", "IBU Calculator", "Priming Sugar Calculator", "Strike Water Calculator"]
+        ["ABV Calculator", "Priming Sugar Calculator", "Gravity Temperature Correction"]
     )
     
     if calc_type == "ABV Calculator":
@@ -398,46 +601,143 @@ def calculator_page():
     
     elif calc_type == "Priming Sugar Calculator":
         st.subheader("Priming Sugar Calculator")
-        volume = st.number_input("Beer Volume (liters)", min_value=4.0, max_value=190.0, value=19.0, step=1.0)
-        co2_level = st.slider("Desired CO2 Volumes", min_value=1.5, max_value=4.0, value=2.5, step=0.1)
         
-        # Simplified calculation (corn sugar) - convert to grams
-        sugar_g = volume * co2_level * 1.32
-        st.success(f"Corn Sugar Needed: **{sugar_g:.1f} g**")
+        st.markdown("""
+        Calculate the amount of priming sugar needed to carbonate your beer. This calculator accounts for 
+        the CO2 already dissolved in your beer based on temperature.
+        """)
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            volume = st.number_input("Beer Volume (liters)", min_value=4.0, max_value=190.0, value=19.0, step=1.0)
+            beer_temp = st.number_input("Beer Temperature (°C)", min_value=0.0, max_value=30.0, value=20.0, step=0.5, 
+                                       help="Usually the fermentation temperature or current temperature if cold crashed")
+        
+        with col2:
+            co2_level = st.number_input("Desired CO2 Volumes", min_value=1.5, max_value=4.5, value=2.5, step=0.1,
+                                       help="Typical: Lager 2.5, Ale 2.0-2.5, Wheat 3.0-4.0")
+            sugar_type = st.selectbox("Sugar Type", ["Corn Sugar (Dextrose)", "Table Sugar (Sucrose)"])
+        
+        # Calculate dissolved CO2 already in beer based on temperature (Celsius)
+        # Polynomial approximation for CO2 solubility in beer (gives 0.86 at 20°C)
+        dissolved_co2 = -0.000316 * (beer_temp ** 2) + 0.0052 * beer_temp + 0.876
+        
+        # Calculate additional CO2 needed
+        co2_needed = co2_level - dissolved_co2
+        
+        # Calculate sugar needed based on type
+        # Corn sugar: 4.39g per liter to produce 1 volume of CO2 (accounting for 91% fermentability)
+        # Table sugar: 4.0g per liter to produce 1 volume of CO2 (100% fermentable)
+        if sugar_type == "Corn Sugar (Dextrose)":
+            sugar_g = volume * co2_needed * 4.39
+        else:  # Table sugar
+            sugar_g = volume * co2_needed * 4.0
+        
+        st.success(f"**{sugar_type}** Needed: **{sugar_g:.1f} g**")
+        
+        # Additional information
+        st.info(f"📊 Dissolved CO2 in beer at {beer_temp}°C: **{dissolved_co2:.2f} volumes**")
+        st.info(f"📊 Additional CO2 needed: **{co2_needed:.2f} volumes**")
+        
+        if co2_needed < 0:
+            st.warning("⚠️ Your beer already has more CO2 than desired. Consider venting or serving at a warmer temperature.")
+        
+        # Carbonation guidelines
+        st.markdown("---")
+        st.markdown("### Carbonation Guidelines by Style")
+        
+        guidelines_data = {
+            "Style": [
+                "British Style Ales",
+                "Belgian Ales",
+                "American Ales and Lager",
+                "Fruit Lambic",
+                "Porter, Stout",
+                "European Lagers",
+                "Lambic",
+                "German Wheat Beer"
+            ],
+            "CO2 Volumes": [
+                "1.5 - 2.0",
+                "1.9 - 2.4",
+                "2.2 - 2.7",
+                "3.0 - 4.5",
+                "1.7 - 2.3",
+                "2.2 - 2.7",
+                "2.4 - 2.8",
+                "3.3 - 4.5"
+            ]
+        }
+        
+        guidelines_df = pd.DataFrame(guidelines_data)
+        st.dataframe(guidelines_df, use_container_width=True, hide_index=True)
     
-    elif calc_type == "Strike Water Calculator":
-        st.subheader("Strike Water Calculator")
-        grain_weight = st.number_input("Grain Weight (kg)", min_value=0.5, max_value=22.0, value=4.5, step=0.5)
-        target_temp = st.number_input("Target Mash Temperature (°C)", min_value=60, max_value=77, value=67)
-        grain_temp = st.number_input("Grain Temperature (°C)", min_value=10, max_value=27, value=20)
+    elif calc_type == "Gravity Temperature Correction":
+        st.subheader("Gravity Temperature Correction")
+        st.markdown("Hydrometers are typically calibrated at 20°C (68°F). Use this calculator to correct readings taken at other temperatures.")
         
-        water_ratio = 3.0  # liters per kg
-        strike_temp = target_temp + (0.2 * (target_temp - grain_temp))
-        water_volume = grain_weight * water_ratio
+        col1, col2 = st.columns(2)
         
-        st.success(f"Strike Water Temperature: **{strike_temp:.1f}°C**")
-        st.success(f"Water Volume Needed: **{water_volume:.1f} liters**")
+        with col1:
+            measured_gravity = st.number_input("Measured Gravity", min_value=1.000, max_value=1.200, value=1.050, step=0.001)
+            measured_temp = st.number_input("Sample Temperature (°C)", min_value=0.0, max_value=100.0, value=25.0, step=0.5)
+        
+        with col2:
+            calibration_temp = st.number_input("Hydrometer Calibration Temp (°C)", min_value=0.0, max_value=30.0, value=20.0, step=0.5)
+        
+        # Temperature correction formula
+        # Standard hydrometer correction accounting for thermal expansion of liquid
+        # Formula: CG = MG + (T - Tcal) * 0.000325
+        # This is the linear approximation used by most brewing calculators
+        temp_difference = measured_temp - calibration_temp
+        
+        # Apply correction: add 0.000325 per degree C above calibration temp
+        correction_amount = temp_difference * 0.000325
+        corrected_gravity = measured_gravity + correction_amount
+        
+        st.success(f"Corrected Gravity: **{corrected_gravity:.3f}**")
+        
+        if temp_difference > 0:
+            st.info(f"📊 Sample is {temp_difference:.1f}°C warmer than calibration temperature. Correction: +{correction_amount:.3f}")
+        elif temp_difference < 0:
+            st.info(f"📊 Sample is {abs(temp_difference):.1f}°C cooler than calibration temperature. Correction: {correction_amount:.3f}")
+        else:
+            st.info("📊 Sample is at calibration temperature. No correction needed.")
 
 
 def recipe_scaler_page():
-    st.header("📏 Recipe Scaler & Importer")
-    st.markdown("Import a recipe from online and scale it to your desired batch size")
-    
-    # Initialize session state for scaled recipe
+    # Initialise session state for scaled recipe
     if 'scaled_recipe' not in st.session_state:
         st.session_state.scaled_recipe = None
     
-    st.subheader("📋 Import Recipe")
+    st.subheader("📋 Recipe Details")
     
-    col1, col2 = st.columns(2)
+    col1, col2, col3, col4 = st.columns(4)
     
     with col1:
         recipe_name_import = st.text_input("Recipe Name", placeholder="e.g., Clone IPA")
-        original_batch_size = st.number_input("Original Batch Size (liters)", min_value=1.0, max_value=500.0, value=19.0, step=1.0)
     
     with col2:
-        target_batch_size = st.number_input("Target Batch Size (liters)", min_value=1.0, max_value=500.0, value=19.0, step=1.0)
         recipe_style = st.text_input("Beer Style", placeholder="e.g., American IPA")
+    
+    with col3:
+        brewer_name_import = st.text_input("Brewer Name", placeholder="Your Name", key="import_brewer")
+
+    with col4:
+        planned_brew_date = st.date_input("Planned Brew Date", datetime.now(), key="import_brew_date")
+
+    st.markdown("---")
+
+    st.subheader("⚖️ Scaling factor")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        original_batch_size = st.number_input("Original Batch Size (liters)", min_value=1.0, max_value=500.0, value=19.0, step=1.0)
+     
+    with col2:
+        target_batch_size = st.number_input("Target Batch Size (liters)", min_value=1.0, max_value=500.0, value=19.0, step=1.0)
     
     # Calculate scaling factor
     if original_batch_size > 0:
@@ -490,10 +790,12 @@ def recipe_scaler_page():
         st.markdown("**Grain Bill:**")
         grain_data = []
         for grain in st.session_state.import_grain_bill:
+            # Recalculate scaled amount based on current scale factor
+            current_scaled_amount = grain['original_amount'] * scale_factor
             grain_data.append({
                 'Grain': grain['name'],
                 'Original (kg)': grain['original_amount'],
-                'Scaled (kg)': grain['scaled_amount']
+                'Scaled (kg)': round(current_scaled_amount, 2)
             })
         grain_df = pd.DataFrame(grain_data)
         st.dataframe(grain_df, use_container_width=True)
@@ -541,10 +843,12 @@ def recipe_scaler_page():
         st.markdown("**Hop Schedule:**")
         hop_data = []
         for hop in st.session_state.import_hop_schedule:
+            # Recalculate scaled amount based on current scale factor
+            current_scaled_amount = hop['original_amount'] * scale_factor
             hop_data.append({
                 'Variety': hop['variety'],
                 'Original (g)': hop['original_amount'],
-                'Scaled (g)': hop['scaled_amount'],
+                'Scaled (g)': round(current_scaled_amount, 1),
                 'Time (min)': hop['time']
             })
         hop_df = pd.DataFrame(hop_data)
@@ -563,33 +867,30 @@ def recipe_scaler_page():
         st.session_state.import_other_ingredients = []
     
     with st.expander("Add Other Ingredient", expanded=False):
-        ocol1, ocol2, ocol3, ocol4 = st.columns([2, 1, 1, 1])
+        ocol1, ocol2, ocol3, ocol4, ocol5 = st.columns([2, 1, 1, 1, 1])
         
         with ocol1:
             other_name = st.text_input("Ingredient", placeholder="e.g., Irish Moss, Yeast Nutrient", key="import_other_name")
         
         with ocol2:
-            other_amount = st.number_input("Amount", min_value=0.0, max_value=1000.0, value=10.0, step=1.0, key="import_other_amount")
+            other_amount = st.number_input("Amount", min_value=0.0, max_value=10000.0, value=10.0, step=1.0, key="import_other_amount")
         
         with ocol3:
-            other_unit = st.selectbox("Unit", ["g", "ml", "tsp", "tbsp", "packet"], key="import_other_unit")
+            other_unit = st.selectbox("Unit", ["g", "kg", "ml", "L", "tsp", "tbsp", "packet"], key="import_other_unit")
         
         with ocol4:
+            other_scale = st.checkbox("Scale", value=True, key="import_other_scale", help="Scale this ingredient with batch size")
+        
+        with ocol5:
             st.write("")
             st.write("")
             if st.button("Add", key="add_import_other"):
                 if other_name:
-                    # Only scale measurable units
-                    if other_unit in ["g", "ml"]:
-                        scaled_amount = other_amount * scale_factor
-                    else:
-                        scaled_amount = other_amount
-                    
                     st.session_state.import_other_ingredients.append({
                         'name': other_name,
                         'original_amount': other_amount,
-                        'scaled_amount': round(scaled_amount, 1),
-                        'unit': other_unit
+                        'unit': other_unit,
+                        'should_scale': other_scale and other_unit in ["g", "kg", "ml", "L"]
                     })
                     st.rerun()
     
@@ -597,10 +898,17 @@ def recipe_scaler_page():
         st.markdown("**Other Ingredients:**")
         other_data = []
         for ingredient in st.session_state.import_other_ingredients:
+            # Recalculate scaled amount based on current scale factor and should_scale flag
+            should_scale = ingredient.get('should_scale', True)
+            if should_scale:
+                current_scaled_amount = ingredient['original_amount'] * scale_factor
+            else:
+                current_scaled_amount = ingredient['original_amount']
+            
             other_data.append({
                 'Ingredient': ingredient['name'],
                 'Original': f"{ingredient['original_amount']} {ingredient['unit']}",
-                'Scaled': f"{ingredient['scaled_amount']} {ingredient['unit']}"
+                'Scaled': f"{round(current_scaled_amount, 3)} {ingredient['unit']}"
             })
         other_df = pd.DataFrame(other_data)
         st.dataframe(other_df, use_container_width=True)
@@ -611,150 +919,234 @@ def recipe_scaler_page():
     
     st.markdown("---")
     
-    # Additional Information
-    st.subheader("📝 Additional Information")
+    # Water Volumes Section
+    st.subheader("💧 Water Volumes")
     
-    acol1, acol2 = st.columns(2)
+    # Calculate total grain weight for water calculations (recalculate based on current scale factor)
+    total_grain_weight = sum(g['original_amount'] * scale_factor for g in st.session_state.import_grain_bill) if st.session_state.import_grain_bill else 0
     
-    with acol1:
+    wcol1, wcol2 = st.columns(2)
+    
+    with wcol1:
+        import_final_volume = st.number_input("Final Expected Volume (liters)", min_value=0.0, max_value=200.0, value=target_batch_size, step=0.5, key="import_final_volume")
+    
+    with wcol2:
+        water_to_grist_ratio = st.number_input("Water-to-Grist Ratio (L/kg)", min_value=2.0, max_value=4.0, value=3.0, step=0.1, key="water_grist_ratio", help="Typical range: 2.5-3.5 L/kg")
+    
+    # Calculate water volumes based on grain bill and final volume
+    if total_grain_weight > 0 and import_final_volume > 0:
+        # Mash water calculation based on water-to-grist ratio
+        calculated_mash_volume = total_grain_weight * water_to_grist_ratio
+        
+        # Account for water absorbed by grain (approximately 1L per kg)
+        grain_absorption = total_grain_weight * 1.0
+        
+        # Account for boil-off (20% loss during boil)
+        boil_off_volume = import_final_volume * 0.2
+        pre_boil_volume = import_final_volume + boil_off_volume
+        
+        # Sparge water needed = pre-boil volume - (mash water - grain absorption)
+        mash_runoff = calculated_mash_volume - grain_absorption
+        calculated_sparge_volume = max(0, pre_boil_volume - mash_runoff)
+        
+        st.markdown("**Calculated Water Volumes (for scaled recipe):**")
+        calc_wcol1, calc_wcol2, calc_wcol3, calc_wcol4 = st.columns(4)
+        
+        with calc_wcol1:
+            st.metric("Mash Volume", f"{calculated_mash_volume:.1f} L", help=f"Based on {water_to_grist_ratio:.1f} L/kg ratio")
+        
+        with calc_wcol2:
+            st.metric("Sparge Volume", f"{calculated_sparge_volume:.1f} L", help="Calculated to reach pre-boil volume")
+        
+        with calc_wcol3:
+            st.metric("Pre-boil Volume", f"{pre_boil_volume:.1f} L", help="Volume before boiling")
+        
+        with calc_wcol4:
+            st.metric("Total Water", f"{calculated_mash_volume + calculated_sparge_volume:.1f} L", help="Mash + Sparge volumes")
+        
+        st.info(f"📊 Grain Absorption: {grain_absorption:.1f} L | Boil-off: {pre_boil_volume - import_final_volume:.1f} L | Pre-boil Volume: {pre_boil_volume:.1f} L")
+        
+        # Use calculated values
+        scaled_mash_volume = calculated_mash_volume
+        scaled_sparge_volume = calculated_sparge_volume
+        scaled_final_volume = import_final_volume
+        scaled_pre_boil_volume = pre_boil_volume
+    else:
+        scaled_mash_volume = 0
+        scaled_sparge_volume = 0
+        scaled_final_volume = import_final_volume if import_final_volume > 0 else 0
+        scaled_pre_boil_volume = 0
+        
+        if total_grain_weight == 0:
+            st.warning("⚠️ Add grains to calculate water volumes automatically")
+    
+    st.markdown("---")
+    
+    # Gravity and ABV Section
+    st.subheader("📊 Gravity & ABV")
+    
+    gcol1, gcol2, gcol3 = st.columns(3)
+    
+    with gcol1:
+        target_og = st.number_input("Target OG", min_value=1.000, max_value=1.200, value=1.050, step=0.001, key="import_og")
+    
+    with gcol2:
+        target_fg = st.number_input("Final Gravity (FG)", min_value=1.000, max_value=1.030, value=1.010, step=0.001, key="import_fg")
+    
+    with gcol3:
+        st.write("")  # Spacer
+        st.write("")  # Spacer
+        if target_og and target_fg:
+            calculated_abv = calculate_abv(target_og, target_fg)
+            st.metric("ABV", f"{calculated_abv}%")
+    
+    st.markdown("---")
+    
+    # Mash and Boil Section
+    st.subheader("🔥 Mash & Boil")
+    
+    mcol1, mcol2 = st.columns(2)
+    
+    with mcol1:
+        mash_temp = st.number_input("Mash Temperature (°C)", min_value=60.0, max_value=77.0, value=67.0, step=0.5, key="import_mash_temp")
+    
+    with mcol2:
+        mash_time = st.number_input("Mash Time (minutes)", min_value=30, max_value=120, value=60, step=5, key="import_mash_time")
+    
+    bcol1, bcol2 = st.columns(2)
+    
+    with bcol1:
+        boil_temp = st.number_input("Boil Temperature (°C)", min_value=95.0, max_value=105.0, value=100.0, step=0.5, key="import_boil_temp")
+    
+    with bcol2:
+        boil_time = st.number_input("Boil Time (minutes)", min_value=30, max_value=120, value=60, step=5, key="import_boil_time")
+    
+    st.markdown("---")
+    
+    # Fermentation
+    st.subheader("🦠 Fermentation")
+    
+    fcol1, fcol2 = st.columns(2)
+    
+    with fcol1:
         yeast_info = st.text_input("Yeast", placeholder="e.g., US-05", key="import_yeast")
-        mash_temp = st.text_input("Mash Temperature", placeholder="e.g., 67°C for 60 min", key="import_mash")
     
-    with acol2:
-        fermentation_info = st.text_input("Fermentation", placeholder="e.g., 20°C for 14 days", key="import_fermentation")
-        target_og = st.text_input("Target OG", placeholder="e.g., 1.055", key="import_og")
+    with fcol2:
+        fermentation_temp = st.number_input("Fermentation Temperature (°C)", min_value=10.0, max_value=30.0, value=20.0, step=0.5, key="import_ferm_temp")
     
+    fcol3, fcol4 = st.columns(2)
+    
+    with fcol3:
+        fermentation_days = st.number_input("Fermentation Duration (days)", min_value=1, max_value=60, value=14, step=1, key="import_ferm_days")
+    
+    with fcol4:
+        st.write("")  # Spacer for alignment
+    
+    st.markdown("---")
+    
+    # Notes
+    st.subheader("📝 Notes")
     recipe_notes = st.text_area("Recipe Notes & Instructions", 
                                 placeholder="Enter any additional notes, brewing instructions, or special techniques...",
                                 key="import_notes")
     
     st.markdown("---")
     
-    # Generate Scaled Recipe Summary
-    if st.button("📊 Generate Scaled Recipe", type="primary"):
+    # Save Scaled Recipe
+    if st.button("💾 Save Scaled Recipe", type="primary"):
         if not recipe_name_import:
             st.error("Please enter a recipe name")
         elif not st.session_state.import_grain_bill and not st.session_state.import_hop_schedule:
             st.error("Please add at least some ingredients")
         else:
-            st.success("✅ Recipe scaled successfully!")
+            # Convert grain bill to recipe format (recalculate with current scale factor)
+            grain_bill_converted = []
+            for grain in st.session_state.import_grain_bill:
+                grain_bill_converted.append({
+                    'type': grain['name'],
+                    'weight': round(grain['original_amount'] * scale_factor, 2),
+                    'ppg': 35,  # Default value
+                    'lovibond': 0  # Default value
+                })
             
-            # Display summary
-            st.markdown("---")
-            st.subheader(f"📄 {recipe_name_import}")
-            if recipe_style:
-                st.markdown(f"**Style:** {recipe_style}")
-            st.markdown(f"**Batch Size:** {target_batch_size} L")
+            # Convert hop schedule to recipe format (recalculate with current scale factor)
+            hop_schedule_converted = []
+            for hop in st.session_state.import_hop_schedule:
+                hop_schedule_converted.append({
+                    'variety': hop['variety'],
+                    'weight': round(hop['original_amount'] * scale_factor, 1),
+                    'time': hop['time'],
+                    'alpha_acid': 0  # Default value
+                })
             
-            if scale_factor != 1.0:
-                st.info(f"🔄 Scaled from {original_batch_size}L to {target_batch_size}L (factor: {scale_factor:.2f}x)")
-            
-            # Display scaled grain bill
-            if st.session_state.import_grain_bill:
-                st.markdown("### 🌾 Grain Bill")
-                for grain in st.session_state.import_grain_bill:
-                    st.markdown(f"- **{grain['scaled_amount']} kg** {grain['name']}")
-                
-                total_grain = sum(g['scaled_amount'] for g in st.session_state.import_grain_bill)
-                st.markdown(f"**Total Grain:** {total_grain:.2f} kg")
-            
-            # Display scaled hop schedule
-            if st.session_state.import_hop_schedule:
-                st.markdown("### 🌿 Hop Schedule")
-                for hop in st.session_state.import_hop_schedule:
-                    st.markdown(f"- **{hop['scaled_amount']} g** {hop['variety']} @ {hop['time']} min")
-            
-            # Display other ingredients
+            # Convert other ingredients (recalculate with current scale factor)
+            other_ingredients_converted = []
             if st.session_state.import_other_ingredients:
-                st.markdown("### 🧪 Other Ingredients")
                 for ingredient in st.session_state.import_other_ingredients:
-                    st.markdown(f"- **{ingredient['scaled_amount']} {ingredient['unit']}** {ingredient['name']}")
+                    should_scale = ingredient.get('should_scale', True)
+                    if should_scale:
+                        scaled_amt = ingredient['original_amount'] * scale_factor
+                    else:
+                        scaled_amt = ingredient['original_amount']
+                    other_ingredients_converted.append({
+                        'name': ingredient['name'],
+                        'amount': round(scaled_amt, 3),
+                        'unit': ingredient['unit']
+                    })
             
-            # Display additional info
-            if yeast_info or mash_temp or fermentation_info or target_og:
-                st.markdown("### 📋 Brewing Information")
-                if yeast_info:
-                    st.markdown(f"**Yeast:** {yeast_info}")
-                if mash_temp:
-                    st.markdown(f"**Mash:** {mash_temp}")
-                if fermentation_info:
-                    st.markdown(f"**Fermentation:** {fermentation_info}")
-                if target_og:
-                    st.markdown(f"**Target OG:** {target_og}")
+            # Use gravity values from inputs
+            og_value = target_og if target_og else 0
+            fg_value = target_fg if target_fg else 0
+            abv_value = calculate_abv(og_value, fg_value) if og_value and fg_value else 0
             
+            # Create recipe notes with scaling info
+            scaled_notes = f"Scaled from {original_batch_size}L to {target_batch_size}L (factor: {scale_factor:.2f}x)\n\n"
             if recipe_notes:
-                st.markdown("### 📝 Notes")
-                st.markdown(recipe_notes)
+                scaled_notes += f"\n{recipe_notes}"
             
-            # Option to export
-            st.markdown("---")
+            # Create recipe object
+            recipe = {
+                'name': recipe_name_import,
+                'style': recipe_style if recipe_style else "Imported Recipe",
+                'brewer': brewer_name_import if brewer_name_import else 'Imported',
+                'batch_size': target_batch_size,
+                'efficiency': 75,
+                'brew_date': planned_brew_date.strftime('%d/%m/%Y'),
+                'grain_bill': grain_bill_converted,
+                'hop_schedule': hop_schedule_converted,
+                'other_ingredients': other_ingredients_converted if other_ingredients_converted else None,
+                'yeast': yeast_info if yeast_info else 'N/A',
+                'fermentation_temp': fermentation_temp if fermentation_temp else None,
+                'fermentation_days': fermentation_days if fermentation_days else None,
+                'mash_temp': mash_temp if mash_temp else None,
+                'mash_time': mash_time if mash_time else None,
+                'boil_temp': boil_temp if boil_temp else None,
+                'boil_time': boil_time if boil_time else None,
+                'mash_volume': scaled_mash_volume if scaled_mash_volume > 0 else None,
+                'sparge_volume': scaled_sparge_volume if scaled_sparge_volume > 0 else None,
+                'pre_boil_volume': scaled_pre_boil_volume if scaled_pre_boil_volume > 0 else None,
+                'final_volume': scaled_final_volume if scaled_final_volume > 0 else None,
+                'og': og_value,
+                'fg': fg_value,
+                'abv': abv_value,
+                'notes': scaled_notes.strip(),
+                'created_at': datetime.now().isoformat()
+            }
             
-            # Create CSV data for export
-            csv_data = []
+            st.session_state.recipes.append(recipe)
             
-            # Add header info
-            csv_data.append(["Recipe Name", recipe_name_import])
-            if recipe_style:
-                csv_data.append(["Style", recipe_style])
-            csv_data.append(["Batch Size (L)", target_batch_size])
-            csv_data.append(["Scaled From (L)", original_batch_size])
-            csv_data.append(["Scale Factor", f"{scale_factor:.2f}x"])
-            csv_data.append([])  # Empty row
+            # Save to file
+            os.makedirs('data/recipes', exist_ok=True)
+            with open('data/recipes/recipes.json', 'w') as f:
+                json.dump(st.session_state.recipes, f, indent=2)
             
-            # Add grain bill
-            if st.session_state.import_grain_bill:
-                csv_data.append(["GRAIN BILL"])
-                csv_data.append(["Ingredient", "Amount", "Unit"])
-                for grain in st.session_state.import_grain_bill:
-                    csv_data.append([grain['name'], grain['scaled_amount'], "kg"])
-                csv_data.append(["Total Grain", sum(g['scaled_amount'] for g in st.session_state.import_grain_bill), "kg"])
-                csv_data.append([])  # Empty row
+            st.success(f"✅ Recipe '{recipe_name_import}' saved successfully!")
+            st.info("📚 View your recipe in the 'View Recipes' page")
             
-            # Add hop schedule
-            if st.session_state.import_hop_schedule:
-                csv_data.append(["HOP SCHEDULE"])
-                csv_data.append(["Variety", "Amount", "Unit", "Time (min)"])
-                for hop in st.session_state.import_hop_schedule:
-                    csv_data.append([hop['variety'], hop['scaled_amount'], "g", hop['time']])
-                csv_data.append([])  # Empty row
-            
-            # Add other ingredients
-            if st.session_state.import_other_ingredients:
-                csv_data.append(["OTHER INGREDIENTS"])
-                csv_data.append(["Ingredient", "Amount", "Unit"])
-                for ingredient in st.session_state.import_other_ingredients:
-                    csv_data.append([ingredient['name'], ingredient['scaled_amount'], ingredient['unit']])
-                csv_data.append([])  # Empty row
-            
-            # Add brewing information
-            csv_data.append(["BREWING INFORMATION"])
-            if yeast_info:
-                csv_data.append(["Yeast", yeast_info])
-            if mash_temp:
-                csv_data.append(["Mash", mash_temp])
-            if fermentation_info:
-                csv_data.append(["Fermentation", fermentation_info])
-            if target_og:
-                csv_data.append(["Target OG", target_og])
-            
-            if recipe_notes:
-                csv_data.append([])  # Empty row
-                csv_data.append(["NOTES"])
-                csv_data.append([recipe_notes])
-            
-            # Convert to CSV string
-            import io
-            csv_buffer = io.StringIO()
-            for row in csv_data:
-                csv_buffer.write(','.join(str(cell) for cell in row) + '\n')
-            csv_string = csv_buffer.getvalue()
-            
-            st.download_button(
-                label="📥 Download Scaled Recipe (CSV)",
-                data=csv_string,
-                file_name=f"{recipe_name_import.replace(' ', '_').lower()}_scaled.csv",
-                mime="text/csv"
-            )
+            # Clear form
+            st.session_state.import_grain_bill = []
+            st.session_state.import_hop_schedule = []
+            st.session_state.import_other_ingredients = []
     
     # Clear all button
     if st.button("🗑️ Clear All", key="clear_all_import"):
