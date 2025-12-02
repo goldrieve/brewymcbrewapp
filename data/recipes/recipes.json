@@ -1,0 +1,28 @@
+[
+  {
+    "name": "test",
+    "style": "Porter",
+    "brewer": "",
+    "batch_size": 19.0,
+    "efficiency": 75,
+    "brew_date": "2025-12-02",
+    "grain_bill": [
+      {
+        "type": "Pilsner Malt",
+        "weight": 0.5,
+        "ppg": 37,
+        "lovibond": 1.5
+      }
+    ],
+    "hop_schedule": [],
+    "yeast": "US-05 (American Ale)",
+    "fermentation_temp": 20,
+    "og": 1.006,
+    "fg": 1.01,
+    "abv": -0.53,
+    "ibu": 0,
+    "srm": 0.2,
+    "notes": "",
+    "created_at": "2025-12-02T09:55:50.522653"
+  }
+]
