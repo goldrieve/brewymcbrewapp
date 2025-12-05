@@ -1,0 +1,1742 @@
+[
+  {
+    "name": "Lockdown IPA",
+    "style": "American IPA",
+    "method": "All Grain",
+    "batch_size": 10,
+    "og": 1.056,
+    "fg": 1.01,
+    "abv": 6,
+    "grain_bill": [
+      {
+        "type": "Low Colour Pale Malt Crushed (BAIRD)",
+        "weight": 2.65,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Ahtanum",
+        "weight": 8.75,
+        "time": 60,
+        "alpha_acid": 5.4
+      },
+      {
+        "variety": "Chinook",
+        "weight": 7.5,
+        "time": 60,
+        "alpha_acid": 5.4
+      },
+      {
+        "variety": "Chinook",
+        "weight": 17.5,
+        "time": 30,
+        "alpha_acid": 4.7
+      },
+      {
+        "variety": "Ahtanum",
+        "weight": 8.75,
+        "time": 30,
+        "alpha_acid": 4.7
+      },
+      {
+        "variety": "Chinook",
+        "weight": 22.5,
+        "time": 0,
+        "alpha_acid": 4.7
+      },
+      {
+        "variety": "Motueka",
+        "weight": 8.75,
+        "time": 0,
+        "alpha_acid": 4.7
+      }
+    ],
+    "yeast": "White Labs WLP028 - Edinburgh Ale Yeast",
+    "notes": ""
+  },
+  {
+    "name": "CLIPA",
+    "style": "American IPA",
+    "method": "All Grain",
+    "batch_size": 10,
+    "og": 1053,
+    "fg": 1011,
+    "abv": 5.5,
+    "grain_bill": [
+      {
+        "type": "Low Colour Pale Malt Crushed (BAIRD)",
+        "weight": 2.19,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Caramalt",
+        "weight": 0.125,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Ahtanum",
+        "weight": 8.75,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Chinook",
+        "weight": 7.5,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Chinook",
+        "weight": 17.5,
+        "time": 30,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Ahtanum",
+        "weight": 8.75,
+        "time": 60,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Chinook",
+        "weight": 22.5,
+        "time": 60,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Motueka",
+        "weight": 8.75,
+        "time": 60,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "White Labs WLP028 - Edinburgh Ale Yeast",
+    "notes": "Source: Brew dog\nDate: 6.4.2020\nAcronym: CLIPA\nIBU: 40"
+  },
+  {
+    "name": "CRIPA",
+    "style": "American IPA",
+    "method": "All Grain",
+    "batch_size": 5,
+    "og": 1053,
+    "fg": 1011,
+    "abv": 5.5,
+    "grain_bill": [
+      {
+        "type": "Low Colour Pale Malt Crushed (BAIRD)",
+        "weight": 1.095,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Caramalt",
+        "weight": 0.0625,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Ahtanum",
+        "weight": 4.375,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Chinook",
+        "weight": 3.75,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Crystal",
+        "weight": 25,
+        "time": 30,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Crystal",
+        "weight": 75,
+        "time": 60,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "US-05",
+    "notes": "Source: Brew dog\nDate: 20.4.2020\nAcronym: CRIPA\nIBU: 40"
+  },
+  {
+    "name": "BFPA",
+    "style": "Ale",
+    "method": "All Grain",
+    "batch_size": 19.0,
+    "og": 1055,
+    "fg": 1.01,
+    "abv": 5.0,
+    "grain_bill": [
+      {
+        "type": "Pale ale",
+        "weight": 5.216312,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Caramalt",
+        "weight": 0.413,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Magnum",
+        "weight": 14.1748,
+        "time": 60,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Perle",
+        "weight": 14.1748,
+        "time": 30,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Cascade",
+        "weight": 28.3496,
+        "time": 10,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Cascade",
+        "weight": 56.6992,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Cascade (dry hop)",
+        "weight": 56.6992,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "Edinburgh ale skimmed from CRIPA",
+    "notes": "Source: https://www.brewersfriend.com/homebrew/recipe/view/28546/sierra-nevada-pale-ale-clone\nDate: 13.5.2020\nAcronym: BFPA"
+  },
+  {
+    "name": "GIW",
+    "style": "Wheat Beer",
+    "method": "All Grain",
+    "batch_size": 19,
+    "og": 1049,
+    "fg": 1013,
+    "abv": 4.8,
+    "grain_bill": [
+      {
+        "type": "Wheat malt",
+        "weight": 2.2,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Pale malt",
+        "weight": 2.2,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Hallertau pellet hops",
+        "weight": 30,
+        "time": 60,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "White Labs WLP300",
+    "notes": "Source: https://byo.com/article/german-hefeweizen-style-profile/\nDate: 14.5.2020\nAcronym: GIW"
+  },
+  {
+    "name": "Flanders red",
+    "style": "Flanders Red Ale",
+    "method": "All Grain",
+    "batch_size": 19,
+    "og": 1.061,
+    "fg": 1.008,
+    "abv": 4.8,
+    "grain_bill": [
+      {
+        "type": "Pilsner",
+        "weight": 1.4,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Vienna",
+        "weight": 1.4,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Carared",
+        "weight": 0.326,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "German Munich",
+        "weight": 1.45,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Aromatic",
+        "weight": 0.23,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Caramunich",
+        "weight": 0.23,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Special B",
+        "weight": 0.23,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Red Wheat",
+        "weight": 0.23,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Amber Candy syrup",
+        "weight": 0.45,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Hallertau pellet hops",
+        "weight": 14,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "Imperial Yeast G02 (Kaiser) or White Labs WLP036 (D\u00fcsseldorf Alt Ale) or SafAle K-97 yeast",
+    "notes": "Source: https://byo.com/recipe/flanders-red-ale/\nAcronym: GIW"
+  },
+  {
+    "name": "Espresso Stout",
+    "style": "Coffee Stout",
+    "method": "All Grain",
+    "batch_size": 18.9,
+    "og": 1.051,
+    "fg": 1.01,
+    "abv": 5.0,
+    "grain_bill": [
+      {
+        "type": "Pale ale malt",
+        "weight": 3.62,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Caramalt",
+        "weight": 0.454,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Chocolate malt",
+        "weight": 0.227,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Roasted barley",
+        "weight": 0.113,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Black malt",
+        "weight": 0.113,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Northern Brewer pellets",
+        "weight": 35,
+        "time": 60,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Northern Brewer pellets",
+        "weight": 7,
+        "time": 5,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "White Labs WLP004 Irish Ale Yeast",
+    "notes": "Source: https://www.homebrewersassociation.org/homebrew-recipe/espresso-stout/\nDate: 18.5.20\nAcronym: Est 2020"
+  },
+  {
+    "name": "Hop rocker",
+    "style": "Ale",
+    "method": "All Grain",
+    "batch_size": 20,
+    "og": 1052,
+    "fg": 1010,
+    "abv": 5.5,
+    "grain_bill": [
+      {
+        "type": "Extra pale marris otter",
+        "weight": 3.78,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Caramalt",
+        "weight": 0.31,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Munich",
+        "weight": 0.31,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Cascade",
+        "weight": 12.5,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Saaz",
+        "weight": 12.5,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Cascade",
+        "weight": 25,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Motueka",
+        "weight": 12.5,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Northern brewer",
+        "weight": 25,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "Saflager W-34/70",
+    "notes": "Source: DIY dog\nDate: 4.6.20"
+  },
+  {
+    "name": "Hazy Jane",
+    "style": "Wheat Beer",
+    "method": "All Grain",
+    "batch_size": 20,
+    "og": 1065,
+    "fg": 1009,
+    "abv": 7.2,
+    "grain_bill": [
+      {
+        "type": "Pale ale",
+        "weight": 3.96,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Marris Otter",
+        "weight": 0.96,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Wheat malt",
+        "weight": 0.6,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Flaked oats",
+        "weight": 0.24,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Northern brewer",
+        "weight": 1,
+        "time": 10,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Northern brewer",
+        "weight": 20,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Cascade",
+        "weight": 20,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Magnum",
+        "weight": 20,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Citra (dry hop)",
+        "weight": 50,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Magnum (dry hop)",
+        "weight": 50,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Cascade (dry hop)",
+        "weight": 50,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Mosaic (dry hop)",
+        "weight": 50,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "US-05",
+    "notes": "Source: DIY Dog"
+  },
+  {
+    "name": "Leffe blonde",
+    "style": "Belgian Blonde Ale",
+    "method": "All Grain",
+    "batch_size": 23,
+    "og": 1065,
+    "fg": 1010,
+    "abv": 7,
+    "grain_bill": [
+      {
+        "type": "Pilsen Malt",
+        "weight": 5,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Aromatic malt",
+        "weight": 0.227,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Pale wheat",
+        "weight": 0.227,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Hallertauer Mittlefruh",
+        "weight": 83,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "Safbrew\u2122 T-58",
+    "notes": "Source: https://www.themaltmiller.co.uk/product/belgian-blonde-leffe-clone/\nDate: 21.6.20"
+  },
+  {
+    "name": "Black IPA",
+    "style": "Black IPA",
+    "method": "All Grain",
+    "batch_size": 20.0627,
+    "og": 1061,
+    "fg": 1005,
+    "abv": 7.35,
+    "grain_bill": [
+      {
+        "type": "Pale malt",
+        "weight": 4.898798,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Flaked rye",
+        "weight": 0.3628739,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Crystal 60",
+        "weight": 0.226796,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Crystal 120",
+        "weight": 0.226796,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Chocolate wheat",
+        "weight": 0.226796,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Carafa 3",
+        "weight": 0.181437,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Columbus",
+        "weight": 8.50486,
+        "time": 60,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Centennial",
+        "weight": 14.1748,
+        "time": 45,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Centennial",
+        "weight": 14.1748,
+        "time": 30,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Cascade",
+        "weight": 28.3496,
+        "time": 15,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Cascade",
+        "weight": 28.3496,
+        "time": 5,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "US-05",
+    "notes": "Source: https://www.clawhammersupply.com/blogs/moonshine-still-blog/how-to-brew-a-black-ipa-homebrew-beer-recipe"
+  },
+  {
+    "name": "Sierra Jane",
+    "style": "Wheat Beer",
+    "method": "All Grain",
+    "batch_size": 20,
+    "og": 1065,
+    "fg": 1009,
+    "abv": 7.2,
+    "grain_bill": [
+      {
+        "type": "Pale ale",
+        "weight": 3.96,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Marris Otter",
+        "weight": 0.96,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Wheat malt",
+        "weight": 0.6,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Flaked oats",
+        "weight": 0.24,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Magnum",
+        "weight": 0.47969516,
+        "time": 60,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Perle",
+        "weight": 0.47969516,
+        "time": 30,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Cascade",
+        "weight": 0.95939031,
+        "time": 10,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Cascade",
+        "weight": 1.91878063,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Cascade (dry hop)",
+        "weight": 1.91878063,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "US-05",
+    "notes": ""
+  },
+  {
+    "name": "Orfy's Hob",
+    "style": "English Bitter",
+    "method": "All Grain",
+    "batch_size": 21,
+    "og": 1050,
+    "fg": 1.01,
+    "abv": 5.0,
+    "grain_bill": [
+      {
+        "type": "Marris Otter",
+        "weight": 4.29,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Crystal",
+        "weight": 0.36,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Chocolate",
+        "weight": 0.1,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "East Kent Geldings",
+        "weight": 14,
+        "time": 60,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Fuggles",
+        "weight": 14,
+        "time": 60,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Cascade",
+        "weight": 16,
+        "time": 15,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Styrian Goldings",
+        "weight": 64,
+        "time": 15,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "Nottingham Ale yeast",
+    "notes": "Source: https://www.brewersfriend.com/homebrew/recipe/view/726563/orfy-s-hobgoblin-clone"
+  },
+  {
+    "name": "Raging Red Irish Red Ale",
+    "style": "Irish Red Ale",
+    "method": "All Grain",
+    "batch_size": 25,
+    "og": 1.055,
+    "fg": 1.009,
+    "abv": 6.13,
+    "grain_bill": [
+      {
+        "type": "Pale ale",
+        "weight": 3.40194,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Simpsons Caramalt",
+        "weight": 0.45,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Caramunich Malt",
+        "weight": 0.275,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Melanoidin",
+        "weight": 0.275,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Cascade",
+        "weight": 28,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Crystal",
+        "weight": 28,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "US-05",
+    "notes": "Source: https://www.brewersfriend.com/homebrew/recipe/view/170777/raging-red-irish-red-ale"
+  },
+  {
+    "name": "Blood Orange IPA Clone",
+    "style": "Fruit IPA",
+    "method": "All Grain",
+    "batch_size": 19.87341,
+    "og": 1.064,
+    "fg": 1.015,
+    "abv": 6.47,
+    "grain_bill": [
+      {
+        "type": "Pale ale",
+        "weight": 4.98952,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Crystal 40",
+        "weight": 0.453592,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Rye",
+        "weight": 0.453592,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Magnum",
+        "weight": 28.3,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Citra",
+        "weight": 28.3,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Citra",
+        "weight": 28.3,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Citra",
+        "weight": 28.3,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Galaxy",
+        "weight": 28.3,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "US-05",
+    "notes": "Source: https://www.brewersfriend.com/homebrew/recipe/view/210070/blood-orange-ipa-clone"
+  },
+  {
+    "name": "Oatmeal stout",
+    "style": "Oatmeal Stout",
+    "method": "All Grain",
+    "batch_size": 23,
+    "og": 1.048,
+    "fg": 1.01,
+    "abv": 4.2,
+    "grain_bill": [
+      {
+        "type": "Pale ale",
+        "weight": 3.2,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Crystal malt",
+        "weight": 0.454,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Honey malt",
+        "weight": 0.225,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Roasted barley",
+        "weight": 0.34,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Black malt",
+        "weight": 0.225,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Chocolate malt",
+        "weight": 0.225,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Rolled oats",
+        "weight": 0.34,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Perle/golding",
+        "weight": 35,
+        "time": 60,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Kent goldings",
+        "weight": 28,
+        "time": 10,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Crystal (dry hop)",
+        "weight": 14,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "Irish ale",
+    "notes": "Source: https://www.homebrewersassociation.org/homebrew-recipe/danado-de-bom-oatmeal-stout-damn-good-oatmeal-stout/"
+  },
+  {
+    "name": "La chouffe",
+    "style": "Belgian Ale",
+    "method": "All Grain",
+    "batch_size": 20,
+    "og": 1.07,
+    "fg": 1.008,
+    "abv": 8.14,
+    "grain_bill": [
+      {
+        "type": "Pilsner",
+        "weight": 4.6,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Caramalt",
+        "weight": 0.2,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Rye malt",
+        "weight": 0.1,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Styrian Golding",
+        "weight": 24.99,
+        "time": 60,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Saaz",
+        "weight": 12.49,
+        "time": 30,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Saaz",
+        "weight": 12.49,
+        "time": 5,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "Mangrove jacks belgian ale yeast",
+    "notes": ""
+  },
+  {
+    "name": "Stereo wolf",
+    "style": "Oatmeal Stout",
+    "method": "All Grain",
+    "batch_size": 20,
+    "og": 1052,
+    "fg": 1014,
+    "abv": 5.2,
+    "grain_bill": [
+      {
+        "type": "Extra pale",
+        "weight": 2.5,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Flaked oats",
+        "weight": 0.63,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Crystal dark malt",
+        "weight": 0.38,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Roasted barley",
+        "weight": 0.38,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Carafa special",
+        "weight": 0.3,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Wheat",
+        "weight": 0.63,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Columbus",
+        "weight": 7.5,
+        "time": 60,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Bramling cross",
+        "weight": 12.5,
+        "time": 30,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Willamette",
+        "weight": 25,
+        "time": 5,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Centennial",
+        "weight": 25,
+        "time": 5,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Centennial (dry hop)",
+        "weight": 62.6,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Willamette (dry hop)",
+        "weight": 62.5,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "US-05",
+    "notes": ""
+  },
+  {
+    "name": "Marzen",
+    "style": "M\u00e4rzen/Oktoberfest",
+    "method": "All Grain",
+    "batch_size": 20,
+    "og": 1.058,
+    "fg": 1.018,
+    "abv": 5.24,
+    "grain_bill": [
+      {
+        "type": "Pilsner",
+        "weight": 1.82,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Munich malt",
+        "weight": 1.82,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Caramunich",
+        "weight": 0.18,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Hallertau Hers",
+        "weight": 22.68,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Hallertau Blanc",
+        "weight": 22.68,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "Bavarian lager yeast",
+    "notes": ""
+  },
+  {
+    "name": "Make america amber again",
+    "style": "American Amber Ale",
+    "method": "All Grain",
+    "batch_size": 20.8198,
+    "og": 1.056,
+    "fg": 1.012,
+    "abv": 5.8,
+    "grain_bill": [
+      {
+        "type": "Marris otter",
+        "weight": 3.288545,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Munich 1",
+        "weight": 1.020583,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Crystal 40",
+        "weight": 0.453592,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Crystal 15",
+        "weight": 0.226796,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Pale choc",
+        "weight": 0.170097,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Magnum",
+        "weight": 10,
+        "time": 60,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Cascade",
+        "weight": 60,
+        "time": 15,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Amarillo",
+        "weight": 40,
+        "time": 15,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Centennial",
+        "weight": 20,
+        "time": 15,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": null,
+    "notes": "Acronym: MAA"
+  },
+  {
+    "name": "Kolsch",
+    "style": "K\u00f6lsch",
+    "method": "All Grain",
+    "batch_size": 22.4,
+    "og": 1.05,
+    "fg": 1.01,
+    "abv": 5.0,
+    "grain_bill": [
+      {
+        "type": "Pilsner",
+        "weight": 3.8,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Vienna",
+        "weight": 0.45,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Caramunich 2",
+        "weight": 0.1,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Hallertau",
+        "weight": 56.7,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "Kolsch",
+    "notes": "Source: https://www.clawhammersupply.com/blogs/moonshine-still-blog/brewing-beer-cucumber-kolsch-style-homebrew"
+  },
+  {
+    "name": "Kviek pils",
+    "style": "Pilsner",
+    "method": "All Grain",
+    "batch_size": 41.6395,
+    "og": 1.058,
+    "fg": 1.014,
+    "abv": 5.87,
+    "grain_bill": [
+      {
+        "type": "Pilsner",
+        "weight": 10.4326,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Carapils",
+        "weight": 0.6803890001,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Acidulated",
+        "weight": 0.226796,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Mosaic",
+        "weight": 170.097,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Mosaic (dry hop)",
+        "weight": 170.097,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "Kviek",
+    "notes": ""
+  },
+  {
+    "name": "Wiesse beer",
+    "style": "Wheat Beer",
+    "method": "All Grain",
+    "batch_size": 50,
+    "og": 1.05,
+    "fg": 1.01,
+    "abv": 5.4,
+    "grain_bill": [
+      {
+        "type": "Wheat",
+        "weight": 6.715,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Pilsner",
+        "weight": 4.395,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Dark crystal",
+        "weight": 0.61,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Carafa special",
+        "weight": 0.097,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Perle",
+        "weight": 18,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Hallertauer",
+        "weight": 18,
+        "time": 30,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Saaz",
+        "weight": 18,
+        "time": 15,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": null,
+    "notes": ""
+  },
+  {
+    "name": "Sourdough",
+    "style": "Sour Beer",
+    "method": "All Grain",
+    "batch_size": 26.5,
+    "og": 1.05,
+    "fg": 1.01,
+    "abv": 5.0,
+    "grain_bill": [
+      {
+        "type": "Pilsner",
+        "weight": 4.989,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Citra",
+        "weight": 14.7,
+        "time": 30,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Citra",
+        "weight": 14.7,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": null,
+    "notes": ""
+  },
+  {
+    "name": "Flower IPA",
+    "style": "American IPA",
+    "method": "All Grain",
+    "batch_size": 12,
+    "og": 1.05,
+    "fg": 1.01,
+    "abv": 5.0,
+    "grain_bill": [
+      {
+        "type": "Pale ale",
+        "weight": 1.941800634,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Caramalt",
+        "weight": 0.153741506,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Magnum",
+        "weight": 5.276646723,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Perle",
+        "weight": 5.276646723,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Cascade",
+        "weight": 10.55329345,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Cascade",
+        "weight": 21.10658689,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Cascade",
+        "weight": 21.10658689,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "US-05",
+    "notes": ""
+  },
+  {
+    "name": "Triple belgian",
+    "style": "Belgian Tripel",
+    "method": "All Grain",
+    "batch_size": 25,
+    "og": 1.05,
+    "fg": 1.01,
+    "abv": 5.0,
+    "grain_bill": [
+      {
+        "type": "Pilsner",
+        "weight": 7.2,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Styrian Goldings",
+        "weight": 60,
+        "time": 60,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Saaz/Styrian Goldings",
+        "weight": 60,
+        "time": 30,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Citra/Galaxy (dry hop)",
+        "weight": 50,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": null,
+    "notes": ""
+  },
+  {
+    "name": "Blueberry double",
+    "style": "Fruit Beer",
+    "method": "All Grain",
+    "batch_size": 20,
+    "og": 1.05,
+    "fg": 1.01,
+    "abv": 5.0,
+    "grain_bill": [
+      {
+        "type": "Extra pale",
+        "weight": 5.75,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Caramalt",
+        "weight": 0.63,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Wheat",
+        "weight": 0.63,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Mosaic",
+        "weight": 12.5,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Mosaic",
+        "weight": 37.5,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Mosaic",
+        "weight": 37.5,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Mosaic",
+        "weight": 187.5,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "US-05",
+    "notes": ""
+  },
+  {
+    "name": "Double choc milk stout",
+    "style": "Milk Stout",
+    "method": "All Grain",
+    "batch_size": 25,
+    "og": 1.066,
+    "fg": 1.021,
+    "abv": 5.9,
+    "grain_bill": [
+      {
+        "type": "Marris Otter Pale",
+        "weight": 4.53592,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Flaked Oats",
+        "weight": 0.453,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Chocolate",
+        "weight": 0.453,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Crystal 80",
+        "weight": 0.453,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Roasted Barley",
+        "weight": 0.226,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Mount Hood",
+        "weight": 34,
+        "time": 60,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Fuggles",
+        "weight": 28,
+        "time": 15,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "California Ale Yeast",
+    "notes": "Source: https://www.brewersfriend.com/homebrew/recipe/view/180328/bill-s-double-chocolate-milk-stout"
+  },
+  {
+    "name": "Cwtch",
+    "style": "Red Ale",
+    "method": "All Grain",
+    "batch_size": 20,
+    "og": 1.045,
+    "fg": 1.009,
+    "abv": 0.8,
+    "grain_bill": [
+      {
+        "type": "Pale",
+        "weight": 3.4,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Carared",
+        "weight": 0.45,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Crystal (60)",
+        "weight": 0.226,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Roasted barley",
+        "weight": 0.057,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Columbus",
+        "weight": 11,
+        "time": 60,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Citra",
+        "weight": 28,
+        "time": 5,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Columbus",
+        "weight": 30,
+        "time": 5,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Citra (dry hop)",
+        "weight": 28,
+        "time": 0,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Columbus (dry hop)",
+        "weight": 30,
+        "time": 0,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "US-05",
+    "notes": "Source: https://www.brewersfriend.com/homebrew/recipe/view/365179/tiny-rebal-cwtch-clone"
+  },
+  {
+    "name": "Milk stout",
+    "style": "Milk Stout",
+    "method": "All Grain",
+    "batch_size": 18.9,
+    "og": 1.045,
+    "fg": 1.009,
+    "abv": 0.8,
+    "grain_bill": [
+      {
+        "type": "Marris otter",
+        "weight": 3.402,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Flaked oats",
+        "weight": 0.5675,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Chocolate malt",
+        "weight": 0.454,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Roasted barley",
+        "weight": 0.227,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Crystal (80)",
+        "weight": 0.227,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Fuggles",
+        "weight": 0.028,
+        "time": 60,
+        "alpha_acid": 0
+      },
+      {
+        "variety": "Fuggles",
+        "weight": 0.028,
+        "time": 30,
+        "alpha_acid": 0
+      }
+    ],
+    "yeast": "British ale WLP005",
+    "notes": "Source: https://www.clawhammersupply.com/blogs/moonshine-still-blog/home-brewing-a-toasted-marshmallow-milk-stout-recipe"
+  }
+]

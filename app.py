@@ -26,6 +26,10 @@ if 'current_recipe' not in st.session_state:
 if 'navigate_to_page' not in st.session_state:
     st.session_state.navigate_to_page = None
 
+# Initialize entry gate state
+if 'entered_app' not in st.session_state:
+    st.session_state.entered_app = False
+
 
 def calculate_og(grain_bill, batch_size):
     """Calculate Original Gravity based on grain bill and batch size"""
@@ -104,18 +108,31 @@ def import_recipe_to_builder(recipe):
             })
     
     # Store recipe metadata for pre-filling form fields
+    # Handle both standard and Guy's recipe formats
+    stats = recipe.get('statistics', {})
+    batch_size = recipe.get('batch_size') or stats.get('volume', 19.0)
+    og = recipe.get('og') or stats.get('og', 0)
+    fg = recipe.get('fg') or stats.get('fg', 0)
+    
+    # Handle yeast format (can be string or dict)
+    yeast_data = recipe.get('yeast', '')
+    if isinstance(yeast_data, dict):
+        yeast_str = yeast_data.get('name', '')
+    else:
+        yeast_str = yeast_data if yeast_data else ''
+    
     st.session_state.imported_recipe_data = {
-        'name': recipe.get('name', ''),
+        'name': recipe.get('name') or recipe.get('beer', ''),
         'style': recipe.get('style', ''),
-        'batch_size': recipe.get('batch_size', 19.0),
+        'batch_size': batch_size,
         'brewer': recipe.get('brewer', ''),
-        'og': recipe.get('og', 0),
-        'fg': recipe.get('fg', 0),
+        'og': og,
+        'fg': fg,
         'mash_temp': recipe.get('mash_temp'),
         'mash_time': recipe.get('mash_time'),
         'boil_temp': recipe.get('boil_temp'),
         'boil_time': recipe.get('boil_time'),
-        'yeast': recipe.get('yeast', ''),
+        'yeast': yeast_str,
         'fermentation_temp': recipe.get('fermentation_temp'),
         'fermentation_days': recipe.get('fermentation_days'),
         'notes': recipe.get('notes', '')
@@ -205,7 +222,47 @@ def export_recipe_to_csv(recipe):
     return csv_buffer.getvalue()
 
 
+def entry_gate():
+    """Entry gate page with a question to verify user"""
+    st.markdown("<div style='text-align: center; padding: 3rem 0;'>", unsafe_allow_html=True)
+    st.title("🍺 Welcome to Joe's Homebrew Recipe Builder")
+    st.markdown("</div>", unsafe_allow_html=True)
+    
+    st.markdown("<div style='text-align: center; padding: 2rem 0;'>", unsafe_allow_html=True)
+    st.markdown("### To enter, please answer this question:")
+    st.markdown("</div>", unsafe_allow_html=True)
+    
+    # Center the question
+    col1, col2, col3 = st.columns([1, 2, 1])
+    
+    with col2:
+        st.markdown("#### Where be that blackbird to?")
+        
+        with st.form(key="entry_form", clear_on_submit=False):
+            answer = st.text_input("Your answer:", key="entry_answer", placeholder="Type your answer here...")
+            
+            st.markdown("")  # Spacer
+            
+            submit_button = st.form_submit_button("Enter", type="primary", use_container_width=True)
+            
+            if submit_button:
+                # Accept various correct answers
+                correct_answers = ["wurzel tree"]
+                if answer.lower().strip() in correct_answers:
+                    st.session_state.entered_app = True
+                    st.rerun()
+                else:
+                    st.error("❌ Incorrect answer.")
+    
+    st.markdown("</div>", unsafe_allow_html=True)
+
+
 def main():
+    # Check if user has entered the app
+    if not st.session_state.entered_app:
+        entry_gate()
+        return
+    
     st.title("🍺 Joe's Homebrew Recipe Builder")
     
     # Sidebar navigation
@@ -236,13 +293,14 @@ def main():
     # Scroll to top when page changes
     if page != st.session_state.previous_page:
         st.session_state.previous_page = page
-        st.markdown(
+        # Use JavaScript to scroll to top
+        st.components.v1.html(
             """
             <script>
                 window.parent.document.querySelector('section.main').scrollTo(0, 0);
             </script>
             """,
-            unsafe_allow_html=True
+            height=0
         )
     
     if page == "Home":
@@ -267,14 +325,13 @@ def home_page():
     st.markdown("### 📏 Recipe Builder")
     st.markdown("""
     Build and scale beer recipes to your desired batch size.
-    Enter ingredients from existing recipes and the app will scale the amounts to your needs, or create new ones from scratch.
+    Load a recipe from 'View Recipes', enter ingredients from existing recipes and the app will scale the amounts to your needs, or create new recipes from scratch.
     """)
     
     # View Recipes
     st.markdown("### 📚 View Recipes")
     st.markdown("""
-    Browse and manage all your saved recipes. View complete recipe details and 
-    export any recipe as a CSV file for safe keeping.
+    Browse and manage all your saved recipes, a collection of the top 10 rated recipes for each beer style on brewer's friend or recipes from the OG recipe excel. You can load any of the recipes back into the recipe builder to scale it to your needs. Export any recipe as a CSV file 
     """)
     
     # Brewing Calculator
@@ -551,7 +608,7 @@ def view_recipes_page():
     # Toggle between user recipes and precompiled recipes
     recipe_view = st.radio(
         "Select Recipe Collection",
-        ["My Recipes", "Forum Recipes"],
+        ["My Recipes", "Forum Recipes", "Guy's Recipes"],
         horizontal=True
     )
     
@@ -569,45 +626,139 @@ def view_recipes_page():
         
         recipes_to_display = st.session_state.recipes
         is_user_recipes = True
-    else:
+    elif recipe_view == "Forum Recipes":
         # Load precompiled recipes
         if os.path.exists('data/recipes/precompiled_recipes.json'):
             with open('data/recipes/precompiled_recipes.json', 'r') as f:
-                recipes_to_display = json.load(f)
+                all_forum_recipes = json.load(f)
         else:
             st.error("Precompiled recipes file not found!")
             return
         is_user_recipes = False
+        
+        # Search and filter interface for Forum Recipes
+        st.subheader("🔍 Search Forum Recipes")
+        
+        # Extract unique styles
+        unique_styles = sorted(list(set(r.get('style', 'Unknown') for r in all_forum_recipes)))
+        
+        # Search options
+        search_col1, search_col2 = st.columns(2)
+        
+        with search_col1:
+            search_by = st.radio("Search by:", ["Style", "Recipe Name"], horizontal=True, key="forum_search_type")
+        
+        with search_col2:
+            if search_by == "Style":
+                selected_style = st.selectbox("Select Beer Style", [""] + unique_styles, key="forum_style_select")
+            else:
+                recipe_name_search = st.text_input("Enter recipe name", placeholder="e.g., IPA, Stout, Pale Ale", key="forum_name_search")
+        
+        # Filter recipes based on search
+        if search_by == "Style" and selected_style:
+            recipes_to_display = [r for r in all_forum_recipes if r.get('style') == selected_style]
+            st.info(f"Found **{len(recipes_to_display)}** recipes in style: **{selected_style}**")
+        elif search_by == "Recipe Name" and recipe_name_search:
+            search_term = recipe_name_search.lower()
+            recipes_to_display = [r for r in all_forum_recipes if search_term in r.get('name', '').lower()]
+            st.info(f"Found **{len(recipes_to_display)}** recipes matching: **{recipe_name_search}**")
+        else:
+            recipes_to_display = []
+            st.info("👆 Select a style or enter a recipe name to view recipes")
+        
+        st.markdown("---")
+    else:  # Guy's Recipes
+        # Load Guy's recipes
+        if os.path.exists('data/recipes/guys.json'):
+            with open('data/recipes/guys.json', 'r') as f:
+                guys_recipes = json.load(f)
+        else:
+            st.error("Guy's recipes file not found!")
+            return
+        
+        recipes_to_display = guys_recipes
+        is_user_recipes = False
+        
+        st.info(f"Displaying **{len(recipes_to_display)}** recipes from Guy's collection")
+        st.markdown("---")
     
-    # Display recipes as cards
+    # Display recipes as cards (only if there are recipes to display)
     for idx, recipe in enumerate(recipes_to_display):
-        with st.expander(f"🍺 {recipe['name']} - {recipe['style']}", expanded=False):
+        # Handle different recipe structures
+        recipe_name = recipe.get('name') or recipe.get('beer', 'Unknown')
+        recipe_style = recipe.get('style', 'N/A')
+        
+        with st.expander(f"🍺 {recipe_name} - {recipe_style}", expanded=False):
             col1, col2 = st.columns(2)
             
             with col1:
-                st.markdown(f"**Brewer:** {recipe.get('brewer', 'N/A')}")
-                st.markdown(f"**Batch Size:** {recipe['batch_size']} liters")
-                st.markdown(f"**Brew Date:** {recipe.get('brew_date', 'N/A')}")
-                st.markdown(f"**Yeast:** {recipe.get('yeast', 'N/A')}")
+                # Display basic info
+                if recipe.get('brewer'):
+                    st.markdown(f"**Brewer:** {recipe.get('brewer')}")
+                if recipe.get('acronym'):
+                    st.markdown(f"**Acronym:** {recipe.get('acronym')}")
+                if recipe.get('recipe_source'):
+                    st.markdown(f"**Recipe Source:** {recipe.get('recipe_source')}")
+                    
+                # Batch size
+                batch_size = recipe.get('batch_size') or recipe.get('statistics', {}).get('volume')
+                if batch_size:
+                    st.markdown(f"**Batch Size:** {batch_size} liters")
+                    
+                # Brew date
+                brew_date = recipe.get('brew_date') or recipe.get('date')
+                if brew_date:
+                    st.markdown(f"**Brew Date:** {brew_date}")
+                    
+                # Yeast
+                yeast = recipe.get('yeast')
+                if isinstance(yeast, dict):
+                    yeast_str = f"{yeast.get('name', 'N/A')} - {yeast.get('amount', '')}"
+                    st.markdown(f"**Yeast:** {yeast_str}")
+                elif yeast:
+                    st.markdown(f"**Yeast:** {yeast}")
             
             with col2:
-                st.markdown(f"**OG:** {recipe.get('og', 'N/A')}")
-                st.markdown(f"**FG:** {recipe.get('fg', 'N/A')}")
-                st.markdown(f"**ABV:** {recipe.get('abv', 'N/A')}%")
+                # Statistics
+                stats = recipe.get('statistics', {})
+                og = recipe.get('og') or stats.get('og')
+                fg = recipe.get('fg') or stats.get('fg')
+                abv = recipe.get('abv') or stats.get('abv')
+                ibu = recipe.get('ibu') or stats.get('ibu')
+                
+                if og:
+                    st.markdown(f"**OG:** {og}")
+                if fg:
+                    st.markdown(f"**FG:** {fg}")
+                if abv:
+                    st.markdown(f"**ABV:** {abv}%")
+                if ibu:
+                    st.markdown(f"**IBU:** {ibu}")
             
-            if recipe.get('grain_bill'):
+            # Grain Bill - handle both formats
+            grain_bill = recipe.get('grain_bill') or recipe.get('malts')
+            if grain_bill:
                 st.markdown("**Grain Bill:**")
-                grain_df = pd.DataFrame(recipe['grain_bill'])
-                grain_df_display = grain_df[['type', 'weight']].copy()
-                grain_df_display.columns = ['Grain Type', 'Weight (kg)']
-                st.dataframe(grain_df_display, use_container_width=True, hide_index=True)
+                grain_data = []
+                for grain in grain_bill:
+                    grain_type = grain.get('type') or grain.get('name', 'Unknown')
+                    grain_weight = grain.get('weight', 0)
+                    grain_data.append({'Grain Type': grain_type, 'Weight (kg)': grain_weight})
+                grain_df = pd.DataFrame(grain_data)
+                st.dataframe(grain_df, use_container_width=True, hide_index=True)
             
-            if recipe.get('hop_schedule'):
+            # Hop Schedule - handle both formats
+            hop_schedule = recipe.get('hop_schedule') or recipe.get('hops')
+            if hop_schedule:
                 st.markdown("**Hop Schedule:**")
-                hop_df = pd.DataFrame(recipe['hop_schedule'])
-                hop_df_display = hop_df[['variety', 'weight', 'time']].copy()
-                hop_df_display.columns = ['Variety', 'Weight (g)', 'Time (min)']
-                st.dataframe(hop_df_display, use_container_width=True, hide_index=True)
+                hop_data = []
+                for hop in hop_schedule:
+                    variety = hop.get('variety') or hop.get('name', 'Unknown')
+                    weight = hop.get('weight', 0)
+                    time = hop.get('time') or hop.get('timing', 'N/A')
+                    hop_data.append({'Variety': variety, 'Weight (g)': weight, 'Time (min)': time})
+                hop_df = pd.DataFrame(hop_data)
+                st.dataframe(hop_df, use_container_width=True, hide_index=True)
             
             # Water Volumes Table
             if recipe.get('mash_volume') or recipe.get('sparge_volume') or recipe.get('pre_boil_volume') or recipe.get('final_volume'):
@@ -629,40 +780,72 @@ def view_recipes_page():
                     water_df = pd.DataFrame(water_data)
                     st.dataframe(water_df, use_container_width=True, hide_index=True)
             
-            # Mash & Boil Table
-            if recipe.get('mash_temp') or recipe.get('mash_time') or recipe.get('boil_temp') or recipe.get('boil_time'):
-                st.markdown("**Mash & Boil:**")
-                mash_boil_data = []
+            # Protocol (Mash & Boil) - handle Guy's format
+            protocol = recipe.get('protocol', {})
+            if protocol or recipe.get('mash_temp') or recipe.get('mash_time') or recipe.get('boil_temp') or recipe.get('boil_time'):
+                st.markdown("**Protocol:**")
+                protocol_data = []
                 
-                # Mash row
-                mash_temp = recipe.get('mash_temp')
-                mash_time = recipe.get('mash_time')
-                mash_temp_str = f"{mash_temp:.1f}" if isinstance(mash_temp, (int, float)) else (str(mash_temp) if mash_temp else "N/A")
-                mash_time_str = str(mash_time) if mash_time else "N/A"
-                mash_boil_data.append({"Step": "Mash", "Temperature (°C)": mash_temp_str, "Time (min)": mash_time_str})
+                # From Guy's format
+                if protocol:
+                    for step_name, step_data in protocol.items():
+                        if isinstance(step_data, dict):
+                            temp = step_data.get('temperature', 'N/A')
+                            time = step_data.get('time', 'N/A')
+                            protocol_data.append({
+                                "Step": step_name.title(),
+                                "Temperature (°C)": str(temp),
+                                "Time (min)": str(time)
+                            })
+                # From standard format
+                else:
+                    mash_temp = recipe.get('mash_temp')
+                    mash_time = recipe.get('mash_time')
+                    if mash_temp or mash_time:
+                        mash_temp_str = f"{mash_temp:.1f}" if isinstance(mash_temp, (int, float)) else (str(mash_temp) if mash_temp else "N/A")
+                        mash_time_str = str(mash_time) if mash_time else "N/A"
+                        protocol_data.append({"Step": "Mash", "Temperature (°C)": mash_temp_str, "Time (min)": mash_time_str})
+                    
+                    boil_temp = recipe.get('boil_temp')
+                    boil_time = recipe.get('boil_time')
+                    if boil_temp or boil_time:
+                        boil_temp_str = f"{boil_temp:.1f}" if isinstance(boil_temp, (int, float)) else (str(boil_temp) if boil_temp else "N/A")
+                        boil_time_str = str(boil_time) if boil_time else "N/A"
+                        protocol_data.append({"Step": "Boil", "Temperature (°C)": boil_temp_str, "Time (min)": boil_time_str})
                 
-                # Boil row
-                boil_temp = recipe.get('boil_temp')
-                boil_time = recipe.get('boil_time')
-                boil_temp_str = f"{boil_temp:.1f}" if isinstance(boil_temp, (int, float)) else (str(boil_temp) if boil_temp else "N/A")
-                boil_time_str = str(boil_time) if boil_time else "N/A"
-                mash_boil_data.append({"Step": "Boil", "Temperature (°C)": boil_temp_str, "Time (min)": boil_time_str})
-                
-                mash_boil_df = pd.DataFrame(mash_boil_data)
-                st.dataframe(mash_boil_df, use_container_width=True, hide_index=True)
+                if protocol_data:
+                    protocol_df = pd.DataFrame(protocol_data)
+                    st.dataframe(protocol_df, use_container_width=True, hide_index=True)
             
-            # Fermentation Table
-            if recipe.get('fermentation_temp') or recipe.get('fermentation_days'):
+            # Fermentation - handle both formats
+            fermentation = recipe.get('fermentation', [])
+            if fermentation or recipe.get('fermentation_temp') or recipe.get('fermentation_days'):
                 st.markdown("**Fermentation:**")
                 
-                ferm_temp = recipe.get('fermentation_temp')
-                ferm_days = recipe.get('fermentation_days')
-                ferm_temp_str = f"{ferm_temp:.1f}" if isinstance(ferm_temp, (int, float)) else (str(ferm_temp) if ferm_temp else "N/A")
-                ferm_days_str = str(ferm_days) if ferm_days else "N/A"
-                
-                fermentation_data = [{"Temperature (°C)": ferm_temp_str, "Duration (days)": ferm_days_str}]
-                fermentation_df = pd.DataFrame(fermentation_data)
-                st.dataframe(fermentation_df, use_container_width=True, hide_index=True)
+                # From Guy's format (list of stages)
+                if isinstance(fermentation, list) and fermentation:
+                    ferm_data = []
+                    for stage in fermentation:
+                        stage_name = stage.get('stage', 'Unknown')
+                        stage_time = stage.get('time', 'N/A')
+                        stage_temp = stage.get('temperature', 'N/A')
+                        ferm_data.append({
+                            "Stage": stage_name,
+                            "Time": str(stage_time),
+                            "Temperature (°C)": str(stage_temp)
+                        })
+                    ferm_df = pd.DataFrame(ferm_data)
+                    st.dataframe(ferm_df, use_container_width=True, hide_index=True)
+                # From standard format
+                else:
+                    ferm_temp = recipe.get('fermentation_temp')
+                    ferm_days = recipe.get('fermentation_days')
+                    ferm_temp_str = f"{ferm_temp:.1f}" if isinstance(ferm_temp, (int, float)) else (str(ferm_temp) if ferm_temp else "N/A")
+                    ferm_days_str = str(ferm_days) if ferm_days else "N/A"
+                    
+                    fermentation_data = [{"Temperature (°C)": ferm_temp_str, "Duration (days)": ferm_days_str}]
+                    fermentation_df = pd.DataFrame(fermentation_data)
+                    st.dataframe(fermentation_df, use_container_width=True, hide_index=True)
             
             if recipe.get('notes'):
                 st.markdown(f"**Notes:** {recipe['notes']}")
@@ -1069,7 +1252,7 @@ def recipe_scaler_page():
         import_final_volume = st.number_input("Final Expected Volume (liters)", min_value=0.0, max_value=200.0, value=target_batch_size, step=0.5, key="import_final_volume")
     
     with wcol2:
-        water_to_grist_ratio = st.number_input("Water-to-Grist Ratio (L/kg)", min_value=2.0, max_value=4.0, value=3.0, step=0.1, key="water_grist_ratio", help="Typical range: 2.5-3.5 L/kg")
+        water_to_grist_ratio = st.number_input("Water-to-Grist Ratio (L/kg)", min_value=2.0, max_value=4.0, value=2.5, step=0.1, key="water_grist_ratio", help="Typical range: 2.5-3.5 L/kg")
     
     # Calculate water volumes based on grain bill and final volume
     if total_grain_weight > 0 and import_final_volume > 0:
