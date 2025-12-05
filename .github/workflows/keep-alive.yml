@@ -14,12 +14,9 @@ jobs:
       - name: Ping Streamlit App
         run: |
           # Replace with your actual Streamlit app URL
-          APP_URL="${{ secrets.STREAMLIT_APP_URL }}"
+          APP_URL="https://brewymcbrewapp.streamlit.app"
           
           if [ -z "$APP_URL" ]; then
-            echo "⚠️  STREAMLIT_APP_URL secret is not set"
-            echo "Please add your Streamlit app URL to repository secrets"
-            echo "Example: https://your-app-name.streamlit.app"
             exit 1
           fi
           
