@@ -229,25 +229,23 @@ def entry_gate():
     st.markdown("</div>", unsafe_allow_html=True)
     
     st.markdown("<div style='text-align: center; padding: 2rem 0;'>", unsafe_allow_html=True)
-    st.markdown("### To enter, please answer this question:")
     st.markdown("</div>", unsafe_allow_html=True)
     
     # Center the question
     col1, col2, col3 = st.columns([1, 2, 1])
     
     with col2:
-        st.markdown("#### Where be that blackbird to?")
+        st.markdown("#### Speak friend and enter")
         
         with st.form(key="entry_form", clear_on_submit=False):
-            answer = st.text_input("Your answer:", key="entry_answer", placeholder="Type your answer here...")
+            answer = st.text_input("", key="entry_answer", placeholder="...")
             
             st.markdown("")  # Spacer
             
             submit_button = st.form_submit_button("Enter", type="primary", use_container_width=True)
             
             if submit_button:
-                # Accept various correct answers
-                correct_answers = ["wurzel tree"]
+                correct_answers = ["mellon"]
                 if answer.lower().strip() in correct_answers:
                     st.session_state.entered_app = True
                     st.rerun()
