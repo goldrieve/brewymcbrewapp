@@ -1,52 +1,13 @@
-name: Keep Streamlit App Alive
+name: Keep Streamlit Apps Alive
 
 on:
   schedule:
-    # Run every 10 minutes
-    - cron: '*/10 * * * *'
-  workflow_dispatch: # Allow manual trigger
+    - cron: '0 6 * * *'
+  workflow_dispatch:
 
 jobs:
-  keep-alive:
+  ping-apps:
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Ping Streamlit App
-        run: |
-          # Replace with your actual Streamlit app URL
-          APP_URL="https://brewymcbrewapp.streamlit.app"
-          
-          if [ -z "$APP_URL" ]; then
-            echo "❌ APP_URL is not set"
-            exit 1
-          fi
-          
-          echo "🔄 Pinging Streamlit app at: $APP_URL"
-          
-          # Make request to keep app alive with verbose error handling
-          set +e  # Don't exit on error
-          RESPONSE=$(curl -s -L -w "\n%{http_code}" --max-time 60 --connect-timeout 30 "$APP_URL" 2>&1)
-          CURL_EXIT=$?
-          set -e
-          
-          if [ $CURL_EXIT -ne 0 ]; then
-            echo "⚠️  Curl failed with exit code: $CURL_EXIT"
-            echo "Response: $RESPONSE"
-            echo "This might mean the app is still starting up or the URL is incorrect"
-            echo "Curl error codes: 6=host not found, 7=connection refused, 28=timeout, 47=too many redirects"
-            exit 0  # Don't fail the workflow, just log the issue
-          fi
-          
-          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
-          
-          if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "301" ] || [ "$HTTP_CODE" = "302" ]; then
-            echo "✅ App is alive! (HTTP $HTTP_CODE)"
-          else
-            echo "⚠️  Response code: HTTP $HTTP_CODE"
-            echo "App might be starting up or experiencing issues"
-          fi
-          
-      - name: Keep workflow active
-        run: |
-          echo "Workflow ran at: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-          echo "Next run in ~10 minutes"
+      - name: Send request to MyStreamlitApp
+        run: curl -s -o /dev/null -w "%{http_code}\n" https://joebrewymcbrewapp.streamlit.app/
