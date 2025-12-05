@@ -23,6 +23,9 @@ if 'recipes' not in st.session_state:
 if 'current_recipe' not in st.session_state:
     st.session_state.current_recipe = None
 
+if 'navigate_to_page' not in st.session_state:
+    st.session_state.navigate_to_page = None
+
 
 def calculate_og(grain_bill, batch_size):
     """Calculate Original Gravity based on grain bill and batch size"""
@@ -62,6 +65,61 @@ def calculate_abv(og, fg):
     """Calculate ABV (Alcohol By Volume)"""
     abv = (og - fg) * 131.25
     return round(abv, 2)
+
+
+def import_recipe_to_builder(recipe):
+    """Import a recipe into the Recipe Builder for scaling"""
+    # Clear existing data
+    st.session_state.import_grain_bill = []
+    st.session_state.import_hop_schedule = []
+    st.session_state.import_other_ingredients = []
+    
+    # Import grain bill
+    if recipe.get('grain_bill'):
+        for grain in recipe['grain_bill']:
+            st.session_state.import_grain_bill.append({
+                'name': grain.get('type', grain.get('name', 'Unknown Grain')),
+                'original_amount': grain.get('weight', 0),
+                'scaled_amount': grain.get('weight', 0)
+            })
+    
+    # Import hop schedule
+    if recipe.get('hop_schedule'):
+        for hop in recipe['hop_schedule']:
+            st.session_state.import_hop_schedule.append({
+                'variety': hop.get('variety', 'Unknown Hop'),
+                'original_amount': hop.get('weight', 0),
+                'scaled_amount': hop.get('weight', 0),
+                'time': hop.get('time', 0)
+            })
+    
+    # Import other ingredients if present
+    if recipe.get('other_ingredients'):
+        for ingredient in recipe['other_ingredients']:
+            st.session_state.import_other_ingredients.append({
+                'name': ingredient.get('name', 'Unknown'),
+                'original_amount': ingredient.get('amount', 0),
+                'unit': ingredient.get('unit', 'g'),
+                'should_scale': True
+            })
+    
+    # Store recipe metadata for pre-filling form fields
+    st.session_state.imported_recipe_data = {
+        'name': recipe.get('name', ''),
+        'style': recipe.get('style', ''),
+        'batch_size': recipe.get('batch_size', 19.0),
+        'brewer': recipe.get('brewer', ''),
+        'og': recipe.get('og', 0),
+        'fg': recipe.get('fg', 0),
+        'mash_temp': recipe.get('mash_temp'),
+        'mash_time': recipe.get('mash_time'),
+        'boil_temp': recipe.get('boil_temp'),
+        'boil_time': recipe.get('boil_time'),
+        'yeast': recipe.get('yeast', ''),
+        'fermentation_temp': recipe.get('fermentation_temp'),
+        'fermentation_days': recipe.get('fermentation_days'),
+        'notes': recipe.get('notes', '')
+    }
 
 
 def export_recipe_to_csv(recipe):
@@ -153,12 +211,39 @@ def main():
     # Sidebar navigation
     with st.sidebar:
         st.header("Navigation")
+        
+        # Initialize page_selector if not present
+        if 'page_selector' not in st.session_state:
+            st.session_state.page_selector = "Home"
+        
+        # Track previous page to detect navigation changes
+        if 'previous_page' not in st.session_state:
+            st.session_state.previous_page = "Home"
+        
+        # Check if we need to navigate to a specific page programmatically
+        if st.session_state.navigate_to_page:
+            st.session_state.page_selector = st.session_state.navigate_to_page
+            st.session_state.navigate_to_page = None
+        
         page = st.radio(
             "Select Page",
-            ["Home", "Recipe Builder", "View Recipes", "Brewing Calculator"]
+            ["Home", "Recipe Builder", "View Recipes", "Brewing Calculator"],
+            key="page_selector"
         )
         
         st.markdown("---")
+    
+    # Scroll to top when page changes
+    if page != st.session_state.previous_page:
+        st.session_state.previous_page = page
+        st.markdown(
+            """
+            <script>
+                window.parent.document.querySelector('section.main').scrollTo(0, 0);
+            </script>
+            """,
+            unsafe_allow_html=True
+        )
     
     if page == "Home":
         home_page()
@@ -461,19 +546,41 @@ def create_recipe_page():
 
 
 def view_recipes_page():
-    st.header("📚 Your Recipes")
+    st.header("📚 Recipes")
     
-    # Load recipes from file if exists
-    if os.path.exists('data/recipes/recipes.json') and not st.session_state.recipes:
-        with open('data/recipes/recipes.json', 'r') as f:
-            st.session_state.recipes = json.load(f)
+    # Toggle between user recipes and precompiled recipes
+    recipe_view = st.radio(
+        "Select Recipe Collection",
+        ["My Recipes", "Forum Recipes"],
+        horizontal=True
+    )
     
-    if not st.session_state.recipes:
-        st.info("No recipes saved yet. Create your first recipe!")
-        return
+    st.markdown("---")
+    
+    if recipe_view == "My Recipes":
+        # Load user recipes from file if exists
+        if os.path.exists('data/recipes/recipes.json') and not st.session_state.recipes:
+            with open('data/recipes/recipes.json', 'r') as f:
+                st.session_state.recipes = json.load(f)
+        
+        if not st.session_state.recipes:
+            st.info("No recipes saved yet. Create your first recipe in the Recipe Builder!")
+            return
+        
+        recipes_to_display = st.session_state.recipes
+        is_user_recipes = True
+    else:
+        # Load precompiled recipes
+        if os.path.exists('data/recipes/precompiled_recipes.json'):
+            with open('data/recipes/precompiled_recipes.json', 'r') as f:
+                recipes_to_display = json.load(f)
+        else:
+            st.error("Precompiled recipes file not found!")
+            return
+        is_user_recipes = False
     
     # Display recipes as cards
-    for idx, recipe in enumerate(st.session_state.recipes):
+    for idx, recipe in enumerate(recipes_to_display):
         with st.expander(f"🍺 {recipe['name']} - {recipe['style']}", expanded=False):
             col1, col2 = st.columns(2)
             
@@ -563,24 +670,44 @@ def view_recipes_page():
             st.markdown("---")
             
             # Action buttons
-            btn_col1, btn_col2 = st.columns(2)
-            
-            with btn_col1:
-                csv_string = export_recipe_to_csv(recipe)
-                st.download_button(
-                    label="📥 Export as CSV",
-                    data=csv_string,
-                    file_name=f"{recipe['name'].replace(' ', '_').lower()}.csv",
-                    mime="text/csv",
-                    key=f"export_{idx}"
-                )
-            
-            with btn_col2:
-                if st.button(f"🗑️ Delete Recipe", key=f"delete_{idx}"):
-                    st.session_state.recipes.pop(idx)
-                    with open('data/recipes/recipes.json', 'w') as f:
-                        json.dump(st.session_state.recipes, f, indent=2)
-                    st.rerun()
+            if is_user_recipes:
+                btn_col1, btn_col2 = st.columns(2)
+                
+                with btn_col1:
+                    csv_string = export_recipe_to_csv(recipe)
+                    st.download_button(
+                        label="📥 Export as CSV",
+                        data=csv_string,
+                        file_name=f"{recipe['name'].replace(' ', '_').lower()}.csv",
+                        mime="text/csv",
+                        key=f"export_{idx}"
+                    )
+                
+                with btn_col2:
+                    if st.button(f"🗑️ Delete Recipe", key=f"delete_{idx}"):
+                        st.session_state.recipes.pop(idx)
+                        with open('data/recipes/recipes.json', 'w') as f:
+                            json.dump(st.session_state.recipes, f, indent=2)
+                        st.rerun()
+            else:
+                # For precompiled recipes, show export and import buttons
+                btn_col1, btn_col2 = st.columns(2)
+                
+                with btn_col1:
+                    csv_string = export_recipe_to_csv(recipe)
+                    st.download_button(
+                        label="📥 Export as CSV",
+                        data=csv_string,
+                        file_name=f"{recipe['name'].replace(' ', '_').lower()}.csv",
+                        mime="text/csv",
+                        key=f"export_{idx}"
+                    )
+                
+                with btn_col2:
+                    if st.button(f"📋 Import to Recipe Builder", key=f"import_{idx}"):
+                        import_recipe_to_builder(recipe)
+                        st.session_state.navigate_to_page = "Recipe Builder"
+                        st.rerun()
 
 
 def calculator_page():
@@ -715,14 +842,20 @@ def recipe_scaler_page():
     
     col1, col2, col3, col4 = st.columns(4)
     
+    # Check for imported recipe data to pre-fill form
+    imported_data = st.session_state.get('imported_recipe_data', {})
+    
     with col1:
-        recipe_name_import = st.text_input("Recipe Name", placeholder="e.g., Clone IPA")
+        recipe_name_import = st.text_input("Recipe Name", placeholder="e.g., Clone IPA", 
+                                          value=imported_data.get('name', ''))
     
     with col2:
-        recipe_style = st.text_input("Beer Style", placeholder="e.g., American IPA")
+        recipe_style = st.text_input("Beer Style", placeholder="e.g., American IPA",
+                                    value=imported_data.get('style', ''))
     
     with col3:
-        brewer_name_import = st.text_input("Brewer Name", placeholder="Your Name", key="import_brewer")
+        brewer_name_import = st.text_input("Brewer Name", placeholder="Your Name", key="import_brewer",
+                                          value=imported_data.get('brewer', ''))
 
     with col4:
         planned_brew_date = st.date_input("Planned Brew Date", datetime.now(), key="import_brew_date")
@@ -732,12 +865,17 @@ def recipe_scaler_page():
     st.subheader("⚖️ Scaling factor")
 
     col1, col2 = st.columns(2)
+    
+    # Use imported batch size if available
+    default_batch_size = imported_data.get('batch_size', 19.0)
 
     with col1:
-        original_batch_size = st.number_input("Original Batch Size (liters)", min_value=1.0, max_value=500.0, value=19.0, step=1.0)
+        original_batch_size = st.number_input("Original Batch Size (liters)", min_value=1.0, max_value=500.0, 
+                                             value=float(default_batch_size), step=1.0)
      
     with col2:
-        target_batch_size = st.number_input("Target Batch Size (liters)", min_value=1.0, max_value=500.0, value=19.0, step=1.0)
+        target_batch_size = st.number_input("Target Batch Size (liters)", min_value=1.0, max_value=500.0, 
+                                           value=float(default_batch_size), step=1.0)
     
     # Calculate scaling factor
     if original_batch_size > 0:
@@ -987,11 +1125,17 @@ def recipe_scaler_page():
     
     gcol1, gcol2, gcol3 = st.columns(3)
     
+    # Use imported gravity values if available
+    default_og = imported_data.get('og', 1.050)
+    default_fg = imported_data.get('fg', 1.010)
+    
     with gcol1:
-        target_og = st.number_input("Target OG", min_value=1.000, max_value=1.200, value=1.050, step=0.001, key="import_og")
+        target_og = st.number_input("Target OG", min_value=1.000, max_value=1.200, 
+                                   value=float(default_og) if default_og else 1.050, step=0.001, key="import_og")
     
     with gcol2:
-        target_fg = st.number_input("Final Gravity (FG)", min_value=1.000, max_value=1.030, value=1.010, step=0.001, key="import_fg")
+        target_fg = st.number_input("Final Gravity (FG)", min_value=1.000, max_value=1.030, 
+                                   value=float(default_fg) if default_fg else 1.010, step=0.001, key="import_fg")
     
     with gcol3:
         st.write("")  # Spacer
@@ -1005,21 +1149,31 @@ def recipe_scaler_page():
     # Mash and Boil Section
     st.subheader("🔥 Mash & Boil")
     
+    # Use imported mash/boil values if available
+    default_mash_temp = imported_data.get('mash_temp', 67.0)
+    default_mash_time = imported_data.get('mash_time', 60)
+    default_boil_temp = imported_data.get('boil_temp', 100.0)
+    default_boil_time = imported_data.get('boil_time', 60)
+    
     mcol1, mcol2 = st.columns(2)
     
     with mcol1:
-        mash_temp = st.number_input("Mash Temperature (°C)", min_value=60.0, max_value=77.0, value=67.0, step=0.5, key="import_mash_temp")
+        mash_temp = st.number_input("Mash Temperature (°C)", min_value=60.0, max_value=77.0, 
+                                   value=float(default_mash_temp) if default_mash_temp else 67.0, step=0.5, key="import_mash_temp")
     
     with mcol2:
-        mash_time = st.number_input("Mash Time (minutes)", min_value=30, max_value=120, value=60, step=5, key="import_mash_time")
+        mash_time = st.number_input("Mash Time (minutes)", min_value=30, max_value=120, 
+                                   value=int(default_mash_time) if default_mash_time else 60, step=5, key="import_mash_time")
     
     bcol1, bcol2 = st.columns(2)
     
     with bcol1:
-        boil_temp = st.number_input("Boil Temperature (°C)", min_value=95.0, max_value=105.0, value=100.0, step=0.5, key="import_boil_temp")
+        boil_temp = st.number_input("Boil Temperature (°C)", min_value=95.0, max_value=105.0, 
+                                   value=float(default_boil_temp) if default_boil_temp else 100.0, step=0.5, key="import_boil_temp")
     
     with bcol2:
-        boil_time = st.number_input("Boil Time (minutes)", min_value=30, max_value=120, value=60, step=5, key="import_boil_time")
+        boil_time = st.number_input("Boil Time (minutes)", min_value=30, max_value=120, 
+                                   value=int(default_boil_time) if default_boil_time else 60, step=5, key="import_boil_time")
     
     st.markdown("---")
     
@@ -1028,16 +1182,24 @@ def recipe_scaler_page():
     
     fcol1, fcol2 = st.columns(2)
     
+    # Use imported fermentation values if available
+    default_yeast = imported_data.get('yeast', '')
+    default_ferm_temp = imported_data.get('fermentation_temp', 20.0)
+    default_ferm_days = imported_data.get('fermentation_days', 14)
+    
     with fcol1:
-        yeast_info = st.text_input("Yeast", placeholder="e.g., US-05", key="import_yeast")
+        yeast_info = st.text_input("Yeast", placeholder="e.g., US-05", key="import_yeast",
+                                  value=default_yeast if default_yeast else '')
     
     with fcol2:
-        fermentation_temp = st.number_input("Fermentation Temperature (°C)", min_value=10.0, max_value=30.0, value=20.0, step=0.5, key="import_ferm_temp")
+        fermentation_temp = st.number_input("Fermentation Temperature (°C)", min_value=10.0, max_value=30.0, 
+                                           value=float(default_ferm_temp) if default_ferm_temp else 20.0, step=0.5, key="import_ferm_temp")
     
     fcol3, fcol4 = st.columns(2)
     
     with fcol3:
-        fermentation_days = st.number_input("Fermentation Duration (days)", min_value=1, max_value=60, value=14, step=1, key="import_ferm_days")
+        fermentation_days = st.number_input("Fermentation Duration (days)", min_value=1, max_value=60, 
+                                          value=int(default_ferm_days) if default_ferm_days else 14, step=1, key="import_ferm_days")
     
     with fcol4:
         st.write("")  # Spacer for alignment
@@ -1046,9 +1208,11 @@ def recipe_scaler_page():
     
     # Notes
     st.subheader("📝 Notes")
+    default_notes = imported_data.get('notes', '')
     recipe_notes = st.text_area("Recipe Notes & Instructions", 
                                 placeholder="Enter any additional notes, brewing instructions, or special techniques...",
-                                key="import_notes")
+                                key="import_notes",
+                                value=default_notes if default_notes else '')
     
     st.markdown("---")
     

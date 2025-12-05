@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Vanilla Cream Ale",
+    "style": "Cream Ale",
+    "method": "All Grain",
+    "batch_size": 21.8,
+    "og": 1.055,
+    "fg": 1.013,
+    "abv": 5.48,
+    "grain_bill": [
+      {"type": "American - Pale 2-Row", "weight": 2.381},
+      {"type": "American - White Wheat", "weight": 0.907},
+      {"type": "American - Pale 6-Row", "weight": 0.907},
+      {"type": "Flaked Corn", "weight": 0.227},
+      {"type": "American - Caramel / Crystal 20L", "weight": 0.227},
+      {"type": "American - Carapils (Dextrine Malt)", "weight": 0.227},
+      {"type": "Flaked Barley", "weight": 0.113},
+      {"type": "Honey", "weight": 0.34}
+    ],
+    "hop_schedule": [
+      {"variety": "Cascade", "weight": 14.0, "time": 60},
+      {"variety": "Cascade", "weight": 14.0, "time": 20},
+      {"variety": "Saaz", "weight": 14.0, "time": 5}
+    ],
+    "yeast": "Wyeast - Kölsch 2565",
+    "notes": "Classic cream ale with vanilla. Popular recipe with 289K+ views."
+  },
+  {
+    "name": "Avg. Perfect Northeast IPA (NEIPA)",
+    "style": "Specialty IPA: New England IPA",
+    "method": "All Grain",
+    "batch_size": 21.8,
+    "og": 1.062,
+    "fg": 1.013,
+    "abv": 6.5,
+    "grain_bill": [
+      {"type": "American - Pale 2-Row", "weight": 4.876},
+      {"type": "American - Wheat", "weight": 0.635},
+      {"type": "Flaked Oats", "weight": 0.635},
+      {"type": "Canadian - Honey Malt", "weight": 0.191}
+    ],
+    "hop_schedule": [
+      {"variety": "Citra", "weight": 28.0, "time": 10},
+      {"variety": "Galaxy", "weight": 28.0, "time": 10},
+      {"variety": "Citra (Whirlpool)", "weight": 42.0, "time": 15},
+      {"variety": "Galaxy (Whirlpool)", "weight": 42.0, "time": 15},
+      {"variety": "Mosaic (Whirlpool)", "weight": 42.0, "time": 15},
+      {"variety": "Citra (Dry Hop)", "weight": 28.0, "time": 0},
+      {"variety": "Galaxy (Dry Hop)", "weight": 42.0, "time": 0},
+      {"variety": "Mosaic (Dry Hop)", "weight": 28.0, "time": 0}
+    ],
+    "yeast": "Wyeast - London Ale III 1318",
+    "notes": "Perfect NEIPA recipe with heavy dry hopping. 288K+ views."
+  },
+  {
+    "name": "Sierra Nevada Pale Ale Clone",
+    "style": "American Pale Ale",
+    "method": "All Grain",
+    "batch_size": 24.6,
+    "og": 1.055,
+    "fg": 1.013,
+    "abv": 5.58,
+    "grain_bill": [
+      {"type": "American - Pale 2-Row", "weight": 5.216},
+      {"type": "American - Caramel / Crystal 60L", "weight": 0.412}
+    ],
+    "hop_schedule": [
+      {"variety": "Magnum", "weight": 14.0, "time": 60},
+      {"variety": "Perle", "weight": 14.0, "time": 30},
+      {"variety": "Cascade", "weight": 28.0, "time": 10},
+      {"variety": "Cascade (Flameout)", "weight": 56.0, "time": 0},
+      {"variety": "Cascade (Dry Hop)", "weight": 56.0, "time": 0}
+    ],
+    "yeast": "Fermentis - Safale - American Ale Yeast US-05",
+    "notes": "Classic Sierra Nevada Pale Ale clone. 271K+ views."
+  }
+]
