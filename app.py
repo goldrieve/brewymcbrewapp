@@ -35,7 +35,7 @@ def calculate_og(grain_bill, batch_size):
     """Calculate Original Gravity based on grain bill and batch size"""
     total_points = 0
     for grain in grain_bill:
-        # Points per kg per liter (typical extract efficiency ~70%)
+        # Points per kg per litre (typical extract efficiency ~70%)
         # Convert from metric: ppg * 8.3454 for kg/L basis
         points = grain['weight'] * grain['ppg'] * 8.3454 * 0.70
         total_points += points
@@ -59,7 +59,7 @@ def calculate_ibu(hop_additions, og, batch_size):
 
 
 def calculate_srm(grain_bill, batch_size):
-    """Calculate SRM (beer color)"""
+    """Calculate SRM (beer colour)"""
     mcu = sum(grain['weight'] * grain['lovibond'] for grain in grain_bill) / batch_size
     srm = 1.4922 * (mcu ** 0.6859)
     return round(srm, 1)
@@ -360,7 +360,7 @@ def create_recipe_page():
             ["American IPA", "Pale Ale", "Stout", "Porter", "Wheat Beer", 
              "Lager", "Belgian Ale", "Brown Ale", "Amber Ale", "Other"]
         )
-        batch_size = st.number_input("Batch Size (liters)", min_value=4.0, max_value=190.0, value=19.0, step=1.0)
+        batch_size = st.number_input("Batch Size (litres)", min_value=4.0, max_value=190.0, value=19.0, step=1.0)
     
     with col2:
         brewer = st.text_input("Brewer Name", placeholder="Your Name")
@@ -503,16 +503,16 @@ def create_recipe_page():
     wcol1, wcol2, wcol3 = st.columns(3)
     
     with wcol1:
-        mash_volume = st.number_input("Mash Volume (liters)", min_value=0.0, max_value=100.0, value=15.0, step=0.5)
+        mash_volume = st.number_input("Mash Volume (litres)", min_value=0.0, max_value=100.0, value=15.0, step=0.5)
     
     with wcol2:
-        sparge_volume = st.number_input("Sparge Volume (liters)", min_value=0.0, max_value=100.0, value=15.0, step=0.5)
+        sparge_volume = st.number_input("Sparge Volume (litres)", min_value=0.0, max_value=100.0, value=15.0, step=0.5)
     
     with wcol3:
-        final_volume = st.number_input("Final Expected Volume (liters)", min_value=0.0, max_value=100.0, value=batch_size, step=0.5)
+        final_volume = st.number_input("Final Expected Volume (litres)", min_value=0.0, max_value=100.0, value=batch_size, step=0.5)
     
     total_water = mash_volume + sparge_volume
-    st.info(f"💧 Total Water: **{total_water:.1f} liters** | Expected Loss: **{total_water - final_volume:.1f} liters**")
+    st.info(f"💧 Total Water: **{total_water:.1f} litres** | Expected Loss: **{total_water - final_volume:.1f} litres**")
     
     st.markdown("---")
     
@@ -546,7 +546,7 @@ def create_recipe_page():
             st.metric("IBU", f"{ibu}")
         
         with col5:
-            st.metric("SRM (Color)", f"{srm}")
+            st.metric("SRM (Colour)", f"{srm}")
     
     st.markdown("---")
     
@@ -701,7 +701,7 @@ def view_recipes_page():
                 # Batch size
                 batch_size = recipe.get('batch_size') or recipe.get('statistics', {}).get('volume')
                 if batch_size:
-                    st.markdown(f"**Batch Size:** {batch_size} liters")
+                    st.markdown(f"**Batch Size:** {batch_size} litres")
                     
                 # Brew date
                 brew_date = recipe.get('brew_date') or recipe.get('date')
@@ -918,7 +918,7 @@ def calculator_page():
         col1, col2 = st.columns(2)
         
         with col1:
-            volume = st.number_input("Beer Volume (liters)", min_value=4.0, max_value=190.0, value=19.0, step=1.0)
+            volume = st.number_input("Beer Volume (litres)", min_value=4.0, max_value=190.0, value=19.0, step=1.0)
             beer_temp = st.number_input("Beer Temperature (°C)", min_value=0.0, max_value=30.0, value=20.0, step=0.5, 
                                        help="Usually the fermentation temperature or current temperature if cold crashed")
         
@@ -935,8 +935,8 @@ def calculator_page():
         co2_needed = co2_level - dissolved_co2
         
         # Calculate sugar needed based on type
-        # Corn sugar: 4.39g per liter to produce 1 volume of CO2 (accounting for 91% fermentability)
-        # Table sugar: 4.0g per liter to produce 1 volume of CO2 (100% fermentable)
+        # Corn sugar: 4.39g per litre to produce 1 volume of CO2 (accounting for 91% fermentability)
+        # Table sugar: 4.0g per litre to produce 1 volume of CO2 (100% fermentable)
         if sugar_type == "Corn Sugar (Dextrose)":
             sugar_g = volume * co2_needed * 4.39
         else:  # Table sugar
@@ -1051,11 +1051,11 @@ def recipe_scaler_page():
     default_batch_size = imported_data.get('batch_size', 19.0)
 
     with col1:
-        original_batch_size = st.number_input("Original Batch Size (liters)", min_value=1.0, max_value=500.0, 
+        original_batch_size = st.number_input("Original Batch Size (litres)", min_value=1.0, max_value=500.0, 
                                              value=float(default_batch_size), step=1.0)
      
     with col2:
-        target_batch_size = st.number_input("Target Batch Size (liters)", min_value=1.0, max_value=500.0, 
+        target_batch_size = st.number_input("Target Batch Size (litres)", min_value=1.0, max_value=500.0, 
                                            value=float(default_batch_size), step=1.0)
     
     # Calculate scaling factor
@@ -1247,7 +1247,7 @@ def recipe_scaler_page():
     wcol1, wcol2 = st.columns(2)
     
     with wcol1:
-        import_final_volume = st.number_input("Final Expected Volume (liters)", min_value=0.0, max_value=200.0, value=target_batch_size, step=0.5, key="import_final_volume")
+        import_final_volume = st.number_input("Final Expected Volume (litres)", min_value=0.0, max_value=200.0, value=target_batch_size, step=0.5, key="import_final_volume")
     
     with wcol2:
         water_to_grist_ratio = st.number_input("Water-to-Grist Ratio (L/kg)", min_value=2.0, max_value=4.0, value=2.5, step=0.1, key="water_grist_ratio", help="Typical range: 2.5-3.5 L/kg")

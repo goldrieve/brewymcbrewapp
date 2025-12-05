@@ -11,7 +11,7 @@ def calculate_original_gravity(grain_bill, batch_size, efficiency=75):
     
     Args:
         grain_bill (list): List of grain dictionaries with 'weight' and 'ppg' keys
-        batch_size (float): Batch size in liters
+        batch_size (float): Batch size in litres
         efficiency (float): Brew house efficiency percentage (default 75%)
     
     Returns:
@@ -21,7 +21,7 @@ def calculate_original_gravity(grain_bill, batch_size, efficiency=75):
     efficiency_factor = efficiency / 100.0
     
     for grain in grain_bill:
-        # Convert ppg to metric (points per kg per liter)
+        # Convert ppg to metric (points per kg per litre)
         points = grain['weight'] * grain['ppg'] * 8.3454 * efficiency_factor
         total_points += points
     
@@ -36,7 +36,7 @@ def calculate_ibu_tinseth(hop_additions, og, batch_size):
     Args:
         hop_additions (list): List of hop dictionaries with 'weight', 'alpha_acid', and 'time' keys
         og (float): Original Gravity
-        batch_size (float): Batch size in liters
+        batch_size (float): Batch size in litres
     
     Returns:
         float: International Bitterness Units (IBU)
@@ -53,7 +53,7 @@ def calculate_ibu_tinseth(hop_additions, og, batch_size):
         # Utilization
         utilization = bigness_factor * boil_time_factor
         
-        # IBU calculation (weight in grams, batch in liters)
+        # IBU calculation (weight in grams, batch in litres)
         ibu = (hop['alpha_acid'] / 100) * hop['weight'] * utilization * 10 / batch_size
         total_ibu += ibu
     
@@ -62,16 +62,16 @@ def calculate_ibu_tinseth(hop_additions, og, batch_size):
 
 def calculate_srm_morey(grain_bill, batch_size):
     """
-    Calculate SRM (beer color) using the Morey equation.
+    Calculate SRM (beer colour) using the Morey equation.
     
     Args:
         grain_bill (list): List of grain dictionaries with 'weight' and 'lovibond' keys
-        batch_size (float): Batch size in liters
+        batch_size (float): Batch size in litres
     
     Returns:
         float: SRM value
     """
-    # Calculate MCU (Malt Color Units) - convert kg to lbs equivalent
+    # Calculate MCU (Malt Colour Units) - convert kg to lbs equivalent
     mcu = sum(grain['weight'] * 2.20462 * grain['lovibond'] for grain in grain_bill) / (batch_size * 0.264172)
     
     # Morey equation
@@ -145,7 +145,7 @@ def calculate_strike_water_temp(grain_weight, target_mash_temp, grain_temp=20, w
         grain_weight (float): Weight of grain in kilograms
         target_mash_temp (float): Target mash temperature in °C
         grain_temp (float): Initial grain temperature in °C (default 20)
-        water_ratio (float): Water to grain ratio in liters per kg (default 3.0)
+        water_ratio (float): Water to grain ratio in litres per kg (default 3.0)
     
     Returns:
         dict: Dictionary with strike_temp and water_volume
@@ -165,14 +165,14 @@ def calculate_priming_sugar(volume_liters, co2_volumes=2.5, sugar_type='corn'):
     Calculate priming sugar needed for bottle conditioning.
     
     Args:
-        volume_liters (float): Beer volume in liters
+        volume_litres (float): Beer volume in litres
         co2_volumes (float): Desired CO2 volumes (default 2.5)
         sugar_type (str): Type of sugar - 'corn', 'table', or 'dme' (default 'corn')
     
     Returns:
         float: Sugar needed in grams
     """
-    # Factors for different sugar types (grams per liter per CO2 volume)
+    # Factors for different sugar types (grams per litre per CO2 volume)
     sugar_factors = {
         'corn': 1.32,      # Corn sugar (dextrose)
         'table': 1.19,     # Table sugar (sucrose)
