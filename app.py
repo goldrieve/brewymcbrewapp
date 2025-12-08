@@ -1625,9 +1625,12 @@ def generate_recipe_page():
                     max_length=max_length,
                     temperature=temperature,
                     top_p=0.9,
+                    top_k=50,
                     do_sample=True,
                     pad_token_id=tokenizer.eos_token_id,
-                    num_return_sequences=1
+                    num_return_sequences=1,
+                    early_stopping=True,
+                    no_repeat_ngram_size=3
                 )
                 
                 # Decode
