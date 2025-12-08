@@ -11,8 +11,8 @@
       {
         "type": "Low Colour Pale Malt Crushed (BAIRD)",
         "weight": 2.65,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 2
       }
     ],
     "hop_schedule": [
@@ -68,52 +68,52 @@
       {
         "type": "Low Colour Pale Malt Crushed (BAIRD)",
         "weight": 2.19,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 2
       },
       {
         "type": "Caramalt",
         "weight": 0.125,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 15
       }
     ],
     "hop_schedule": [
       {
         "variety": "Ahtanum",
         "weight": 8.75,
-        "time": 0,
-        "alpha_acid": 0
-      },
-      {
-        "variety": "Chinook",
-        "weight": 7.5,
-        "time": 0,
-        "alpha_acid": 0
-      },
-      {
-        "variety": "Chinook",
-        "weight": 17.5,
-        "time": 30,
-        "alpha_acid": 0
-      },
-      {
-        "variety": "Ahtanum",
-        "weight": 8.75,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 6.0
       },
       {
         "variety": "Chinook",
         "weight": 22.5,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 13.0
       },
       {
         "variety": "Motueka",
         "weight": 8.75,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 7.0
+      },
+      {
+        "variety": "Chinook",
+        "weight": 17.5,
+        "time": 30,
+        "alpha_acid": 13.0
+      },
+      {
+        "variety": "Ahtanum",
+        "weight": 8.75,
+        "time": 0,
+        "alpha_acid": 6.0
+      },
+      {
+        "variety": "Chinook",
+        "weight": 7.5,
+        "time": 0,
+        "alpha_acid": 13.0
       }
     ],
     "yeast": "White Labs WLP028 - Edinburgh Ale Yeast",
@@ -131,40 +131,40 @@
       {
         "type": "Low Colour Pale Malt Crushed (BAIRD)",
         "weight": 1.095,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 2
       },
       {
         "type": "Caramalt",
         "weight": 0.0625,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 15
       }
     ],
     "hop_schedule": [
       {
-        "variety": "Ahtanum",
-        "weight": 4.375,
-        "time": 0,
-        "alpha_acid": 0
-      },
-      {
-        "variety": "Chinook",
-        "weight": 3.75,
-        "time": 0,
-        "alpha_acid": 0
+        "variety": "Crystal",
+        "weight": 75,
+        "time": 60,
+        "alpha_acid": 4.5
       },
       {
         "variety": "Crystal",
         "weight": 25,
         "time": 30,
-        "alpha_acid": 0
+        "alpha_acid": 4.5
       },
       {
-        "variety": "Crystal",
-        "weight": 75,
-        "time": 60,
-        "alpha_acid": 0
+        "variety": "Ahtanum",
+        "weight": 4.375,
+        "time": 0,
+        "alpha_acid": 6.0
+      },
+      {
+        "variety": "Chinook",
+        "weight": 3.75,
+        "time": 0,
+        "alpha_acid": 13.0
       }
     ],
     "yeast": "US-05",
@@ -182,14 +182,14 @@
       {
         "type": "Pale ale",
         "weight": 5.216312,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 2
       },
       {
         "type": "Caramalt",
         "weight": 0.413,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 15
       }
     ],
     "hop_schedule": [
@@ -197,31 +197,31 @@
         "variety": "Magnum",
         "weight": 14.1748,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 14.0
       },
       {
         "variety": "Perle",
         "weight": 14.1748,
         "time": 30,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       },
       {
         "variety": "Cascade",
         "weight": 28.3496,
         "time": 10,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       },
       {
         "variety": "Cascade",
         "weight": 56.6992,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       },
       {
         "variety": "Cascade (dry hop)",
         "weight": 56.6992,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       }
     ],
     "yeast": "Edinburgh ale skimmed from CRIPA",
@@ -239,14 +239,14 @@
       {
         "type": "Wheat malt",
         "weight": 2.2,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 38,
+        "lovibond": 2
       },
       {
         "type": "Pale malt",
         "weight": 2.2,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 2
       }
     ],
     "hop_schedule": [
@@ -254,7 +254,7 @@
         "variety": "Hallertau pellet hops",
         "weight": 30,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 4.0
       }
     ],
     "yeast": "White Labs WLP300",
@@ -272,56 +272,56 @@
       {
         "type": "Pilsner",
         "weight": 1.4,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 1.5
       },
       {
         "type": "Vienna",
         "weight": 1.4,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 36,
+        "lovibond": 4
       },
       {
         "type": "Carared",
         "weight": 0.326,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 20
       },
       {
         "type": "German Munich",
         "weight": 1.45,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 9
       },
       {
         "type": "Aromatic",
         "weight": 0.23,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       },
       {
         "type": "Caramunich",
         "weight": 0.23,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 9
       },
       {
         "type": "Special B",
         "weight": 0.23,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       },
       {
         "type": "Red Wheat",
         "weight": 0.23,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 38,
+        "lovibond": 2
       },
       {
         "type": "Amber Candy syrup",
         "weight": 0.45,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 30
       }
     ],
     "hop_schedule": [
@@ -329,7 +329,7 @@
         "variety": "Hallertau pellet hops",
         "weight": 14,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 4.0
       }
     ],
     "yeast": "Imperial Yeast G02 (Kaiser) or White Labs WLP036 (D\u00fcsseldorf Alt Ale) or SafAle K-97 yeast",
@@ -347,32 +347,32 @@
       {
         "type": "Pale ale malt",
         "weight": 3.62,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 2
       },
       {
         "type": "Caramalt",
         "weight": 0.454,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 15
       },
       {
         "type": "Chocolate malt",
         "weight": 0.227,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 350
       },
       {
         "type": "Roasted barley",
         "weight": 0.113,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 28,
+        "lovibond": 500
       },
       {
         "type": "Black malt",
         "weight": 0.113,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 28,
+        "lovibond": 500
       }
     ],
     "hop_schedule": [
@@ -380,13 +380,13 @@
         "variety": "Northern Brewer pellets",
         "weight": 35,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       },
       {
         "variety": "Northern Brewer pellets",
         "weight": 7,
         "time": 5,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       }
     ],
     "yeast": "White Labs WLP004 Irish Ale Yeast",
@@ -404,20 +404,20 @@
       {
         "type": "Extra pale marris otter",
         "weight": 3.78,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       },
       {
         "type": "Caramalt",
         "weight": 0.31,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 15
       },
       {
         "type": "Munich",
         "weight": 0.31,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 9
       }
     ],
     "hop_schedule": [
@@ -425,31 +425,31 @@
         "variety": "Cascade",
         "weight": 12.5,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       },
       {
         "variety": "Saaz",
         "weight": 12.5,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 3.5
       },
       {
         "variety": "Cascade",
         "weight": 25,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       },
       {
         "variety": "Motueka",
         "weight": 12.5,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 7.0
       },
       {
         "variety": "Northern brewer",
         "weight": 25,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       }
     ],
     "yeast": "Saflager W-34/70",
@@ -467,26 +467,26 @@
       {
         "type": "Pale ale",
         "weight": 3.96,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 2
       },
       {
         "type": "Marris Otter",
         "weight": 0.96,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       },
       {
         "type": "Wheat malt",
         "weight": 0.6,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 38,
+        "lovibond": 2
       },
       {
         "type": "Flaked oats",
         "weight": 0.24,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 33,
+        "lovibond": 1
       }
     ],
     "hop_schedule": [
@@ -494,49 +494,49 @@
         "variety": "Northern brewer",
         "weight": 1,
         "time": 10,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       },
       {
         "variety": "Northern brewer",
         "weight": 20,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       },
       {
         "variety": "Cascade",
         "weight": 20,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       },
       {
         "variety": "Magnum",
         "weight": 20,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 14.0
       },
       {
         "variety": "Citra (dry hop)",
         "weight": 50,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 12.0
       },
       {
         "variety": "Magnum (dry hop)",
         "weight": 50,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 14.0
       },
       {
         "variety": "Cascade (dry hop)",
         "weight": 50,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       },
       {
         "variety": "Mosaic (dry hop)",
         "weight": 50,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 12.5
       }
     ],
     "yeast": "US-05",
@@ -554,20 +554,20 @@
       {
         "type": "Pilsen Malt",
         "weight": 5,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       },
       {
         "type": "Aromatic malt",
         "weight": 0.227,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       },
       {
         "type": "Pale wheat",
         "weight": 0.227,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 38,
+        "lovibond": 2
       }
     ],
     "hop_schedule": [
@@ -575,7 +575,7 @@
         "variety": "Hallertauer Mittlefruh",
         "weight": 83,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 4.0
       }
     ],
     "yeast": "Safbrew\u2122 T-58",
@@ -593,38 +593,38 @@
       {
         "type": "Pale malt",
         "weight": 4.898798,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 2
       },
       {
         "type": "Flaked rye",
         "weight": 0.3628739,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       },
       {
         "type": "Crystal 60",
         "weight": 0.226796,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 40
       },
       {
         "type": "Crystal 120",
         "weight": 0.226796,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 40
       },
       {
         "type": "Chocolate wheat",
         "weight": 0.226796,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 350
       },
       {
         "type": "Carafa 3",
         "weight": 0.181437,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 20
       }
     ],
     "hop_schedule": [
@@ -632,31 +632,31 @@
         "variety": "Columbus",
         "weight": 8.50486,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 15.0
       },
       {
         "variety": "Centennial",
         "weight": 14.1748,
         "time": 45,
-        "alpha_acid": 0
+        "alpha_acid": 10.0
       },
       {
         "variety": "Centennial",
         "weight": 14.1748,
         "time": 30,
-        "alpha_acid": 0
+        "alpha_acid": 10.0
       },
       {
         "variety": "Cascade",
         "weight": 28.3496,
         "time": 15,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       },
       {
         "variety": "Cascade",
         "weight": 28.3496,
         "time": 5,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       }
     ],
     "yeast": "US-05",
@@ -674,26 +674,26 @@
       {
         "type": "Pale ale",
         "weight": 3.96,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 2
       },
       {
         "type": "Marris Otter",
         "weight": 0.96,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       },
       {
         "type": "Wheat malt",
         "weight": 0.6,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 38,
+        "lovibond": 2
       },
       {
         "type": "Flaked oats",
         "weight": 0.24,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 33,
+        "lovibond": 1
       }
     ],
     "hop_schedule": [
@@ -701,31 +701,31 @@
         "variety": "Magnum",
         "weight": 0.47969516,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 14.0
       },
       {
         "variety": "Perle",
         "weight": 0.47969516,
         "time": 30,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       },
       {
         "variety": "Cascade",
         "weight": 0.95939031,
         "time": 10,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       },
       {
         "variety": "Cascade",
         "weight": 1.91878063,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       },
       {
         "variety": "Cascade (dry hop)",
         "weight": 1.91878063,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       }
     ],
     "yeast": "US-05",
@@ -743,20 +743,20 @@
       {
         "type": "Marris Otter",
         "weight": 4.29,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       },
       {
         "type": "Crystal",
         "weight": 0.36,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 40
       },
       {
         "type": "Chocolate",
         "weight": 0.1,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 350
       }
     ],
     "hop_schedule": [
@@ -764,25 +764,25 @@
         "variety": "East Kent Geldings",
         "weight": 14,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       },
       {
         "variety": "Fuggles",
         "weight": 14,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       },
       {
         "variety": "Cascade",
         "weight": 16,
         "time": 15,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       },
       {
         "variety": "Styrian Goldings",
         "weight": 64,
         "time": 15,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       }
     ],
     "yeast": "Nottingham Ale yeast",
@@ -800,26 +800,26 @@
       {
         "type": "Pale ale",
         "weight": 3.40194,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 2
       },
       {
         "type": "Simpsons Caramalt",
         "weight": 0.45,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 15
       },
       {
         "type": "Caramunich Malt",
         "weight": 0.275,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 9
       },
       {
         "type": "Melanoidin",
         "weight": 0.275,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       }
     ],
     "hop_schedule": [
@@ -827,13 +827,13 @@
         "variety": "Cascade",
         "weight": 28,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       },
       {
         "variety": "Crystal",
         "weight": 28,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 4.5
       }
     ],
     "yeast": "US-05",
@@ -851,20 +851,20 @@
       {
         "type": "Pale ale",
         "weight": 4.98952,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 2
       },
       {
         "type": "Crystal 40",
         "weight": 0.453592,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 40
       },
       {
         "type": "Rye",
         "weight": 0.453592,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       }
     ],
     "hop_schedule": [
@@ -872,31 +872,31 @@
         "variety": "Magnum",
         "weight": 28.3,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 14.0
       },
       {
         "variety": "Citra",
         "weight": 28.3,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 12.0
       },
       {
         "variety": "Citra",
         "weight": 28.3,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 12.0
       },
       {
         "variety": "Citra",
         "weight": 28.3,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 12.0
       },
       {
         "variety": "Galaxy",
         "weight": 28.3,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 14.0
       }
     ],
     "yeast": "US-05",
@@ -914,44 +914,44 @@
       {
         "type": "Pale ale",
         "weight": 3.2,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 2
       },
       {
         "type": "Crystal malt",
         "weight": 0.454,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 40
       },
       {
         "type": "Honey malt",
         "weight": 0.225,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       },
       {
         "type": "Roasted barley",
         "weight": 0.34,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 28,
+        "lovibond": 500
       },
       {
         "type": "Black malt",
         "weight": 0.225,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 28,
+        "lovibond": 500
       },
       {
         "type": "Chocolate malt",
         "weight": 0.225,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 350
       },
       {
         "type": "Rolled oats",
         "weight": 0.34,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 33,
+        "lovibond": 1
       }
     ],
     "hop_schedule": [
@@ -959,19 +959,19 @@
         "variety": "Perle/golding",
         "weight": 35,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       },
       {
         "variety": "Kent goldings",
         "weight": 28,
         "time": 10,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       },
       {
         "variety": "Crystal (dry hop)",
         "weight": 14,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 4.5
       }
     ],
     "yeast": "Irish ale",
@@ -989,20 +989,20 @@
       {
         "type": "Pilsner",
         "weight": 4.6,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 1.5
       },
       {
         "type": "Caramalt",
         "weight": 0.2,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 15
       },
       {
         "type": "Rye malt",
         "weight": 0.1,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       }
     ],
     "hop_schedule": [
@@ -1010,19 +1010,19 @@
         "variety": "Styrian Golding",
         "weight": 24.99,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       },
       {
         "variety": "Saaz",
         "weight": 12.49,
         "time": 30,
-        "alpha_acid": 0
+        "alpha_acid": 3.5
       },
       {
         "variety": "Saaz",
         "weight": 12.49,
         "time": 5,
-        "alpha_acid": 0
+        "alpha_acid": 3.5
       }
     ],
     "yeast": "Mangrove jacks belgian ale yeast",
@@ -1040,38 +1040,38 @@
       {
         "type": "Extra pale",
         "weight": 2.5,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       },
       {
         "type": "Flaked oats",
         "weight": 0.63,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 33,
+        "lovibond": 1
       },
       {
         "type": "Crystal dark malt",
         "weight": 0.38,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 40
       },
       {
         "type": "Roasted barley",
         "weight": 0.38,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 28,
+        "lovibond": 500
       },
       {
         "type": "Carafa special",
         "weight": 0.3,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 20
       },
       {
         "type": "Wheat",
         "weight": 0.63,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 38,
+        "lovibond": 2
       }
     ],
     "hop_schedule": [
@@ -1079,37 +1079,37 @@
         "variety": "Columbus",
         "weight": 7.5,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 15.0
       },
       {
         "variety": "Bramling cross",
         "weight": 12.5,
         "time": 30,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       },
       {
         "variety": "Willamette",
         "weight": 25,
         "time": 5,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       },
       {
         "variety": "Centennial",
         "weight": 25,
         "time": 5,
-        "alpha_acid": 0
+        "alpha_acid": 10.0
       },
       {
         "variety": "Centennial (dry hop)",
         "weight": 62.6,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 10.0
       },
       {
         "variety": "Willamette (dry hop)",
         "weight": 62.5,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       }
     ],
     "yeast": "US-05",
@@ -1127,20 +1127,20 @@
       {
         "type": "Pilsner",
         "weight": 1.82,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 1.5
       },
       {
         "type": "Munich malt",
         "weight": 1.82,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 9
       },
       {
         "type": "Caramunich",
         "weight": 0.18,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 9
       }
     ],
     "hop_schedule": [
@@ -1148,13 +1148,13 @@
         "variety": "Hallertau Hers",
         "weight": 22.68,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 4.0
       },
       {
         "variety": "Hallertau Blanc",
         "weight": 22.68,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 4.0
       }
     ],
     "yeast": "Bavarian lager yeast",
@@ -1172,32 +1172,32 @@
       {
         "type": "Marris otter",
         "weight": 3.288545,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       },
       {
         "type": "Munich 1",
         "weight": 1.020583,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 9
       },
       {
         "type": "Crystal 40",
         "weight": 0.453592,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 40
       },
       {
         "type": "Crystal 15",
         "weight": 0.226796,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 40
       },
       {
         "type": "Pale choc",
         "weight": 0.170097,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       }
     ],
     "hop_schedule": [
@@ -1205,25 +1205,25 @@
         "variety": "Magnum",
         "weight": 10,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 14.0
       },
       {
         "variety": "Cascade",
         "weight": 60,
         "time": 15,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       },
       {
         "variety": "Amarillo",
         "weight": 40,
         "time": 15,
-        "alpha_acid": 0
+        "alpha_acid": 9.0
       },
       {
         "variety": "Centennial",
         "weight": 20,
         "time": 15,
-        "alpha_acid": 0
+        "alpha_acid": 10.0
       }
     ],
     "yeast": null,
@@ -1241,20 +1241,20 @@
       {
         "type": "Pilsner",
         "weight": 3.8,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 1.5
       },
       {
         "type": "Vienna",
         "weight": 0.45,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 36,
+        "lovibond": 4
       },
       {
         "type": "Caramunich 2",
         "weight": 0.1,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 9
       }
     ],
     "hop_schedule": [
@@ -1262,7 +1262,7 @@
         "variety": "Hallertau",
         "weight": 56.7,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 4.0
       }
     ],
     "yeast": "Kolsch",
@@ -1280,20 +1280,20 @@
       {
         "type": "Pilsner",
         "weight": 10.4326,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 1.5
       },
       {
         "type": "Carapils",
         "weight": 0.6803890001,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 20
       },
       {
         "type": "Acidulated",
         "weight": 0.226796,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       }
     ],
     "hop_schedule": [
@@ -1301,13 +1301,13 @@
         "variety": "Mosaic",
         "weight": 170.097,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 12.5
       },
       {
         "variety": "Mosaic (dry hop)",
         "weight": 170.097,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 12.5
       }
     ],
     "yeast": "Kviek",
@@ -1325,46 +1325,46 @@
       {
         "type": "Wheat",
         "weight": 6.715,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 38,
+        "lovibond": 2
       },
       {
         "type": "Pilsner",
         "weight": 4.395,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 1.5
       },
       {
         "type": "Dark crystal",
         "weight": 0.61,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 40
       },
       {
         "type": "Carafa special",
         "weight": 0.097,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 20
       }
     ],
     "hop_schedule": [
       {
-        "variety": "Perle",
-        "weight": 18,
-        "time": 0,
-        "alpha_acid": 0
-      },
-      {
         "variety": "Hallertauer",
         "weight": 18,
         "time": 30,
-        "alpha_acid": 0
+        "alpha_acid": 4.0
       },
       {
         "variety": "Saaz",
         "weight": 18,
         "time": 15,
-        "alpha_acid": 0
+        "alpha_acid": 3.5
+      },
+      {
+        "variety": "Perle",
+        "weight": 18,
+        "time": 0,
+        "alpha_acid": 5.0
       }
     ],
     "yeast": null,
@@ -1382,8 +1382,8 @@
       {
         "type": "Pilsner",
         "weight": 4.989,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 1.5
       }
     ],
     "hop_schedule": [
@@ -1391,13 +1391,13 @@
         "variety": "Citra",
         "weight": 14.7,
         "time": 30,
-        "alpha_acid": 0
+        "alpha_acid": 12.0
       },
       {
         "variety": "Citra",
         "weight": 14.7,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 12.0
       }
     ],
     "yeast": null,
@@ -1415,14 +1415,14 @@
       {
         "type": "Pale ale",
         "weight": 1.941800634,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 2
       },
       {
         "type": "Caramalt",
         "weight": 0.153741506,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 15
       }
     ],
     "hop_schedule": [
@@ -1430,31 +1430,31 @@
         "variety": "Magnum",
         "weight": 5.276646723,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 14.0
       },
       {
         "variety": "Perle",
         "weight": 5.276646723,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       },
       {
         "variety": "Cascade",
         "weight": 10.55329345,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       },
       {
         "variety": "Cascade",
         "weight": 21.10658689,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       },
       {
         "variety": "Cascade",
         "weight": 21.10658689,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 5.5
       }
     ],
     "yeast": "US-05",
@@ -1472,8 +1472,8 @@
       {
         "type": "Pilsner",
         "weight": 7.2,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 37,
+        "lovibond": 1.5
       }
     ],
     "hop_schedule": [
@@ -1481,19 +1481,19 @@
         "variety": "Styrian Goldings",
         "weight": 60,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       },
       {
         "variety": "Saaz/Styrian Goldings",
         "weight": 60,
         "time": 30,
-        "alpha_acid": 0
+        "alpha_acid": 3.5
       },
       {
         "variety": "Citra/Galaxy (dry hop)",
         "weight": 50,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 12.0
       }
     ],
     "yeast": null,
@@ -1511,20 +1511,20 @@
       {
         "type": "Extra pale",
         "weight": 5.75,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       },
       {
         "type": "Caramalt",
         "weight": 0.63,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 15
       },
       {
         "type": "Wheat",
         "weight": 0.63,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 38,
+        "lovibond": 2
       }
     ],
     "hop_schedule": [
@@ -1532,25 +1532,25 @@
         "variety": "Mosaic",
         "weight": 12.5,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 12.5
       },
       {
         "variety": "Mosaic",
         "weight": 37.5,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 12.5
       },
       {
         "variety": "Mosaic",
         "weight": 37.5,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 12.5
       },
       {
         "variety": "Mosaic",
         "weight": 187.5,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 12.5
       }
     ],
     "yeast": "US-05",
@@ -1568,32 +1568,32 @@
       {
         "type": "Marris Otter Pale",
         "weight": 4.53592,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       },
       {
         "type": "Flaked Oats",
         "weight": 0.453,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 33,
+        "lovibond": 1
       },
       {
         "type": "Chocolate",
         "weight": 0.453,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 350
       },
       {
         "type": "Crystal 80",
         "weight": 0.453,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 40
       },
       {
         "type": "Roasted Barley",
         "weight": 0.226,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 28,
+        "lovibond": 500
       }
     ],
     "hop_schedule": [
@@ -1601,13 +1601,13 @@
         "variety": "Mount Hood",
         "weight": 34,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       },
       {
         "variety": "Fuggles",
         "weight": 28,
         "time": 15,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       }
     ],
     "yeast": "California Ale Yeast",
@@ -1625,26 +1625,26 @@
       {
         "type": "Pale",
         "weight": 3.4,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       },
       {
         "type": "Carared",
         "weight": 0.45,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 20
       },
       {
         "type": "Crystal (60)",
         "weight": 0.226,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 40
       },
       {
         "type": "Roasted barley",
         "weight": 0.057,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 28,
+        "lovibond": 500
       }
     ],
     "hop_schedule": [
@@ -1652,31 +1652,31 @@
         "variety": "Columbus",
         "weight": 11,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 15.0
       },
       {
         "variety": "Citra",
         "weight": 28,
         "time": 5,
-        "alpha_acid": 0
+        "alpha_acid": 12.0
       },
       {
         "variety": "Columbus",
         "weight": 30,
         "time": 5,
-        "alpha_acid": 0
+        "alpha_acid": 15.0
       },
       {
         "variety": "Citra (dry hop)",
         "weight": 28,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 12.0
       },
       {
         "variety": "Columbus (dry hop)",
         "weight": 30,
         "time": 0,
-        "alpha_acid": 0
+        "alpha_acid": 15.0
       }
     ],
     "yeast": "US-05",
@@ -1694,32 +1694,32 @@
       {
         "type": "Marris otter",
         "weight": 3.402,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 35,
+        "lovibond": 5
       },
       {
         "type": "Flaked oats",
         "weight": 0.5675,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 33,
+        "lovibond": 1
       },
       {
         "type": "Chocolate malt",
         "weight": 0.454,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 350
       },
       {
         "type": "Roasted barley",
         "weight": 0.227,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 28,
+        "lovibond": 500
       },
       {
         "type": "Crystal (80)",
         "weight": 0.227,
-        "ppg": 0,
-        "lovibond": 0
+        "ppg": 34,
+        "lovibond": 40
       }
     ],
     "hop_schedule": [
@@ -1727,13 +1727,13 @@
         "variety": "Fuggles",
         "weight": 0.028,
         "time": 60,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       },
       {
         "variety": "Fuggles",
         "weight": 0.028,
         "time": 30,
-        "alpha_acid": 0
+        "alpha_acid": 5.0
       }
     ],
     "yeast": "British ale WLP005",

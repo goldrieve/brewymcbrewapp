@@ -282,7 +282,7 @@ def main():
         
         page = st.radio(
             "Select Page",
-            ["Home", "Recipe Builder", "View Recipes", "Brewing Calculator"],
+            ["Home", "Recipe Builder", "View Recipes", "Brewing Calculator", "Generate Recipe"],
             key="page_selector"
         )
         
@@ -309,6 +309,8 @@ def main():
         view_recipes_page()
     elif page == "Brewing Calculator":
         calculator_page()
+    elif page == "Generate Recipe":
+        generate_recipe_page()
 
 
 def home_page():
@@ -398,8 +400,7 @@ def create_recipe_page():
             grain_weight = st.number_input("Weight (kg)", min_value=0.0, max_value=22.0, value=0.5, step=0.1, key="grain_weight")
         
         with gcol3:
-            st.write("")
-            st.write("")
+            st.markdown("<div style='margin-top: 2rem;'></div>", unsafe_allow_html=True)
             if st.button("Add Grain"):
                 grain_info = grain_types[grain_type]
                 st.session_state.grain_bill.append({
@@ -452,8 +453,7 @@ def create_recipe_page():
             hop_time = st.number_input("Boil Time (min)", min_value=0, max_value=90, value=60, step=5, key="hop_time")
         
         with hcol4:
-            st.write("")
-            st.write("")
+            st.markdown("<div style='margin-top: 2rem;'></div>", unsafe_allow_html=True)
             if st.button("Add Hop"):
                 st.session_state.hop_schedule.append({
                     'variety': hop_variety,
@@ -467,9 +467,18 @@ def create_recipe_page():
         hop_df = pd.DataFrame(st.session_state.hop_schedule)
         st.dataframe(hop_df[['variety', 'weight', 'time', 'alpha_acid']], use_container_width=True)
         
-        if st.button("Clear Hop Schedule"):
-            st.session_state.hop_schedule = []
-            st.rerun()
+        hbtn1, hbtn2 = st.columns(2)
+        with hbtn1:
+            if st.button("Remove Last Hop", disabled=len(st.session_state.hop_schedule) == 0):
+                if st.session_state.hop_schedule:
+                    st.session_state.hop_schedule.pop()
+                    st.rerun()
+        with hbtn2:
+            if st.button("Clear Hop Schedule", disabled=len(st.session_state.hop_schedule) == 0):
+                st.session_state.hop_schedule = []
+                st.rerun()
+    else:
+        st.info("No hops added yet. Add your first hop above.")
     
     st.markdown("---")
     
@@ -606,7 +615,7 @@ def view_recipes_page():
     # Toggle between user recipes and precompiled recipes
     recipe_view = st.radio(
         "Select Recipe Collection",
-        ["My Recipes", "Forum Recipes", "Guy's Recipes"],
+        ["My Recipes", "Forum Recipes", "Guy's Recipes", "Mathieu's Recipes"],
         horizontal=True
     )
     
@@ -665,7 +674,7 @@ def view_recipes_page():
             st.info("👆 Select a style or enter a recipe name to view recipes")
         
         st.markdown("---")
-    else:  # Guy's Recipes
+    elif recipe_view == "Guy's Recipes":
         # Load Guy's recipes
         if os.path.exists('data/recipes/guys.json'):
             with open('data/recipes/guys.json', 'r') as f:
@@ -678,6 +687,20 @@ def view_recipes_page():
         is_user_recipes = False
         
         st.info(f"Displaying **{len(recipes_to_display)}** recipes from Guy's collection")
+        st.markdown("---")
+    else:  # Mathieu's Recipes
+        # Load Mathieu's recipes
+        if os.path.exists('data/recipes/mathieu.json'):
+            with open('data/recipes/mathieu.json', 'r') as f:
+                mathieu_recipes = json.load(f)
+        else:
+            st.error("Mathieu's recipes file not found!")
+            return
+        
+        recipes_to_display = mathieu_recipes
+        is_user_recipes = False
+        
+        st.info(f"Displaying **{len(recipes_to_display)}** recipes from Mathieu's collection")
         st.markdown("---")
     
     # Display recipes as cards (only if there are recipes to display)
@@ -1157,6 +1180,12 @@ def recipe_scaler_page():
                         'time': hop_timing
                     })
                     st.rerun()
+        
+        with st.container():
+            if st.button("Remove Last", key="remove_last_hop"):
+                if st.session_state.import_hop_schedule:
+                    st.session_state.import_hop_schedule.pop()
+                    st.rerun()
     
     if st.session_state.import_hop_schedule:
         st.markdown("**Hop Schedule:**")
@@ -1495,10 +1524,153 @@ def recipe_scaler_page():
     
     # Clear all button
     if st.button("🗑️ Clear All", key="clear_all_import"):
-        st.session_state.import_grain_bill = []
-        st.session_state.import_hop_schedule = []
-        st.session_state.import_other_ingredients = []
-        st.rerun()
+            st.session_state.import_grain_bill = []
+            st.session_state.import_hop_schedule = []
+            st.session_state.import_other_ingredients = []
+            st.rerun()
+
+
+def generate_recipe_page():
+    """AI-powered recipe generation page using fine-tuned GPT-2 model"""
+    st.header("🤖 AI Recipe Generator")
+    st.markdown("Generate unique homebrew recipes using AI trained on Guy's recipes!")
+    
+    # Check if model is available
+    try:
+        from transformers import GPT2LMHeadModel, GPT2Tokenizer
+        import torch
+        model_available = True
+    except ImportError:
+        model_available = False
+        st.error("⚠️ Model dependencies not installed. Please install: `pip install transformers torch`")
+        return
+    
+    # Load model (cached)
+    @st.cache_resource
+    def load_model():
+        try:
+            # TODO: Replace 'yourusername' with actual Hugging Face username after upload
+            model_name = "goldrieve/brew-recipe-generator"
+            model = GPT2LMHeadModel.from_pretrained(model_name)
+            tokenizer = GPT2Tokenizer.from_pretrained(model_name)
+            return model, tokenizer, None
+        except Exception as e:
+            # Fallback to local model if available
+            try:
+                model = GPT2LMHeadModel.from_pretrained("recipe_model")
+                tokenizer = GPT2Tokenizer.from_pretrained("recipe_model")
+                return model, tokenizer, None
+            except Exception as e2:
+                return None, None, f"Model not found. Please train and upload the model first.\n\nError: {str(e)}\n\nLocal error: {str(e2)}"
+    
+    model, tokenizer, error = load_model()
+    
+    if error:
+        st.error(error)
+        st.info("""
+        **To train and deploy the model:**
+        
+        1. Train locally: `python train_recipe_model.py`
+        2. Test it: `python test_model.py`
+        3. Upload to Hugging Face: `python upload_to_huggingface.py`
+        4. Update the model name in this page
+        """)
+        return
+    
+    st.success("✅ Model loaded successfully!")
+    
+    # Input form
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        recipe_name = st.text_input("Recipe Name", "My New Recipe")
+        style = st.selectbox("Beer Style", [
+            "American IPA",
+            "English IPA", 
+            "Irish Stout",
+            "English Pale Ale",
+            "American Pale Ale",
+            "Porter",
+            "Belgian Tripel",
+            "Wheat Beer",
+            "Lager",
+            "Other"
+        ])
+        
+    with col2:
+        method = st.selectbox("Brewing Method", ["All Grain", "Extract", "Partial Mash"])
+        abv = st.slider("Target ABV (%)", 3.0, 10.0, 5.5, 0.5)
+        batch_size = st.number_input("Batch Size (litres)", 5, 50, 10, 5)
+    
+    # Generation parameters
+    with st.expander("⚙️ Advanced Generation Settings"):
+        temperature = st.slider("Creativity (Temperature)", 0.5, 1.5, 0.8, 0.1, 
+                               help="Higher = more creative but less consistent")
+        max_length = st.slider("Max Recipe Length", 200, 800, 500, 50,
+                              help="Maximum tokens to generate")
+    
+    # Generate button
+    if st.button("🎲 Generate Recipe", type="primary"):
+        with st.spinner("🍺 Brewing up a new recipe..."):
+            # Create prompt
+            prompt = f"<|startofrecipe|>\nRecipe: {recipe_name}\nStyle: {style}\nMethod: {method}\nBatch Size: {batch_size} litres\nABV: {abv}%\n"
+            
+            # Generate
+            try:
+                input_ids = tokenizer.encode(prompt, return_tensors='pt')
+                
+                # Generate text
+                output = model.generate(
+                    input_ids,
+                    max_length=max_length,
+                    temperature=temperature,
+                    top_p=0.9,
+                    do_sample=True,
+                    pad_token_id=tokenizer.eos_token_id,
+                    num_return_sequences=1
+                )
+                
+                # Decode
+                generated_text = tokenizer.decode(output[0], skip_special_tokens=False)
+                
+                # Extract recipe (between special tokens)
+                if '<|endofrecipe|>' in generated_text:
+                    recipe_text = generated_text.split('<|startofrecipe|>')[-1].split('<|endofrecipe|>')[0]
+                else:
+                    recipe_text = generated_text.split('<|startofrecipe|>')[-1]
+                
+                st.markdown("### Generated Recipe")
+                st.code(recipe_text, language="text")
+                
+                # Parse and display in structured format
+                st.markdown("### Formatted View")
+                st.text(recipe_text)
+                
+                # Option to save to recipes
+                st.markdown("---")
+                if st.button("💾 Save to My Recipes"):
+                    st.info("📝 To save, copy the recipe to Recipe Builder and customize it!")
+                    
+            except Exception as e:
+                st.error(f"Generation failed: {str(e)}")
+    
+    # Info section
+    st.markdown("---")
+    st.markdown("""
+    ### 📚 How it works
+    
+    This AI model was fine-tuned on Guy's collection of homebrew recipes. It learns patterns in:
+    - Grain bills for different styles
+    - Hop schedules and varieties
+    - Yeast selections
+    - Recipe structure and proportions
+    
+    **Tips for best results:**
+    - Use traditional beer styles for more accurate recipes
+    - Lower temperature (0.6-0.8) = more consistent recipes
+    - Higher temperature (0.9-1.2) = more creative/experimental recipes
+    - The model generates suggestions - always review and adjust to your preferences!
+    """)
 
 
 if __name__ == "__main__":

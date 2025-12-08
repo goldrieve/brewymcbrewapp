@@ -782,12 +782,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "cascade",
-        "weight": 12.0,
-        "time": 0,
-        "alpha_acid": 7.0
-      },
-      {
         "variety": "Chinook",
         "weight": 22.0,
         "time": 75,
@@ -816,6 +810,12 @@
         "weight": 10.0,
         "time": 5,
         "alpha_acid": 11.0
+      },
+      {
+        "variety": "cascade",
+        "weight": 12.0,
+        "time": 0,
+        "alpha_acid": 7.0
       },
       {
         "variety": "Citra",
@@ -875,12 +875,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Amarillo",
-        "weight": 56.0,
-        "time": 0,
-        "alpha_acid": 8.6
-      },
-      {
         "variety": "Warrior",
         "weight": 28.0,
         "time": 60,
@@ -933,6 +927,12 @@
         "weight": 56.0,
         "time": 20,
         "alpha_acid": 12.7
+      },
+      {
+        "variety": "Amarillo",
+        "weight": 56.0,
+        "time": 0,
+        "alpha_acid": 8.6
       },
       {
         "variety": "Amarillo",
@@ -1011,6 +1011,12 @@
       },
       {
         "variety": "Citra",
+        "weight": 56.0,
+        "time": 30,
+        "alpha_acid": 11.0
+      },
+      {
+        "variety": "Citra",
         "weight": 28.0,
         "time": 20,
         "alpha_acid": 11.0
@@ -1019,12 +1025,6 @@
         "variety": "Citra",
         "weight": 28.0,
         "time": 1,
-        "alpha_acid": 11.0
-      },
-      {
-        "variety": "Citra",
-        "weight": 56.0,
-        "time": 30,
         "alpha_acid": 11.0
       },
       {
@@ -1325,12 +1325,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Chinook",
-        "weight": 28.0,
-        "time": 0,
-        "alpha_acid": 11.5
-      },
-      {
         "variety": "Warrior",
         "weight": 70.0,
         "time": 60,
@@ -1353,6 +1347,12 @@
         "weight": 56.0,
         "time": 10,
         "alpha_acid": 9.3
+      },
+      {
+        "variety": "Chinook",
+        "weight": 28.0,
+        "time": 0,
+        "alpha_acid": 11.5
       },
       {
         "variety": "Amarillo",
@@ -1823,12 +1823,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Centennial",
-        "weight": 28.0,
-        "time": 0,
-        "alpha_acid": 10.0
-      },
-      {
         "variety": "Cascade",
         "weight": 14.0,
         "time": 15,
@@ -1845,6 +1839,12 @@
         "weight": 28.0,
         "time": 6,
         "alpha_acid": 11.6
+      },
+      {
+        "variety": "Centennial",
+        "weight": 28.0,
+        "time": 0,
+        "alpha_acid": 10.0
       },
       {
         "variety": "Citra",
@@ -2166,6 +2166,12 @@
       },
       {
         "variety": "Mosaic",
+        "weight": 56.0,
+        "time": 20,
+        "alpha_acid": 12.8
+      },
+      {
+        "variety": "Mosaic",
         "weight": 14.0,
         "time": 15,
         "alpha_acid": 12.8
@@ -2180,12 +2186,6 @@
         "variety": "Mosaic",
         "weight": 56.0,
         "time": 5,
-        "alpha_acid": 12.8
-      },
-      {
-        "variety": "Mosaic",
-        "weight": 56.0,
-        "time": 20,
         "alpha_acid": 12.8
       },
       {
@@ -2429,12 +2429,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Cascade",
-        "weight": 28.0,
-        "time": 0,
-        "alpha_acid": 7.0
-      },
-      {
         "variety": "Chinook",
         "weight": 28.0,
         "time": 30,
@@ -2457,6 +2451,12 @@
         "weight": 28.0,
         "time": 1,
         "alpha_acid": 8.6
+      },
+      {
+        "variety": "Cascade",
+        "weight": 28.0,
+        "time": 0,
+        "alpha_acid": 7.0
       }
     ],
     "yeast": "Danstar - Nottingham Ale Yeast",
@@ -2750,18 +2750,6 @@
         "alpha_acid": 4.5
       },
       {
-        "variety": "Chinook",
-        "weight": 25.0,
-        "time": 15,
-        "alpha_acid": 13.0
-      },
-      {
-        "variety": "Willamette",
-        "weight": 40.0,
-        "time": 15,
-        "alpha_acid": 4.5
-      },
-      {
         "variety": "Cascade",
         "weight": 40.0,
         "time": 20,
@@ -2777,6 +2765,18 @@
         "variety": "Willamette",
         "weight": 50.0,
         "time": 20,
+        "alpha_acid": 4.5
+      },
+      {
+        "variety": "Chinook",
+        "weight": 25.0,
+        "time": 15,
+        "alpha_acid": 13.0
+      },
+      {
+        "variety": "Willamette",
+        "weight": 40.0,
+        "time": 15,
         "alpha_acid": 4.5
       }
     ],
@@ -2984,12 +2984,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Citra",
-        "weight": 14.0,
-        "time": 0,
-        "alpha_acid": 13.0
-      },
-      {
         "variety": "citra",
         "weight": 28.0,
         "time": 15,
@@ -3011,6 +3005,12 @@
         "variety": "citra",
         "weight": 21.0,
         "time": 1,
+        "alpha_acid": 13.0
+      },
+      {
+        "variety": "Citra",
+        "weight": 14.0,
+        "time": 0,
         "alpha_acid": 13.0
       },
       {
@@ -3060,8 +3060,20 @@
     "hop_schedule": [
       {
         "variety": "Challenger",
+        "weight": 5.0,
+        "time": 60,
+        "alpha_acid": 8.5
+      },
+      {
+        "variety": "Centennial",
+        "weight": 10.0,
+        "time": 60,
+        "alpha_acid": 10.0
+      },
+      {
+        "variety": "Challenger",
         "weight": 15.0,
-        "time": 15,
+        "time": 45,
         "alpha_acid": 8.5
       },
       {
@@ -3073,20 +3085,8 @@
       {
         "variety": "Challenger",
         "weight": 15.0,
-        "time": 45,
+        "time": 15,
         "alpha_acid": 8.5
-      },
-      {
-        "variety": "Challenger",
-        "weight": 5.0,
-        "time": 60,
-        "alpha_acid": 8.5
-      },
-      {
-        "variety": "Centennial",
-        "weight": 10.0,
-        "time": 60,
-        "alpha_acid": 10.0
       },
       {
         "variety": "Centennial",
@@ -4325,16 +4325,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Citra",
-        "weight": 21.0,
-        "time": 0,
-        "alpha_acid": 12.5
-      },
-      {
         "variety": "Magnum",
         "weight": 7.0,
         "time": 60,
         "alpha_acid": 13.5
+      },
+      {
+        "variety": "mosaic",
+        "weight": 28.0,
+        "time": 15,
+        "alpha_acid": 12.5
       },
       {
         "variety": "mosaic",
@@ -4349,9 +4349,9 @@
         "alpha_acid": 12.5
       },
       {
-        "variety": "mosaic",
-        "weight": 28.0,
-        "time": 15,
+        "variety": "Citra",
+        "weight": 21.0,
+        "time": 0,
         "alpha_acid": 12.5
       },
       {
@@ -4625,12 +4625,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Magnum Hallertau",
-        "weight": 20.0,
-        "time": 0,
-        "alpha_acid": 12.5
-      },
-      {
         "variety": "Perle",
         "weight": 35.0,
         "time": 30,
@@ -4647,6 +4641,12 @@
         "weight": 50.0,
         "time": 2,
         "alpha_acid": 7.1
+      },
+      {
+        "variety": "Magnum Hallertau",
+        "weight": 20.0,
+        "time": 0,
+        "alpha_acid": 12.5
       }
     ],
     "yeast": "Mangrove Jack - Bohemian Lager Yeast",
@@ -5797,37 +5797,37 @@
       {
         "variety": "Simcoe",
         "weight": 14.0,
-        "time": 0,
+        "time": 10,
         "alpha_acid": 12.7
       },
       {
         "variety": "Mosaic",
         "weight": 14.0,
-        "time": 0,
+        "time": 10,
         "alpha_acid": 12.5
       },
       {
         "variety": "Calypso",
         "weight": 14.0,
-        "time": 0,
+        "time": 10,
         "alpha_acid": 13.0
       },
       {
         "variety": "Simcoe",
         "weight": 14.0,
-        "time": 10,
+        "time": 0,
         "alpha_acid": 12.7
       },
       {
         "variety": "Mosaic",
         "weight": 14.0,
-        "time": 10,
+        "time": 0,
         "alpha_acid": 12.5
       },
       {
         "variety": "Calypso",
         "weight": 14.0,
-        "time": 10,
+        "time": 0,
         "alpha_acid": 13.0
       },
       {
@@ -6245,16 +6245,16 @@
         "alpha_acid": 8.2
       },
       {
-        "variety": "Perle",
-        "weight": 14.0,
-        "time": 10,
-        "alpha_acid": 8.2
-      },
-      {
         "variety": "Domestic Hallertau",
         "weight": 14.0,
         "time": 20,
         "alpha_acid": 3.9
+      },
+      {
+        "variety": "Perle",
+        "weight": 14.0,
+        "time": 10,
+        "alpha_acid": 8.2
       }
     ],
     "yeast": "Wyeast - K\u00f6lsch 2565",
@@ -7034,16 +7034,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Yakima Chief Hops - US golding",
-        "weight": 28.0,
-        "time": 20,
-        "alpha_acid": 5.7
-      },
-      {
         "variety": "Willamette",
         "weight": 28.0,
         "time": 55,
         "alpha_acid": 6.5
+      },
+      {
+        "variety": "Yakima Chief Hops - US golding",
+        "weight": 28.0,
+        "time": 20,
+        "alpha_acid": 5.7
       }
     ],
     "yeast": "Wyeast - Irish Ale 1084",
@@ -7841,24 +7841,6 @@
         "alpha_acid": 19.0
       },
       {
-        "variety": "Apollo",
-        "weight": 15.5,
-        "time": 0,
-        "alpha_acid": 20.0
-      },
-      {
-        "variety": "Columbus",
-        "weight": 60.0,
-        "time": 0,
-        "alpha_acid": 15.0
-      },
-      {
-        "variety": "Simcoe",
-        "weight": 60.0,
-        "time": 0,
-        "alpha_acid": 12.0
-      },
-      {
         "variety": "Comet",
         "weight": 23.0,
         "time": 30,
@@ -7886,6 +7868,24 @@
         "variety": "Simcoe",
         "weight": 30.0,
         "time": 30,
+        "alpha_acid": 12.0
+      },
+      {
+        "variety": "Apollo",
+        "weight": 15.5,
+        "time": 0,
+        "alpha_acid": 20.0
+      },
+      {
+        "variety": "Columbus",
+        "weight": 60.0,
+        "time": 0,
+        "alpha_acid": 15.0
+      },
+      {
+        "variety": "Simcoe",
+        "weight": 60.0,
+        "time": 0,
         "alpha_acid": 12.0
       },
       {
@@ -8051,12 +8051,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Columbus",
-        "weight": 56.0,
-        "time": 0,
-        "alpha_acid": 17.8
-      },
-      {
         "variety": "Simcoe",
         "weight": 56.0,
         "time": 60,
@@ -8085,6 +8079,12 @@
         "weight": 56.0,
         "time": 10,
         "alpha_acid": 8.7
+      },
+      {
+        "variety": "Columbus",
+        "weight": 56.0,
+        "time": 0,
+        "alpha_acid": 17.8
       },
       {
         "variety": "Amarillo",
@@ -8158,24 +8158,6 @@
       {
         "variety": "Citra",
         "weight": 7.0,
-        "time": 0,
-        "alpha_acid": 13.8
-      },
-      {
-        "variety": "Crosby Hop Farm - Denali",
-        "weight": 7.0,
-        "time": 0,
-        "alpha_acid": 15.7
-      },
-      {
-        "variety": "Vic Secret",
-        "weight": 7.0,
-        "time": 0,
-        "alpha_acid": 15.5
-      },
-      {
-        "variety": "Citra",
-        "weight": 7.0,
         "time": 40,
         "alpha_acid": 13.8
       },
@@ -8225,6 +8207,24 @@
         "variety": "Vic Secret",
         "weight": 21.0,
         "time": 20,
+        "alpha_acid": 15.5
+      },
+      {
+        "variety": "Citra",
+        "weight": 7.0,
+        "time": 0,
+        "alpha_acid": 13.8
+      },
+      {
+        "variety": "Crosby Hop Farm - Denali",
+        "weight": 7.0,
+        "time": 0,
+        "alpha_acid": 15.7
+      },
+      {
+        "variety": "Vic Secret",
+        "weight": 7.0,
+        "time": 0,
         "alpha_acid": 15.5
       },
       {
@@ -8373,13 +8373,13 @@
     "hop_schedule": [
       {
         "variety": "Citra",
-        "weight": 32.0,
-        "time": 0,
+        "weight": 8.0,
+        "time": 20,
         "alpha_acid": 12.8
       },
       {
         "variety": "Citra",
-        "weight": 8.0,
+        "weight": 40.0,
         "time": 20,
         "alpha_acid": 12.8
       },
@@ -8403,14 +8403,14 @@
       },
       {
         "variety": "Citra",
-        "weight": 126.0,
+        "weight": 32.0,
         "time": 0,
         "alpha_acid": 12.8
       },
       {
         "variety": "Citra",
-        "weight": 40.0,
-        "time": 20,
+        "weight": 126.0,
+        "time": 0,
         "alpha_acid": 12.8
       }
     ],
@@ -8442,13 +8442,13 @@
     "hop_schedule": [
       {
         "variety": "Citra",
-        "weight": 32.0,
-        "time": 0,
+        "weight": 8.0,
+        "time": 20,
         "alpha_acid": 12.8
       },
       {
         "variety": "Citra",
-        "weight": 8.0,
+        "weight": 40.0,
         "time": 20,
         "alpha_acid": 12.8
       },
@@ -8472,14 +8472,14 @@
       },
       {
         "variety": "Citra",
-        "weight": 96.0,
+        "weight": 32.0,
         "time": 0,
         "alpha_acid": 12.8
       },
       {
         "variety": "Citra",
-        "weight": 40.0,
-        "time": 20,
+        "weight": 96.0,
+        "time": 0,
         "alpha_acid": 12.8
       }
     ],
@@ -9284,12 +9284,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Warrior",
-        "weight": 28.0,
-        "time": 0,
-        "alpha_acid": 16.0
-      },
-      {
         "variety": "Cascade",
         "weight": 40.0,
         "time": 10,
@@ -9318,6 +9312,12 @@
         "weight": 40.0,
         "time": 1,
         "alpha_acid": 15.0
+      },
+      {
+        "variety": "Warrior",
+        "weight": 28.0,
+        "time": 0,
+        "alpha_acid": 16.0
       },
       {
         "variety": "Simcoe",
@@ -9725,16 +9725,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Tettnanger",
-        "weight": 28.0,
-        "time": 30,
-        "alpha_acid": 4.5
-      },
-      {
         "variety": "Mount Hood",
         "weight": 14.0,
         "time": 45,
         "alpha_acid": 4.8
+      },
+      {
+        "variety": "Tettnanger",
+        "weight": 28.0,
+        "time": 30,
+        "alpha_acid": 4.5
       }
     ],
     "yeast": "",
@@ -9906,26 +9906,26 @@
       },
       {
         "variety": "Amarillo (8.6 AA)",
-        "weight": 42.0,
-        "time": 0,
+        "weight": 56.0,
+        "time": 20,
         "alpha_acid": 8.6
       },
       {
         "variety": "Citra (11 AA)",
-        "weight": 42.0,
-        "time": 0,
+        "weight": 56.0,
+        "time": 20,
         "alpha_acid": 11.0
       },
       {
         "variety": "Amarillo (8.6 AA)",
-        "weight": 56.0,
-        "time": 20,
+        "weight": 42.0,
+        "time": 0,
         "alpha_acid": 8.6
       },
       {
         "variety": "Citra (11 AA)",
-        "weight": 56.0,
-        "time": 20,
+        "weight": 42.0,
+        "time": 0,
         "alpha_acid": 11.0
       },
       {
@@ -10091,6 +10091,12 @@
         "alpha_acid": 8.2
       },
       {
+        "variety": "Amarillo",
+        "weight": 28.0,
+        "time": 5,
+        "alpha_acid": 8.6
+      },
+      {
         "variety": "Cascade",
         "weight": 28.0,
         "time": 0,
@@ -10101,12 +10107,6 @@
         "weight": 56.0,
         "time": 0,
         "alpha_acid": 11.0
-      },
-      {
-        "variety": "Amarillo",
-        "weight": 28.0,
-        "time": 5,
-        "alpha_acid": 8.6
       }
     ],
     "yeast": "Fermentis - Safale - American Ale Yeast US-05",
@@ -10298,18 +10298,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Columbus",
-        "weight": 8.0,
-        "time": 0,
-        "alpha_acid": 15.0
-      },
-      {
-        "variety": "Simcoe",
-        "weight": 5.0,
-        "time": 0,
-        "alpha_acid": 12.7
-      },
-      {
         "variety": "Magnum",
         "weight": 23.0,
         "time": 65,
@@ -10338,6 +10326,18 @@
         "weight": 15.0,
         "time": 2,
         "alpha_acid": 7.0
+      },
+      {
+        "variety": "Columbus",
+        "weight": 8.0,
+        "time": 0,
+        "alpha_acid": 15.0
+      },
+      {
+        "variety": "Simcoe",
+        "weight": 5.0,
+        "time": 0,
+        "alpha_acid": 12.7
       },
       {
         "variety": "Cascade",
@@ -10397,12 +10397,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Centennial",
-        "weight": 25.0,
-        "time": 0,
-        "alpha_acid": 10.0
-      },
-      {
         "variety": "Chinook",
         "weight": 30.0,
         "time": 60,
@@ -10419,6 +10413,12 @@
         "weight": 40.0,
         "time": 5,
         "alpha_acid": 12.7
+      },
+      {
+        "variety": "Centennial",
+        "weight": 25.0,
+        "time": 0,
+        "alpha_acid": 10.0
       },
       {
         "variety": "Cascade",
@@ -10775,6 +10775,12 @@
     ],
     "hop_schedule": [
       {
+        "variety": "Comet",
+        "weight": 14.0,
+        "time": 60,
+        "alpha_acid": 11.0
+      },
+      {
         "variety": "Glacier",
         "weight": 14.0,
         "time": 30,
@@ -10784,12 +10790,6 @@
         "variety": "Comet",
         "weight": 14.0,
         "time": 15,
-        "alpha_acid": 11.0
-      },
-      {
-        "variety": "Comet",
-        "weight": 14.0,
-        "time": 60,
         "alpha_acid": 11.0
       },
       {
@@ -11882,12 +11882,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Styrian Goldings",
-        "weight": 28.0,
-        "time": 0,
-        "alpha_acid": 5.5
-      },
-      {
         "variety": "Saaz",
         "weight": 7.0,
         "time": 60,
@@ -11898,6 +11892,12 @@
         "weight": 21.0,
         "time": 15,
         "alpha_acid": 3.5
+      },
+      {
+        "variety": "Styrian Goldings",
+        "weight": 28.0,
+        "time": 0,
+        "alpha_acid": 5.5
       }
     ],
     "yeast": "Wyeast - Belgian Ardennes 3522",
@@ -13454,16 +13454,16 @@
         "alpha_acid": 13.4
       },
       {
-        "variety": "Chinook",
-        "weight": 21.0,
-        "time": 15,
-        "alpha_acid": 13.4
-      },
-      {
         "variety": "Centennial",
         "weight": 28.0,
         "time": 20,
         "alpha_acid": 7.6
+      },
+      {
+        "variety": "Chinook",
+        "weight": 21.0,
+        "time": 15,
+        "alpha_acid": 13.4
       },
       {
         "variety": "Centennial",
@@ -14194,7 +14194,7 @@
       {
         "variety": "Hallertau Blanc",
         "weight": 28.0,
-        "time": 0,
+        "time": 20,
         "alpha_acid": 8.3
       },
       {
@@ -14206,7 +14206,7 @@
       {
         "variety": "Hallertau Blanc",
         "weight": 28.0,
-        "time": 20,
+        "time": 0,
         "alpha_acid": 8.3
       }
     ],
@@ -14262,6 +14262,12 @@
       },
       {
         "variety": "Saaz",
+        "weight": 6.0,
+        "time": 30,
+        "alpha_acid": 3.7
+      },
+      {
+        "variety": "Saaz",
         "weight": 4.0,
         "time": 0,
         "alpha_acid": 3.7
@@ -14271,12 +14277,6 @@
         "weight": 4.0,
         "time": 0,
         "alpha_acid": 5.6
-      },
-      {
-        "variety": "Saaz",
-        "weight": 6.0,
-        "time": 30,
-        "alpha_acid": 3.7
       }
     ],
     "yeast": "Danstar - Belle Saison Yeast",
@@ -14336,16 +14336,16 @@
         "alpha_acid": 6.4
       },
       {
-        "variety": "Kent Goldings",
-        "weight": 28.0,
-        "time": 10,
-        "alpha_acid": 6.4
-      },
-      {
         "variety": "Citra",
         "weight": 56.0,
         "time": 15,
         "alpha_acid": 14.1
+      },
+      {
+        "variety": "Kent Goldings",
+        "weight": 28.0,
+        "time": 10,
+        "alpha_acid": 6.4
       },
       {
         "variety": "East Kent Goldings",
@@ -15641,12 +15641,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Tettnanger",
-        "weight": 28.0,
-        "time": 0,
-        "alpha_acid": 4.5
-      },
-      {
         "variety": "Saaz",
         "weight": 14.0,
         "time": 60,
@@ -15663,6 +15657,12 @@
         "weight": 28.0,
         "time": 15,
         "alpha_acid": 3.5
+      },
+      {
+        "variety": "Tettnanger",
+        "weight": 28.0,
+        "time": 0,
+        "alpha_acid": 4.5
       }
     ],
     "yeast": "Wyeast - Czech Pils 2278",
@@ -15762,15 +15762,21 @@
     "hop_schedule": [
       {
         "variety": "Hallertauer Mittelfreuh",
-        "weight": 14.0,
-        "time": 0,
+        "weight": 28.0,
+        "time": 20,
         "alpha_acid": 3.2
       },
       {
         "variety": "Perle",
         "weight": 14.0,
-        "time": 0,
+        "time": 20,
         "alpha_acid": 4.5
+      },
+      {
+        "variety": "Tettnanger",
+        "weight": 28.0,
+        "time": 20,
+        "alpha_acid": 3.81
       },
       {
         "variety": "Hallertauer Mittelfreuh",
@@ -15792,21 +15798,15 @@
       },
       {
         "variety": "Hallertauer Mittelfreuh",
-        "weight": 28.0,
-        "time": 20,
+        "weight": 14.0,
+        "time": 0,
         "alpha_acid": 3.2
       },
       {
         "variety": "Perle",
         "weight": 14.0,
-        "time": 20,
+        "time": 0,
         "alpha_acid": 4.5
-      },
-      {
-        "variety": "Tettnanger",
-        "weight": 28.0,
-        "time": 20,
-        "alpha_acid": 3.81
       }
     ],
     "yeast": "Mangrove Jack - Californian Lager M54",
@@ -15952,13 +15952,13 @@
       {
         "variety": "Saaz",
         "weight": 42.0,
-        "time": 15,
+        "time": 20,
         "alpha_acid": 3.5
       },
       {
         "variety": "Saaz",
         "weight": 42.0,
-        "time": 20,
+        "time": 15,
         "alpha_acid": 3.5
       }
     ],
@@ -15996,14 +15996,14 @@
       },
       {
         "variety": "Saaz",
-        "weight": 56.0,
-        "time": 10,
+        "weight": 112.0,
+        "time": 30,
         "alpha_acid": 3.5
       },
       {
         "variety": "Saaz",
-        "weight": 112.0,
-        "time": 30,
+        "weight": 56.0,
+        "time": 10,
         "alpha_acid": 3.5
       }
     ],
@@ -16626,14 +16626,14 @@
     "hop_schedule": [
       {
         "variety": "Mount Hood",
-        "weight": 15.400000000000002,
-        "time": 15,
+        "weight": 39.76,
+        "time": 30,
         "alpha_acid": 6.1
       },
       {
         "variety": "Mount Hood",
-        "weight": 39.76,
-        "time": 30,
+        "weight": 15.400000000000002,
+        "time": 15,
         "alpha_acid": 6.1
       }
     ],
@@ -17078,16 +17078,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Saaz",
-        "weight": 20.0,
-        "time": 10,
-        "alpha_acid": 3.0
-      },
-      {
         "variety": "sladek",
         "weight": 25.0,
         "time": 60,
         "alpha_acid": 7.0
+      },
+      {
+        "variety": "Saaz",
+        "weight": 20.0,
+        "time": 10,
+        "alpha_acid": 3.0
       }
     ],
     "yeast": "Mangrove Jack - Bohemian Lager Yeast M84",
@@ -17755,13 +17755,13 @@
       {
         "variety": "Cascade",
         "weight": 14.0,
-        "time": 5,
+        "time": 15,
         "alpha_acid": 7.0
       },
       {
         "variety": "Cascade",
         "weight": 14.0,
-        "time": 15,
+        "time": 5,
         "alpha_acid": 7.0
       }
     ],
@@ -18567,12 +18567,6 @@
     "hop_schedule": [
       {
         "variety": "Tettnanger",
-        "weight": 50.0,
-        "time": 0,
-        "alpha_acid": 5.0
-      },
-      {
-        "variety": "Tettnanger",
         "weight": 71.0,
         "time": 60,
         "alpha_acid": 5.0
@@ -18581,6 +18575,12 @@
         "variety": "Tettnanger",
         "weight": 57.0,
         "time": 5,
+        "alpha_acid": 5.0
+      },
+      {
+        "variety": "Tettnanger",
+        "weight": 50.0,
+        "time": 0,
         "alpha_acid": 5.0
       }
     ],
@@ -19424,18 +19424,6 @@
         "alpha_acid": 15.0
       },
       {
-        "variety": "Mosaic",
-        "weight": 28.0,
-        "time": 0,
-        "alpha_acid": 12.5
-      },
-      {
-        "variety": "Simcoe",
-        "weight": 28.0,
-        "time": 0,
-        "alpha_acid": 12.7
-      },
-      {
         "variety": "Citra",
         "weight": 28.0,
         "time": 20,
@@ -19446,6 +19434,18 @@
         "weight": 26.0,
         "time": 20,
         "alpha_acid": 15.0
+      },
+      {
+        "variety": "Mosaic",
+        "weight": 28.0,
+        "time": 0,
+        "alpha_acid": 12.5
+      },
+      {
+        "variety": "Simcoe",
+        "weight": 28.0,
+        "time": 0,
+        "alpha_acid": 12.7
       }
     ],
     "yeast": "White Labs - London Fog Ale Yeast WLP066",
@@ -19644,24 +19644,6 @@
     "hop_schedule": [
       {
         "variety": "Crosby Hop Farm - denali",
-        "weight": 7.0,
-        "time": 10,
-        "alpha_acid": 14.0
-      },
-      {
-        "variety": "Citra",
-        "weight": 7.0,
-        "time": 10,
-        "alpha_acid": 11.0
-      },
-      {
-        "variety": "Galaxy",
-        "weight": 7.0,
-        "time": 10,
-        "alpha_acid": 14.25
-      },
-      {
-        "variety": "Crosby Hop Farm - denali",
         "weight": 11.0,
         "time": 25,
         "alpha_acid": 14.0
@@ -19676,6 +19658,24 @@
         "variety": "Galaxy",
         "weight": 11.0,
         "time": 25,
+        "alpha_acid": 14.25
+      },
+      {
+        "variety": "Crosby Hop Farm - denali",
+        "weight": 7.0,
+        "time": 10,
+        "alpha_acid": 14.0
+      },
+      {
+        "variety": "Citra",
+        "weight": 7.0,
+        "time": 10,
+        "alpha_acid": 11.0
+      },
+      {
+        "variety": "Galaxy",
+        "weight": 7.0,
+        "time": 10,
         "alpha_acid": 14.25
       },
       {
@@ -20042,16 +20042,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Magnum",
-        "weight": 14.0,
-        "time": 0,
-        "alpha_acid": 15.0
-      },
-      {
         "variety": "Falconer's Flight",
         "weight": 42.0,
         "time": 15,
         "alpha_acid": 10.0
+      },
+      {
+        "variety": "Magnum",
+        "weight": 14.0,
+        "time": 0,
+        "alpha_acid": 15.0
       },
       {
         "variety": "Falconer's Flight",
@@ -20119,6 +20119,12 @@
       {
         "variety": "Cascade",
         "weight": 14.0,
+        "time": 10,
+        "alpha_acid": 7.1
+      },
+      {
+        "variety": "Cascade",
+        "weight": 14.0,
         "time": 0,
         "alpha_acid": 7.1
       },
@@ -20127,12 +20133,6 @@
         "weight": 14.0,
         "time": 0,
         "alpha_acid": 12.8
-      },
-      {
-        "variety": "Cascade",
-        "weight": 14.0,
-        "time": 10,
-        "alpha_acid": 7.1
       }
     ],
     "yeast": "Imperial Yeast - B44 Whiteout",
@@ -20301,8 +20301,8 @@
     "hop_schedule": [
       {
         "variety": "Fuggles",
-        "weight": 28.0,
-        "time": 0,
+        "weight": 14.0,
+        "time": 60,
         "alpha_acid": 4.2
       },
       {
@@ -20319,8 +20319,8 @@
       },
       {
         "variety": "Fuggles",
-        "weight": 14.0,
-        "time": 60,
+        "weight": 28.0,
+        "time": 0,
         "alpha_acid": 4.2
       }
     ],
@@ -20876,12 +20876,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Citra",
-        "weight": 42.0,
-        "time": 0,
-        "alpha_acid": 11.0
-      },
-      {
         "variety": "Galaxy",
         "weight": 42.0,
         "time": 15,
@@ -20897,6 +20891,12 @@
         "variety": "Citra",
         "weight": 42.0,
         "time": 10,
+        "alpha_acid": 11.0
+      },
+      {
+        "variety": "Citra",
+        "weight": 42.0,
+        "time": 0,
         "alpha_acid": 11.0
       }
     ],
@@ -20933,12 +20933,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Citra",
-        "weight": 42.0,
-        "time": 0,
-        "alpha_acid": 11.0
-      },
-      {
         "variety": "Galaxy",
         "weight": 42.0,
         "time": 15,
@@ -20954,6 +20948,12 @@
         "variety": "Citra",
         "weight": 42.0,
         "time": 10,
+        "alpha_acid": 11.0
+      },
+      {
+        "variety": "Citra",
+        "weight": 42.0,
+        "time": 0,
         "alpha_acid": 11.0
       }
     ],
@@ -21488,12 +21488,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "East Kent Goldings",
-        "weight": 28.0,
-        "time": 0,
-        "alpha_acid": 5.0
-      },
-      {
         "variety": "Fuggles",
         "weight": 28.0,
         "time": 30,
@@ -21503,6 +21497,12 @@
         "variety": "East Kent Goldings",
         "weight": 28.0,
         "time": 20,
+        "alpha_acid": 5.0
+      },
+      {
+        "variety": "East Kent Goldings",
+        "weight": 28.0,
+        "time": 0,
         "alpha_acid": 5.0
       }
     ],
@@ -22041,18 +22041,6 @@
     "hop_schedule": [
       {
         "variety": "Citra",
-        "weight": 25.0,
-        "time": 10,
-        "alpha_acid": 12.6
-      },
-      {
-        "variety": "Amarillo",
-        "weight": 50.0,
-        "time": 10,
-        "alpha_acid": 8.6
-      },
-      {
-        "variety": "Citra",
         "weight": 40.0,
         "time": 15,
         "alpha_acid": 12.6
@@ -22068,6 +22056,18 @@
         "weight": 40.0,
         "time": 15,
         "alpha_acid": 11.3
+      },
+      {
+        "variety": "Citra",
+        "weight": 25.0,
+        "time": 10,
+        "alpha_acid": 12.6
+      },
+      {
+        "variety": "Amarillo",
+        "weight": 50.0,
+        "time": 10,
+        "alpha_acid": 8.6
       },
       {
         "variety": "Citra",
@@ -22251,24 +22251,6 @@
     "hop_schedule": [
       {
         "variety": "Mosaic",
-        "weight": 4.2,
-        "time": 0,
-        "alpha_acid": 13.1
-      },
-      {
-        "variety": "Citra",
-        "weight": 4.2,
-        "time": 0,
-        "alpha_acid": 12.5
-      },
-      {
-        "variety": "El Dorado",
-        "weight": 4.2,
-        "time": 0,
-        "alpha_acid": 14.8
-      },
-      {
-        "variety": "Mosaic",
         "weight": 5.6000000000000005,
         "time": 40,
         "alpha_acid": 13.1
@@ -22319,6 +22301,24 @@
         "variety": "El Dorado",
         "weight": 16.8,
         "time": 20,
+        "alpha_acid": 14.8
+      },
+      {
+        "variety": "Mosaic",
+        "weight": 4.2,
+        "time": 0,
+        "alpha_acid": 13.1
+      },
+      {
+        "variety": "Citra",
+        "weight": 4.2,
+        "time": 0,
+        "alpha_acid": 12.5
+      },
+      {
+        "variety": "El Dorado",
+        "weight": 4.2,
+        "time": 0,
         "alpha_acid": 14.8
       },
       {
@@ -22853,34 +22853,34 @@
         "alpha_acid": 14.7
       },
       {
-        "variety": "Citra",
-        "weight": 84.0,
-        "time": 0,
-        "alpha_acid": 11.0
-      },
-      {
-        "variety": "Mosaic",
-        "weight": 84.0,
-        "time": 0,
-        "alpha_acid": 12.5
-      },
-      {
-        "variety": "Citra",
-        "weight": 84.0,
-        "time": 0,
-        "alpha_acid": 11.0
-      },
-      {
-        "variety": "Mosaic",
-        "weight": 84.0,
-        "time": 0,
-        "alpha_acid": 12.5
-      },
-      {
         "variety": "Warrior",
         "weight": 8.4,
         "time": 30,
         "alpha_acid": 14.7
+      },
+      {
+        "variety": "Citra",
+        "weight": 84.0,
+        "time": 0,
+        "alpha_acid": 11.0
+      },
+      {
+        "variety": "Mosaic",
+        "weight": 84.0,
+        "time": 0,
+        "alpha_acid": 12.5
+      },
+      {
+        "variety": "Citra",
+        "weight": 84.0,
+        "time": 0,
+        "alpha_acid": 11.0
+      },
+      {
+        "variety": "Mosaic",
+        "weight": 84.0,
+        "time": 0,
+        "alpha_acid": 12.5
       }
     ],
     "yeast": "RVA Yeast Labs - RVA 132 Manchester Ale",
@@ -22928,12 +22928,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Ella",
-        "weight": 56.0,
-        "time": 10,
-        "alpha_acid": 15.1
-      },
-      {
         "variety": "Cascade",
         "weight": 56.0,
         "time": 15,
@@ -22943,6 +22937,12 @@
         "variety": "Ella",
         "weight": 56.0,
         "time": 15,
+        "alpha_acid": 15.1
+      },
+      {
+        "variety": "Ella",
+        "weight": 56.0,
+        "time": 10,
         "alpha_acid": 15.1
       },
       {
@@ -23247,6 +23247,12 @@
       },
       {
         "variety": "Fuggles",
+        "weight": 336.0,
+        "time": 30,
+        "alpha_acid": 4.5
+      },
+      {
+        "variety": "Fuggles",
         "weight": 112.0,
         "time": 10,
         "alpha_acid": 4.5
@@ -23256,12 +23262,6 @@
         "weight": 112.0,
         "time": 10,
         "alpha_acid": 7.0
-      },
-      {
-        "variety": "Fuggles",
-        "weight": 336.0,
-        "time": 30,
-        "alpha_acid": 4.5
       }
     ],
     "yeast": "Wyeast - American Ale 1056",
@@ -23812,12 +23812,6 @@
       {
         "variety": "Horizon",
         "weight": 14.0,
-        "time": 0,
-        "alpha_acid": 12.5
-      },
-      {
-        "variety": "Horizon",
-        "weight": 14.0,
         "time": 60,
         "alpha_acid": 12.5
       },
@@ -23831,6 +23825,12 @@
         "variety": "Horizon",
         "weight": 14.0,
         "time": 15,
+        "alpha_acid": 12.5
+      },
+      {
+        "variety": "Horizon",
+        "weight": 14.0,
+        "time": 0,
         "alpha_acid": 12.5
       },
       {
@@ -24476,12 +24476,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Summit",
-        "weight": 15.0,
-        "time": 0,
-        "alpha_acid": 16.0
-      },
-      {
         "variety": "Willamette",
         "weight": 10.0,
         "time": 5,
@@ -24492,6 +24486,12 @@
         "weight": 20.0,
         "time": 5,
         "alpha_acid": 3.2
+      },
+      {
+        "variety": "Summit",
+        "weight": 15.0,
+        "time": 0,
+        "alpha_acid": 16.0
       }
     ],
     "yeast": "- -",
@@ -24878,16 +24878,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "East Kent Goldings",
-        "weight": 25.0,
-        "time": 30,
-        "alpha_acid": 5.0
-      },
-      {
         "variety": "Perle",
         "weight": 42.0,
         "time": 60,
         "alpha_acid": 8.2
+      },
+      {
+        "variety": "East Kent Goldings",
+        "weight": 25.0,
+        "time": 30,
+        "alpha_acid": 5.0
       }
     ],
     "yeast": "Wyeast - Irish Ale 1084",
@@ -26006,6 +26006,12 @@
     ],
     "hop_schedule": [
       {
+        "variety": "Mandarina Bavaria",
+        "weight": 10.0,
+        "time": 5,
+        "alpha_acid": 6.7
+      },
+      {
         "variety": "Target",
         "weight": 15.0,
         "time": 0,
@@ -26015,12 +26021,6 @@
         "variety": "Mandarina Bavaria",
         "weight": 20.0,
         "time": 0,
-        "alpha_acid": 6.7
-      },
-      {
-        "variety": "Mandarina Bavaria",
-        "weight": 10.0,
-        "time": 5,
         "alpha_acid": 6.7
       },
       {
@@ -26468,12 +26468,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Amarillo",
-        "weight": 84.0,
-        "time": 0,
-        "alpha_acid": 8.6
-      },
-      {
         "variety": "Warrior",
         "weight": 42.0,
         "time": 60,
@@ -26519,6 +26513,12 @@
         "variety": "Amarillo",
         "weight": 84.0,
         "time": 1,
+        "alpha_acid": 8.6
+      },
+      {
+        "variety": "Amarillo",
+        "weight": 84.0,
+        "time": 0,
         "alpha_acid": 8.6
       },
       {
@@ -26585,12 +26585,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Centennial",
-        "weight": 30.800000000000004,
-        "time": 15,
-        "alpha_acid": 12.5
-      },
-      {
         "variety": "Mosaic",
         "weight": 30.800000000000004,
         "time": 20,
@@ -26607,6 +26601,12 @@
         "weight": 30.800000000000004,
         "time": 20,
         "alpha_acid": 10.0
+      },
+      {
+        "variety": "Centennial",
+        "weight": 30.800000000000004,
+        "time": 15,
+        "alpha_acid": 12.5
       },
       {
         "variety": "Mosaic",
@@ -27139,25 +27139,25 @@
       {
         "variety": "Cascade",
         "weight": 20.0,
-        "time": 5,
+        "time": 10,
         "alpha_acid": 7.0
       },
       {
         "variety": "Citra",
         "weight": 20.0,
-        "time": 5,
+        "time": 10,
         "alpha_acid": 13.0
       },
       {
         "variety": "Cascade",
         "weight": 20.0,
-        "time": 10,
+        "time": 5,
         "alpha_acid": 7.0
       },
       {
         "variety": "Citra",
         "weight": 20.0,
-        "time": 10,
+        "time": 5,
         "alpha_acid": 13.0
       },
       {
@@ -28032,13 +28032,13 @@
       {
         "variety": "Northern Brewer",
         "weight": 40.0,
-        "time": 0,
+        "time": 60,
         "alpha_acid": 7.8
       },
       {
         "variety": "Northern Brewer",
         "weight": 40.0,
-        "time": 60,
+        "time": 0,
         "alpha_acid": 7.8
       }
     ],
@@ -28537,16 +28537,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Columbus",
-        "weight": 12.0,
-        "time": 0,
-        "alpha_acid": 16.8
-      },
-      {
         "variety": "cascade",
         "weight": 10.0,
         "time": 12,
         "alpha_acid": 12.0
+      },
+      {
+        "variety": "Columbus",
+        "weight": 12.0,
+        "time": 0,
+        "alpha_acid": 16.8
       }
     ],
     "yeast": "Fermentis - Saflager - German Lager Yeast W-34/70",
@@ -29743,16 +29743,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Jarrylo",
-        "weight": 30.0,
-        "time": 10,
-        "alpha_acid": 16.3
-      },
-      {
         "variety": "Perle",
         "weight": 15.0,
         "time": 25,
         "alpha_acid": 8.2
+      },
+      {
+        "variety": "Jarrylo",
+        "weight": 30.0,
+        "time": 10,
+        "alpha_acid": 16.3
       },
       {
         "variety": "Jarrylo",
@@ -30493,16 +30493,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Cluster",
-        "weight": 28.0,
-        "time": 0,
-        "alpha_acid": 7.5
-      },
-      {
         "variety": "Saaz",
         "weight": 28.0,
         "time": 10,
         "alpha_acid": 3.5
+      },
+      {
+        "variety": "Cluster",
+        "weight": 28.0,
+        "time": 0,
+        "alpha_acid": 7.5
       }
     ],
     "yeast": "White Labs - Cream Ale Yeast Blend WLP080",
@@ -30583,16 +30583,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Glacier",
-        "weight": 15.0,
-        "time": 0,
-        "alpha_acid": 5.6
-      },
-      {
         "variety": "Magnum",
         "weight": 20.0,
         "time": 45,
         "alpha_acid": 13.1
+      },
+      {
+        "variety": "Glacier",
+        "weight": 15.0,
+        "time": 0,
+        "alpha_acid": 5.6
       },
       {
         "variety": "Vanguard",
@@ -30697,12 +30697,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Chinook",
-        "weight": 122.08000000000001,
-        "time": 0,
-        "alpha_acid": 13.0
-      },
-      {
         "variety": "Nugget",
         "weight": 81.48,
         "time": 10,
@@ -30713,6 +30707,12 @@
         "weight": 81.48,
         "time": 5,
         "alpha_acid": 14.0
+      },
+      {
+        "variety": "Chinook",
+        "weight": 122.08000000000001,
+        "time": 0,
+        "alpha_acid": 13.0
       }
     ],
     "yeast": "Wyeast - American Ale II 1272",
@@ -31780,15 +31780,15 @@
         "alpha_acid": 4.5
       },
       {
-        "variety": "Fuggles",
-        "weight": 16.8,
-        "time": 15,
-        "alpha_acid": 4.5
-      },
-      {
         "variety": "Goldings",
         "weight": 28.0,
         "time": 30,
+        "alpha_acid": 4.5
+      },
+      {
+        "variety": "Fuggles",
+        "weight": 16.8,
+        "time": 15,
         "alpha_acid": 4.5
       }
     ],
@@ -31900,16 +31900,16 @@
         "alpha_acid": 8.6
       },
       {
-        "variety": "Saaz",
-        "weight": 56.0,
-        "time": 10,
-        "alpha_acid": 3.5
-      },
-      {
         "variety": "Willamette",
         "weight": 28.0,
         "time": 15,
         "alpha_acid": 4.5
+      },
+      {
+        "variety": "Saaz",
+        "weight": 56.0,
+        "time": 10,
+        "alpha_acid": 3.5
       }
     ],
     "yeast": "Danstar - Nottingham Ale Yeast",
@@ -31975,15 +31975,15 @@
         "alpha_acid": 4.5
       },
       {
-        "variety": "Fuggles",
-        "weight": 10.0,
-        "time": 5,
-        "alpha_acid": 4.5
-      },
-      {
         "variety": "Willamette",
         "weight": 20.0,
         "time": 15,
+        "alpha_acid": 4.5
+      },
+      {
+        "variety": "Fuggles",
+        "weight": 10.0,
+        "time": 5,
         "alpha_acid": 4.5
       },
       {
@@ -32212,12 +32212,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Saaz",
-        "weight": 30.0,
-        "time": 0,
-        "alpha_acid": 3.5
-      },
-      {
         "variety": "Perle",
         "weight": 20.0,
         "time": 90,
@@ -32233,6 +32227,12 @@
         "variety": "Saaz",
         "weight": 25.0,
         "time": 5,
+        "alpha_acid": 3.5
+      },
+      {
+        "variety": "Saaz",
+        "weight": 30.0,
+        "time": 0,
         "alpha_acid": 3.5
       }
     ],
@@ -32886,13 +32886,13 @@
       {
         "variety": "Hallertau Hersbrucker",
         "weight": 56.0,
-        "time": 15,
+        "time": 30,
         "alpha_acid": 4.0
       },
       {
         "variety": "Hallertau Hersbrucker",
         "weight": 56.0,
-        "time": 30,
+        "time": 15,
         "alpha_acid": 4.0
       }
     ],
@@ -33136,12 +33136,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Loral",
-        "weight": 42.0,
-        "time": 0,
-        "alpha_acid": 9.0
-      },
-      {
         "variety": "Northern Brewer - Hallertau",
         "weight": 28.0,
         "time": 15,
@@ -33152,6 +33146,12 @@
         "weight": 14.0,
         "time": 15,
         "alpha_acid": 4.3
+      },
+      {
+        "variety": "Loral",
+        "weight": 42.0,
+        "time": 0,
+        "alpha_acid": 9.0
       }
     ],
     "yeast": "Mangrove Jack - Californian Lager M54",
@@ -33325,16 +33325,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Fuggles",
-        "weight": 28.0,
-        "time": 30,
-        "alpha_acid": 3.5
-      },
-      {
         "variety": "East Kent Goldings",
         "weight": 14.0,
         "time": 60,
         "alpha_acid": 5.8
+      },
+      {
+        "variety": "Fuggles",
+        "weight": 28.0,
+        "time": 30,
+        "alpha_acid": 3.5
       }
     ],
     "yeast": "Danstar - Nottingham Ale Yeast",
@@ -33447,13 +33447,13 @@
       {
         "variety": "Saaz",
         "weight": 56.0,
-        "time": 10,
+        "time": 30,
         "alpha_acid": 3.5
       },
       {
         "variety": "Saaz",
         "weight": 56.0,
-        "time": 30,
+        "time": 10,
         "alpha_acid": 3.5
       }
     ],
@@ -33655,12 +33655,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Mount Hood",
-        "weight": 42.0,
-        "time": 0,
-        "alpha_acid": 4.8
-      },
-      {
         "variety": "Chinook",
         "weight": 119.0,
         "time": 60,
@@ -33670,6 +33664,12 @@
         "variety": "Mount Hood",
         "weight": 42.0,
         "time": 30,
+        "alpha_acid": 4.8
+      },
+      {
+        "variety": "Mount Hood",
+        "weight": 42.0,
+        "time": 0,
         "alpha_acid": 4.8
       },
       {
@@ -33787,12 +33787,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Waimea",
-        "weight": 10.0,
-        "time": 0,
-        "alpha_acid": 18.0
-      },
-      {
         "variety": "Wakatu",
         "weight": 10.0,
         "time": 60,
@@ -33803,6 +33797,12 @@
         "weight": 10.0,
         "time": 15,
         "alpha_acid": 3.4
+      },
+      {
+        "variety": "Waimea",
+        "weight": 10.0,
+        "time": 0,
+        "alpha_acid": 18.0
       }
     ],
     "yeast": "Fermentis - Safale - American Ale Yeast US-05",
@@ -34773,12 +34773,6 @@
       {
         "variety": "Domestic Hallertau",
         "weight": 28.0,
-        "time": 0,
-        "alpha_acid": 3.9
-      },
-      {
-        "variety": "Domestic Hallertau",
-        "weight": 28.0,
         "time": 40,
         "alpha_acid": 3.9
       },
@@ -34787,6 +34781,12 @@
         "weight": 28.0,
         "time": 18,
         "alpha_acid": 3.5
+      },
+      {
+        "variety": "Domestic Hallertau",
+        "weight": 28.0,
+        "time": 0,
+        "alpha_acid": 3.9
       }
     ],
     "yeast": "Wyeast - Octoberfest Lager Blend 2633",
@@ -35431,16 +35431,16 @@
         "alpha_acid": 4.9
       },
       {
-        "variety": "East Kent Goldings",
-        "weight": 28.0,
-        "time": 10,
-        "alpha_acid": 5.8
-      },
-      {
         "variety": "Styrian Goldings",
         "weight": 28.0,
         "time": 15,
         "alpha_acid": 2.6
+      },
+      {
+        "variety": "East Kent Goldings",
+        "weight": 28.0,
+        "time": 10,
+        "alpha_acid": 5.8
       }
     ],
     "yeast": "Wyeast - West Yorkshire 1469",
@@ -35962,6 +35962,12 @@
     ],
     "hop_schedule": [
       {
+        "variety": "Cascade",
+        "weight": 28.0,
+        "time": 60,
+        "alpha_acid": 6.3
+      },
+      {
         "variety": "Citra",
         "weight": 9.24,
         "time": 30,
@@ -36020,12 +36026,6 @@
         "weight": 28.0,
         "time": 1,
         "alpha_acid": 14.3
-      },
-      {
-        "variety": "Cascade",
-        "weight": 28.0,
-        "time": 60,
-        "alpha_acid": 6.3
       }
     ],
     "yeast": "Fermentis - Safale - American Ale Yeast US-05",
@@ -36505,16 +36505,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Magnum",
-        "weight": 21.0,
-        "time": 0,
-        "alpha_acid": 10.5
-      },
-      {
         "variety": "Tettnanger",
         "weight": 28.0,
         "time": 15,
         "alpha_acid": 2.8
+      },
+      {
+        "variety": "Magnum",
+        "weight": 21.0,
+        "time": 0,
+        "alpha_acid": 10.5
       }
     ],
     "yeast": "Mangrove Jack - Californian Lager M54",
@@ -37334,12 +37334,6 @@
     "hop_schedule": [
       {
         "variety": "Hallertau Mittelfruh",
-        "weight": 11.0,
-        "time": 0,
-        "alpha_acid": 3.75
-      },
-      {
-        "variety": "Hallertau Mittelfruh",
         "weight": 30.0,
         "time": 30,
         "alpha_acid": 3.75
@@ -37348,6 +37342,12 @@
         "variety": "Hallertau Mittelfruh",
         "weight": 11.0,
         "time": 5,
+        "alpha_acid": 3.75
+      },
+      {
+        "variety": "Hallertau Mittelfruh",
+        "weight": 11.0,
+        "time": 0,
         "alpha_acid": 3.75
       }
     ],
@@ -37753,16 +37753,16 @@
         "alpha_acid": 11.0
       },
       {
-        "variety": "Citra",
-        "weight": 40.0,
-        "time": 10,
-        "alpha_acid": 11.0
-      },
-      {
         "variety": "Centennial",
         "weight": 50.0,
         "time": 30,
         "alpha_acid": 10.0
+      },
+      {
+        "variety": "Citra",
+        "weight": 40.0,
+        "time": 10,
+        "alpha_acid": 11.0
       }
     ],
     "yeast": "Fermentis - Safale - English Ale Yeast S-04",
@@ -39550,10 +39550,10 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Fuggles",
-        "weight": 50.0,
-        "time": 0,
-        "alpha_acid": 4.5
+        "variety": "East Kent Goldings",
+        "weight": 10.0,
+        "time": 30,
+        "alpha_acid": 5.0
       },
       {
         "variety": "East Kent Goldings",
@@ -39568,16 +39568,16 @@
         "alpha_acid": 5.0
       },
       {
+        "variety": "Fuggles",
+        "weight": 50.0,
+        "time": 0,
+        "alpha_acid": 4.5
+      },
+      {
         "variety": "Target",
         "weight": 50.0,
         "time": 0,
         "alpha_acid": 11.5
-      },
-      {
-        "variety": "East Kent Goldings",
-        "weight": 10.0,
-        "time": 30,
-        "alpha_acid": 5.0
       }
     ],
     "yeast": "Danstar - Windsor Ale Yeast",
@@ -40054,15 +40054,15 @@
     ],
     "hop_schedule": [
       {
-        "variety": "STYRIAN DANA",
-        "weight": 25.0,
-        "time": 0,
-        "alpha_acid": 13.2
+        "variety": "Saaz",
+        "weight": 15.0,
+        "time": 30,
+        "alpha_acid": 2.73
       },
       {
         "variety": "Saaz",
         "weight": 15.0,
-        "time": 30,
+        "time": 20,
         "alpha_acid": 2.73
       },
       {
@@ -40070,6 +40070,12 @@
         "weight": 20.0,
         "time": 10,
         "alpha_acid": 2.1
+      },
+      {
+        "variety": "STYRIAN DANA",
+        "weight": 25.0,
+        "time": 0,
+        "alpha_acid": 13.2
       },
       {
         "variety": "Hallertau Hersbrucker ",
@@ -40082,12 +40088,6 @@
         "weight": 10.0,
         "time": 0,
         "alpha_acid": 2.1
-      },
-      {
-        "variety": "Saaz",
-        "weight": 15.0,
-        "time": 20,
-        "alpha_acid": 2.73
       }
     ],
     "yeast": "Fermentis - Safale - German Ale Yeast K-97",
@@ -41522,16 +41522,16 @@
         "alpha_acid": 11.0
       },
       {
-        "variety": "Willamette",
-        "weight": 28.0,
-        "time": 15,
-        "alpha_acid": 4.2
-      },
-      {
         "variety": "Centennial",
         "weight": 28.0,
         "time": 30,
         "alpha_acid": 9.3
+      },
+      {
+        "variety": "Willamette",
+        "weight": 28.0,
+        "time": 15,
+        "alpha_acid": 4.2
       }
     ],
     "yeast": "Fermentis - Safale - English Ale Yeast S-04",
@@ -42065,6 +42065,12 @@
     ],
     "hop_schedule": [
       {
+        "variety": "Fuggles",
+        "weight": 10.0,
+        "time": 69,
+        "alpha_acid": 4.5
+      },
+      {
         "variety": "Challenger",
         "weight": 30.0,
         "time": 60,
@@ -42075,12 +42081,6 @@
         "weight": 30.0,
         "time": 30,
         "alpha_acid": 8.5
-      },
-      {
-        "variety": "Fuggles",
-        "weight": 10.0,
-        "time": 69,
-        "alpha_acid": 4.5
       }
     ],
     "yeast": "White Labs - Irish Ale Yeast WLP004",
@@ -42860,16 +42860,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Saaz",
-        "weight": 28.0,
-        "time": 10,
-        "alpha_acid": 3.75
-      },
-      {
         "variety": "Fuggles",
         "weight": 56.0,
         "time": 60,
         "alpha_acid": 4.5
+      },
+      {
+        "variety": "Saaz",
+        "weight": 28.0,
+        "time": 10,
+        "alpha_acid": 3.75
       }
     ],
     "yeast": "White Labs - San Francisco Lager Yeast WLP810",
@@ -43154,12 +43154,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Nelson Sauvin",
-        "weight": 15.0,
-        "time": 0,
-        "alpha_acid": 12.5
-      },
-      {
         "variety": "Styrian Goldings",
         "weight": 10.0,
         "time": 15,
@@ -43176,6 +43170,12 @@
         "weight": 10.0,
         "time": 5,
         "alpha_acid": 8.6
+      },
+      {
+        "variety": "Nelson Sauvin",
+        "weight": 15.0,
+        "time": 0,
+        "alpha_acid": 12.5
       },
       {
         "variety": "Citra",
@@ -44894,10 +44894,10 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Saaz",
-        "weight": 10.0,
-        "time": 0,
-        "alpha_acid": 2.9
+        "variety": "Chinook",
+        "weight": 3.0,
+        "time": 45,
+        "alpha_acid": 13.0
       },
       {
         "variety": "Hallertau Hersbrucker",
@@ -44912,10 +44912,10 @@
         "alpha_acid": 4.8
       },
       {
-        "variety": "Chinook",
-        "weight": 3.0,
-        "time": 45,
-        "alpha_acid": 13.0
+        "variety": "Saaz",
+        "weight": 10.0,
+        "time": 0,
+        "alpha_acid": 2.9
       }
     ],
     "yeast": "Fermentis - Safale - American Ale Yeast US-05",
@@ -45388,6 +45388,12 @@
       {
         "variety": "Kent Goldings",
         "weight": 28.0,
+        "time": 60,
+        "alpha_acid": 5.3
+      },
+      {
+        "variety": "Kent Goldings",
+        "weight": 28.0,
         "time": 30,
         "alpha_acid": 5.3
       },
@@ -45395,12 +45401,6 @@
         "variety": "Fuggles",
         "weight": 28.0,
         "time": 30,
-        "alpha_acid": 5.3
-      },
-      {
-        "variety": "Kent Goldings",
-        "weight": 28.0,
-        "time": 60,
         "alpha_acid": 5.3
       }
     ],
@@ -45650,16 +45650,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Magnum",
-        "weight": 14.0,
-        "time": 0,
-        "alpha_acid": 15.0
-      },
-      {
         "variety": "Mandarina Bavaria",
         "weight": 28.0,
         "time": 15,
         "alpha_acid": 6.8
+      },
+      {
+        "variety": "Magnum",
+        "weight": 14.0,
+        "time": 0,
+        "alpha_acid": 15.0
       }
     ],
     "yeast": "Danstar - London ESB Yeast",
@@ -46562,6 +46562,12 @@
         "alpha_acid": 13.0
       },
       {
+        "variety": "Chinook",
+        "weight": 14.0,
+        "time": 20,
+        "alpha_acid": 13.0
+      },
+      {
         "variety": "Simcoe",
         "weight": 28.0,
         "time": 15,
@@ -46572,12 +46578,6 @@
         "weight": 28.0,
         "time": 0,
         "alpha_acid": 12.7
-      },
-      {
-        "variety": "Chinook",
-        "weight": 14.0,
-        "time": 20,
-        "alpha_acid": 13.0
       }
     ],
     "yeast": "Fermentis - Safale - American Ale Yeast US-05",
@@ -47159,10 +47159,10 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Saaz",
-        "weight": 28.0,
-        "time": 15,
-        "alpha_acid": 3.0
+        "variety": "Cascade",
+        "weight": 14.0,
+        "time": 60,
+        "alpha_acid": 7.0
       },
       {
         "variety": "Cascade",
@@ -47171,10 +47171,10 @@
         "alpha_acid": 7.0
       },
       {
-        "variety": "Cascade",
-        "weight": 14.0,
-        "time": 60,
-        "alpha_acid": 7.0
+        "variety": "Saaz",
+        "weight": 28.0,
+        "time": 15,
+        "alpha_acid": 3.0
       }
     ],
     "yeast": "White Labs - American Hefeweizen Ale Yeast WLP320",
@@ -47502,14 +47502,14 @@
     "hop_schedule": [
       {
         "variety": "Tettnanger",
-        "weight": 28.0,
-        "time": 0,
+        "weight": 7.0,
+        "time": 15,
         "alpha_acid": 3.81
       },
       {
         "variety": "Tettnanger",
-        "weight": 7.0,
-        "time": 15,
+        "weight": 28.0,
+        "time": 0,
         "alpha_acid": 3.81
       }
     ],
@@ -48033,14 +48033,14 @@
     "hop_schedule": [
       {
         "variety": "East Kent Goldings",
-        "weight": 35.0,
-        "time": 0,
+        "weight": 15.0,
+        "time": 15,
         "alpha_acid": 5.0
       },
       {
         "variety": "East Kent Goldings",
-        "weight": 15.0,
-        "time": 15,
+        "weight": 35.0,
+        "time": 0,
         "alpha_acid": 5.0
       }
     ],
@@ -49050,12 +49050,6 @@
         "alpha_acid": 15.0
       },
       {
-        "variety": "toasted coconut",
-        "weight": 183.4,
-        "time": 0,
-        "alpha_acid": 1.0
-      },
-      {
         "variety": "Cascade",
         "weight": 22.400000000000002,
         "time": 15,
@@ -49066,6 +49060,12 @@
         "weight": 18.2,
         "time": 15,
         "alpha_acid": 12.5
+      },
+      {
+        "variety": "toasted coconut",
+        "weight": 183.4,
+        "time": 0,
+        "alpha_acid": 1.0
       },
       {
         "variety": "Mosaic",
@@ -49263,16 +49263,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Cascade",
-        "weight": 60.0,
-        "time": 10,
-        "alpha_acid": 7.0
-      },
-      {
         "variety": "Pioneer",
         "weight": 40.0,
         "time": 60,
         "alpha_acid": 9.3
+      },
+      {
+        "variety": "Cascade",
+        "weight": 60.0,
+        "time": 10,
+        "alpha_acid": 7.0
       },
       {
         "variety": "Cascade",
@@ -50462,16 +50462,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Hallertau Mittelfruh",
-        "weight": 15.0,
-        "time": 20,
-        "alpha_acid": 3.5
-      },
-      {
         "variety": "Willamette",
         "weight": 10.0,
         "time": 75,
         "alpha_acid": 4.5
+      },
+      {
+        "variety": "Hallertau Mittelfruh",
+        "weight": 15.0,
+        "time": 20,
+        "alpha_acid": 3.5
       }
     ],
     "yeast": "Fermentis - Safale - American Ale Yeast US-05",
@@ -50729,10 +50729,10 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Spalter Select (Germany)",
+        "variety": "Cascade",
         "weight": 20.0,
-        "time": 25,
-        "alpha_acid": 5.6
+        "time": 75,
+        "alpha_acid": 7.0
       },
       {
         "variety": "Cascade",
@@ -50741,10 +50741,10 @@
         "alpha_acid": 7.0
       },
       {
-        "variety": "Cascade",
+        "variety": "Spalter Select (Germany)",
         "weight": 20.0,
-        "time": 75,
-        "alpha_acid": 7.0
+        "time": 25,
+        "alpha_acid": 5.6
       }
     ],
     "yeast": "Mangrove Jack - Liberty Bell Ale M36",
@@ -51080,12 +51080,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Saaz",
-        "weight": 56.0,
-        "time": 0,
-        "alpha_acid": 3.5
-      },
-      {
         "variety": "Tettnang",
         "weight": 56.0,
         "time": 60,
@@ -51102,6 +51096,12 @@
         "weight": 56.0,
         "time": 10,
         "alpha_acid": 4.5
+      },
+      {
+        "variety": "Saaz",
+        "weight": 56.0,
+        "time": 0,
+        "alpha_acid": 3.5
       }
     ],
     "yeast": "White Labs - Mexican Lager Yeast WLP940",
@@ -51270,14 +51270,14 @@
       },
       {
         "variety": "Nelson Sauvin",
-        "weight": 18.0,
-        "time": 1,
+        "weight": 20.0,
+        "time": 10,
         "alpha_acid": 11.9
       },
       {
         "variety": "Nelson Sauvin",
-        "weight": 20.0,
-        "time": 10,
+        "weight": 18.0,
+        "time": 1,
         "alpha_acid": 11.9
       }
     ],
@@ -51686,12 +51686,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Cluster",
-        "weight": 28.0,
-        "time": 0,
-        "alpha_acid": 6.5
-      },
-      {
         "variety": "Crystal",
         "weight": 28.0,
         "time": 30,
@@ -51708,6 +51702,12 @@
         "weight": 28.0,
         "time": 30,
         "alpha_acid": 3.5
+      },
+      {
+        "variety": "Cluster",
+        "weight": 28.0,
+        "time": 0,
+        "alpha_acid": 6.5
       },
       {
         "variety": "Tettnanger",
@@ -51761,12 +51761,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "New Zealand Hops - Pacific Gem (14.3 AA) / 7 Ounces",
-        "weight": 28.0,
-        "time": 15,
-        "alpha_acid": 14.3
-      },
-      {
         "variety": "Amarillo (8.6 AA) / 3.5 Ounces",
         "weight": 28.0,
         "time": 30,
@@ -51783,6 +51777,12 @@
         "weight": 28.0,
         "time": 30,
         "alpha_acid": 3.8
+      },
+      {
+        "variety": "New Zealand Hops - Pacific Gem (14.3 AA) / 7 Ounces",
+        "weight": 28.0,
+        "time": 15,
+        "alpha_acid": 14.3
       },
       {
         "variety": "Amarillo (8.6 AA) / 3.5 Ounces",
@@ -51860,12 +51860,6 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Magnum",
-        "weight": 14.0,
-        "time": 0,
-        "alpha_acid": 15.0
-      },
-      {
         "variety": "Hallertau Hersbrucker",
         "weight": 28.0,
         "time": 30,
@@ -51894,6 +51888,12 @@
         "weight": 28.0,
         "time": 30,
         "alpha_acid": 3.8
+      },
+      {
+        "variety": "Magnum",
+        "weight": 14.0,
+        "time": 0,
+        "alpha_acid": 15.0
       }
     ],
     "yeast": "Wyeast - Trappist High Gravity 3787",
@@ -52138,34 +52138,34 @@
     ],
     "hop_schedule": [
       {
+        "variety": "Falconer's Flight 7c's",
+        "weight": 30.0,
+        "time": 30,
+        "alpha_acid": 9.1
+      },
+      {
+        "variety": "Cascade",
+        "weight": 30.0,
+        "time": 30,
+        "alpha_acid": 6.9
+      },
+      {
+        "variety": "Falconer's Flight 7c's",
+        "weight": 20.0,
+        "time": 10,
+        "alpha_acid": 9.1
+      },
+      {
+        "variety": "Cascade",
+        "weight": 20.0,
+        "time": 10,
+        "alpha_acid": 6.9
+      },
+      {
         "variety": "Magnum",
         "weight": 5.0,
         "time": 0,
         "alpha_acid": 12.0
-      },
-      {
-        "variety": "Falconer's Flight 7c's",
-        "weight": 20.0,
-        "time": 10,
-        "alpha_acid": 9.1
-      },
-      {
-        "variety": "Cascade",
-        "weight": 20.0,
-        "time": 10,
-        "alpha_acid": 6.9
-      },
-      {
-        "variety": "Falconer's Flight 7c's",
-        "weight": 30.0,
-        "time": 30,
-        "alpha_acid": 9.1
-      },
-      {
-        "variety": "Cascade",
-        "weight": 30.0,
-        "time": 30,
-        "alpha_acid": 6.9
       },
       {
         "variety": "Falconer's Flight 7c's",
@@ -52372,14 +52372,14 @@
     "hop_schedule": [
       {
         "variety": "East Kent Goldings",
-        "weight": 11.0,
-        "time": 0,
+        "weight": 24.0,
+        "time": 20,
         "alpha_acid": 7.0
       },
       {
         "variety": "East Kent Goldings",
-        "weight": 24.0,
-        "time": 20,
+        "weight": 11.0,
+        "time": 0,
         "alpha_acid": 7.0
       }
     ],
@@ -53852,16 +53852,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "East Kent Goldings",
-        "weight": 8.8,
-        "time": 0,
-        "alpha_acid": 5.0
-      },
-      {
         "variety": "herkules",
         "weight": 8.8,
         "time": 10,
         "alpha_acid": 17.7
+      },
+      {
+        "variety": "East Kent Goldings",
+        "weight": 8.8,
+        "time": 0,
+        "alpha_acid": 5.0
       },
       {
         "variety": "herkules",
@@ -53927,16 +53927,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "East Kent Goldings",
-        "weight": 8.8,
-        "time": 0,
-        "alpha_acid": 5.0
-      },
-      {
         "variety": "herkules",
         "weight": 8.8,
         "time": 10,
         "alpha_acid": 17.7
+      },
+      {
+        "variety": "East Kent Goldings",
+        "weight": 8.8,
+        "time": 0,
+        "alpha_acid": 5.0
       },
       {
         "variety": "herkules",
@@ -55005,16 +55005,16 @@
         "alpha_acid": 3.9
       },
       {
-        "variety": "Domestic Hallertau",
-        "weight": 60.0,
-        "time": 30,
-        "alpha_acid": 3.9
-      },
-      {
         "variety": "Warrior",
         "weight": 30.0,
         "time": 60,
         "alpha_acid": 16.0
+      },
+      {
+        "variety": "Domestic Hallertau",
+        "weight": 60.0,
+        "time": 30,
+        "alpha_acid": 3.9
       }
     ],
     "yeast": "Wyeast - American Ale 1056",
@@ -55107,16 +55107,16 @@
     ],
     "hop_schedule": [
       {
-        "variety": "Strisselspalt",
-        "weight": 28.0,
-        "time": 10,
-        "alpha_acid": 3.5
-      },
-      {
         "variety": "Tettnanger",
         "weight": 28.0,
         "time": 60,
         "alpha_acid": 4.5
+      },
+      {
+        "variety": "Strisselspalt",
+        "weight": 28.0,
+        "time": 10,
+        "alpha_acid": 3.5
       },
       {
         "variety": "Strisselspalt",
@@ -56087,7 +56087,19 @@
       {
         "variety": "Jarrylo",
         "weight": 5.0,
+        "time": 100,
+        "alpha_acid": 12.3
+      },
+      {
+        "variety": "Jarrylo",
+        "weight": 5.0,
         "time": 60,
+        "alpha_acid": 12.3
+      },
+      {
+        "variety": "Jarrylo",
+        "weight": 10.0,
+        "time": 15,
         "alpha_acid": 12.3
       },
       {
@@ -56099,19 +56111,7 @@
       {
         "variety": "Jarrylo",
         "weight": 10.0,
-        "time": 15,
-        "alpha_acid": 12.3
-      },
-      {
-        "variety": "Jarrylo",
-        "weight": 10.0,
         "time": 0,
-        "alpha_acid": 12.3
-      },
-      {
-        "variety": "Jarrylo",
-        "weight": 5.0,
-        "time": 100,
         "alpha_acid": 12.3
       }
     ],
@@ -56161,12 +56161,6 @@
     "hop_schedule": [
       {
         "variety": "Northern Brewer",
-        "weight": 28.0,
-        "time": 0,
-        "alpha_acid": 7.8
-      },
-      {
-        "variety": "Northern Brewer",
         "weight": 42.0,
         "time": 60,
         "alpha_acid": 7.8
@@ -56182,6 +56176,12 @@
         "weight": 42.0,
         "time": 10,
         "alpha_acid": 7.0
+      },
+      {
+        "variety": "Northern Brewer",
+        "weight": 28.0,
+        "time": 0,
+        "alpha_acid": 7.8
       },
       {
         "variety": "Cascade",

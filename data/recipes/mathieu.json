@@ -1,0 +1,1489 @@
+[
+  {
+    "name": "60min IPA",
+    "grain_bill": [
+      {
+        "type": "Simpsons - Maris Otter",
+        "weight": 180,
+        "ppg": 37,
+        "lovibond": 3
+      },
+      {
+        "type": "Amber Malt",
+        "weight": 5900,
+        "ppg": 34,
+        "lovibond": 22
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Amarillo (dry hop)",
+        "weight": 28.0,
+        "time": 0,
+        "alpha_acid": 8.2
+      },
+      {
+        "variety": "Simcoe",
+        "weight": 20.0,
+        "time": 35,
+        "alpha_acid": 13.3
+      },
+      {
+        "variety": "Columbus/Tomahawk/Zeus",
+        "weight": 20.0,
+        "time": 60,
+        "alpha_acid": 17.8
+      },
+      {
+        "variety": "Simcoe (dry hop)",
+        "weight": 14.0,
+        "time": 0,
+        "alpha_acid": 13.3
+      },
+      {
+        "variety": "Amarillo",
+        "weight": 20.0,
+        "time": 35,
+        "alpha_acid": 8.2
+      },
+      {
+        "variety": "Amarillo",
+        "weight": 20.0,
+        "time": 60,
+        "alpha_acid": 8.2
+      }
+    ],
+    "yeast": "Safale S-03",
+    "notes": "Columbus as replacement for Warrior hop in boil 60-35min"
+  },
+  {
+    "name": "Allagash Tripel..ish",
+    "grain_bill": [
+      {
+        "type": "Weyermann - Pilsner Malt",
+        "weight": 5800,
+        "ppg": 37,
+        "lovibond": 2
+      },
+      {
+        "type": "Sugar, Table (Sucrose)",
+        "weight": 610,
+        "ppg": 46,
+        "lovibond": 1
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Tettnang",
+        "weight": 50.0,
+        "time": 60,
+        "alpha_acid": 4.0
+      },
+      {
+        "variety": "Hallertau",
+        "weight": 7.0,
+        "time": 60,
+        "alpha_acid": 4.5
+      },
+      {
+        "variety": "Hallertau",
+        "weight": 11.0,
+        "time": 0,
+        "alpha_acid": 4.5
+      }
+    ],
+    "yeast": "LalBrew - Abbaye - Belgian Style ale",
+    "notes": ""
+  },
+  {
+    "name": "Bee Have (Honey)",
+    "grain_bill": [
+      {
+        "type": "Pale Malt (2 Row) UK",
+        "weight": 5765,
+        "ppg": 36,
+        "lovibond": 3
+      },
+      {
+        "type": "Honey",
+        "weight": 2041,
+        "ppg": 34,
+        "lovibond": 1
+      },
+      {
+        "type": "Briess - Vienna Malt",
+        "weight": 1115,
+        "ppg": 36,
+        "lovibond": 4
+      },
+      {
+        "type": "Briess - Carabrown Malt",
+        "weight": 513,
+        "ppg": 36,
+        "lovibond": 55
+      },
+      {
+        "type": "White Wheat Malt",
+        "weight": 513,
+        "ppg": 40,
+        "lovibond": 2
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Hallertau",
+        "weight": 66.0,
+        "time": 60,
+        "alpha_acid": 4.5
+      },
+      {
+        "variety": "Saaz (USA)",
+        "weight": 33.6,
+        "time": 20,
+        "alpha_acid": 3.8
+      },
+      {
+        "variety": "Saaz (USA)",
+        "weight": 26.4,
+        "time": 0,
+        "alpha_acid": 3.8
+      },
+      {
+        "variety": "Hallertau",
+        "weight": 27.6,
+        "time": 20,
+        "alpha_acid": 4.5
+      },
+      {
+        "variety": "Hallertau",
+        "weight": 26.4,
+        "time": 0,
+        "alpha_acid": 4.5
+      }
+    ],
+    "yeast": "WLP036 - Dusseldorf Alt Yeast",
+    "notes": "Honey added after primary fermentation slowed down.\nAfter 3 months in fridge the honey flavour is still evident. Honey flavour did fade over time, after 6 months there was only a very slight hint"
+  },
+  {
+    "name": "Belgian Blonde",
+    "grain_bill": [
+      {
+        "type": "Aromatic Malt",
+        "weight": 280,
+        "ppg": 36,
+        "lovibond": 26
+      },
+      {
+        "type": "Weyermann - Pilsner Malt",
+        "weight": 1150,
+        "ppg": 37,
+        "lovibond": 2
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Perle",
+        "weight": 8.0,
+        "time": 60,
+        "alpha_acid": 7.0
+      }
+    ],
+    "yeast": "M41 - Belgian Ale Yeast",
+    "notes": "Targets:\nVol. collected: 4.5L\nOriginal gravity (before yeast) : 1.058\nFinishing gravity : 1.009\nABV : 6.5%\n\nActual:\nVol. collected: 3.5L + 1L boiled water\nOriginal gravity (before yeast) : 1.046\nFinishing gravity : \nABV : \n\n\npH 5.2-5.4 target (check after 10 min of mashing)\nWater chemistry : chlorides higher than sulfates 2:1 (softer and juicy taste)\nSite Glencorse A\n\nAlternative:\n - Belgian Golden Strong Ale ? Get that classic Duvel flavour. \nAdd 250g sugar per gallon and substitute yeast with WLP570\nBelgian Golden Ale.\nAdd sugar at 5 minutes to the end of the boil.\n \n - Hibiscus Belgian pink ale ? Hibiscus will add deep pinkish tones, berry flavour and a subtle tartness to this already refreshing style.\nAdd 30g hibiscus per gallon.\nAdd at 5 minutes to the end of the boil.\n\n - Orval clone ? This beer will gain additional complexity over time.\nAdd WLP650 Brett Bruxellensis or Orval bottle dregs (last inch of liquid from a settled bottle).\nAdd just at bottling time. You can even pipette single drop in each bottle before capping.\nWarning: This beer will slowly gain additional carbonation."
+  },
+  {
+    "name": "Belgian Dubbel",
+    "grain_bill": [
+      {
+        "type": "Weyermann - Bohemian Pilsner Malt",
+        "weight": 1115,
+        "ppg": 37,
+        "lovibond": 2
+      },
+      {
+        "type": "Munich Malt",
+        "weight": 131,
+        "ppg": 37,
+        "lovibond": 9
+      },
+      {
+        "type": "Caramunich Malt",
+        "weight": 66,
+        "ppg": 33,
+        "lovibond": 56
+      },
+      {
+        "type": "Candi Sugar, Amber",
+        "weight": 64,
+        "ppg": 36,
+        "lovibond": 75
+      },
+      {
+        "type": "Candi Sugar, Dark",
+        "weight": 64,
+        "ppg": 36,
+        "lovibond": 275
+      },
+      {
+        "type": "Special B Malt",
+        "weight": 33,
+        "ppg": 30,
+        "lovibond": 160
+      },
+      {
+        "type": "Invert Sugar",
+        "weight": 28,
+        "ppg": 46,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Tettnang",
+        "weight": 14.1,
+        "time": 60,
+        "alpha_acid": 4.0
+      },
+      {
+        "variety": "Saaz (USA)",
+        "weight": 9.8,
+        "time": 10,
+        "alpha_acid": 3.8
+      }
+    ],
+    "yeast": "Belgian Schelde Ale (WY3655)",
+    "notes": "Water treated with brewing salts to our Balanced flavour profile: Ca=50, Mg=10, Na=16, Cl=70, SO4=70 (Hit minimums on Ca and Mg, keep the Cl:SO4 ratio low and equal. Do not favour flavour / maltiness or bitterness / dryness. For balanced beers.). While this balanced profile is our preference, for something closer to Westmalle water, in his book Brew like a Monk Stan Hieronymus indicates to use: Ca=41, Mg=8, Na=16, Cl=60, SO4=26. Try brewing it both ways and see which you prefer. \n\nProfiles (ppm)\tExist\tMash\tFinished\t\nCa\t\t                 113\t 113\t    121\nMg\t\t                      5\t     5                \t5\nNa\t\t                    27\t   27\t      27\nSO4\t\t                    55\t   55\t      68\nCl\t\t                    46\t   46\t      71\nHCO3\t\t          253\t   64\t      NA\nSO4/Cl Ratio\t\t\t\t1.0\n\nEstimated mash pH 5.48\n\n\n#################\nMashing water profile (Amber balanced): \nCalcium: 63\nMagnesium: 11\nSodium: 19\nSulfate: 90\nChloride: 70\nBicarbonate: 65\n\nEstimated Mash pH : 5.47\nAddition for indicated volumes : \n- Mash:\n\tCaSO4, 2H2O: 0.3g\n\tCaCl2: 0.4g\n\tMgSO4, 7H2O: 0.4g\n\tMgCl2, 6H2O: 0g\n\tNaCl: 0g\n\tNaHCO3: 0.2g\n\tCaCO3: 0g\n\tPickling lime Ca(OH)2: 0g\n\tlactic acid 88%: 0mL\n- Sparge:\n\tCaSO4, 2H2O: 0.3g\n\tCaCl2: 0.4g\n\tMgSO4, 7H2O: 0.4g\n\tMgCl2: 0g\n\tNaCl: 0g\n\tPhosphoric acid 1%: 19.9mL\n###################################\n\nPitch yeast and ferment at 17C (wort temperature), allowing temperature to rise to 21C over one week (raise 1 degree per day). Allow yeast to continue until finished. Do not allow temperature to drop. If yeast seems to be stalling, do not be afraid to raise temperature as high as 24C to ensure proper attenuation. Assume fermentation is done if the gravity does not change over ~3 days. \n\nRack to a bright tank that has been purged with CO2 to avoid oxygen pickup, add 1 tsp of unflavoured gelatin dissolved in a cup of hot distilled water per 19 litres of beer, and allow to clear for 2-3 days. Package as you would normally. Rack to kegs that have first been purged with CO2 and then chill the kegs to near freezing while carbonating at the same time in a conditioning fridge. After ~1-2 weeks at serving pressure the kegs will be carbonated and ready to serve. In a hurry? Feel free to raise the CO2 pressure temporarily to 30-40 PSI to carbonate fast over a 24 period, and then turn back down to serving pressure. Carbonate this beer to higher than normal levels, around 2.5 to 3.5 volumes of CO2. The beer will improve if conditioned just above freezing for 4 weeks before serving and will continue to change over time. Sampling is recommended."
+  },
+  {
+    "name": "Belgian Quadrupel Abbey Gold",
+    "grain_bill": [
+      {
+        "type": "Pale Malt (2 Row) UK",
+        "weight": 4136,
+        "ppg": 36,
+        "lovibond": 3
+      },
+      {
+        "type": "Caramunich Malt",
+        "weight": 318,
+        "ppg": 33,
+        "lovibond": 56
+      },
+      {
+        "type": "Briess - Chocolate Malt",
+        "weight": 255,
+        "ppg": 28,
+        "lovibond": 350
+      },
+      {
+        "type": "Briess - 2 Row Caramel Malt 120L",
+        "weight": 140,
+        "ppg": 34,
+        "lovibond": 120
+      },
+      {
+        "type": "Candi Sugar, Dark",
+        "weight": 261,
+        "ppg": 36,
+        "lovibond": 275
+      },
+      {
+        "type": "Candi Sugar, Clear",
+        "weight": 209,
+        "ppg": 36,
+        "lovibond": 1
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Magnum",
+        "weight": 13.0,
+        "time": 60,
+        "alpha_acid": 13.5
+      },
+      {
+        "variety": "Hallertau",
+        "weight": 7.3,
+        "time": 5,
+        "alpha_acid": 4.5
+      },
+      {
+        "variety": "Saaz (USA)",
+        "weight": 7.3,
+        "time": 5,
+        "alpha_acid": 3.8
+      }
+    ],
+    "yeast": "WLP530 - Abbey Ale Yeast",
+    "notes": "K\u00f8benhavn \u00d8sterbro RO vand (Style - Belgian T...\nCa 39 Mg 9 Na 28 Cl 74 SO 74\nSO/Cl ratio: 1\nMash pH: 5.22\n\nWLP530 could be substituted with M31.\nThe candis could easily be substituted with regular table sugar, but it will change the EBC. Add the\nsugar late in the boil.\n\n\nUsed : Mangrove Jack's M31 Belgian Triple Yeast | Replace saaz hops with amarillo"
+  },
+  {
+    "name": "Brixton Atlantic IPA",
+    "grain_bill": [
+      {
+        "type": "Simpsons - Maris Otter",
+        "weight": 4500,
+        "ppg": 37,
+        "lovibond": 3
+      },
+      {
+        "type": "Wheat, Torrified",
+        "weight": 530,
+        "ppg": 36,
+        "lovibond": 2
+      },
+      {
+        "type": "Cara-Pils/Dextrine",
+        "weight": 265,
+        "ppg": 33,
+        "lovibond": 2
+      },
+      {
+        "type": "Sugar, Table (Sucrose)",
+        "weight": 144,
+        "ppg": 46,
+        "lovibond": 1
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Simcoe",
+        "weight": 30.0,
+        "time": 60,
+        "alpha_acid": 13.0
+      },
+      {
+        "variety": "Citra (dry hop)",
+        "weight": 80.0,
+        "time": 0,
+        "alpha_acid": 12.0
+      },
+      {
+        "variety": "Citra",
+        "weight": 70.0,
+        "time": 60,
+        "alpha_acid": 12.0
+      },
+      {
+        "variety": "Simcoe (dry hop)",
+        "weight": 30.0,
+        "time": 0,
+        "alpha_acid": 13.0
+      },
+      {
+        "variety": "Galaxy (dry hop)",
+        "weight": 50.0,
+        "time": 0,
+        "alpha_acid": 13.5
+      },
+      {
+        "variety": "Perle",
+        "weight": 46.0,
+        "time": 60,
+        "alpha_acid": 6.5
+      }
+    ],
+    "yeast": "Safale S-05",
+    "notes": "Shoot for about 85% low colour marris otter pale malt, 10% torrified wheat, and 5% pale dextrin malt. Mash at 67*C for an hour. \nFor hops, use anything for bittering, one hour boil, \ncitra and Simcoe in the whirlpool (cooled down to 90*C) and aim for 35 IBU in the brewhouse. \nDH towards the end of fermentation with Citra, Simcoe, and a touch of galaxy at about 8g/L. Use a nice neutral ale strain like Chico. \nAnd most importantly avoid oxygen ingress post fermentation as much as possible.\n\nFrancesco Mayell\nSenior Brewer\nBrixton Brewery Limited"
+  },
+  {
+    "name": "Czech Dark Lager (Flekovsk\u00fd Tmav\u00fd Le?\u00e1k clone)",
+    "grain_bill": [
+      {
+        "type": "Pilsner (2 Row) UK",
+        "weight": 2000,
+        "ppg": 36,
+        "lovibond": 1
+      },
+      {
+        "type": "Munich Malt - 20L",
+        "weight": 2000,
+        "ppg": 34,
+        "lovibond": 20
+      },
+      {
+        "type": "Carafa III",
+        "weight": 220,
+        "ppg": 32,
+        "lovibond": 525
+      },
+      {
+        "type": "Briess - 2 Row Caramel Malt 30L",
+        "weight": 750,
+        "ppg": 35,
+        "lovibond": 30
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Saaz (Czech Republic)",
+        "weight": 30.0,
+        "time": 60,
+        "alpha_acid": 4.5
+      },
+      {
+        "variety": "Saaz (Czech Republic)",
+        "weight": 30.0,
+        "time": 70,
+        "alpha_acid": 4.5
+      },
+      {
+        "variety": "Saaz (Czech Republic)",
+        "weight": 30.0,
+        "time": 5,
+        "alpha_acid": 4.5
+      }
+    ],
+    "yeast": "Wyeast - Bohemian Lager",
+    "notes": "Water profile Munich (Dark Lager)"
+  },
+  {
+    "name": "Double bag",
+    "grain_bill": [
+      {
+        "type": "Pale Malt (2 Row) UK",
+        "weight": 5900,
+        "ppg": 36,
+        "lovibond": 3
+      },
+      {
+        "type": "Caramel/Crystal Malt - 60L",
+        "weight": 230,
+        "ppg": 34,
+        "lovibond": 60
+      },
+      {
+        "type": "Chocolate Malt (UK)",
+        "weight": 110,
+        "ppg": 34,
+        "lovibond": 450
+      },
+      {
+        "type": "Briess - Wheat Malt, White",
+        "weight": 230,
+        "ppg": 39,
+        "lovibond": 2
+      },
+      {
+        "type": "Simpsons - Caramalt Light",
+        "weight": 450,
+        "ppg": 35,
+        "lovibond": 13
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Northern Brewer",
+        "weight": 19.0,
+        "time": 60,
+        "alpha_acid": 6.7
+      },
+      {
+        "variety": "Northern Brewer",
+        "weight": 10.0,
+        "time": 30,
+        "alpha_acid": 6.7
+      },
+      {
+        "variety": "Hallertau",
+        "weight": 12.0,
+        "time": 0,
+        "alpha_acid": 2.7
+      }
+    ],
+    "yeast": "Wyeast - German Ale",
+    "notes": ""
+  },
+  {
+    "name": "Elderbery wine",
+    "grain_bill": [
+      {
+        "type": "Sugar, Table (Sucrose)",
+        "weight": 1400,
+        "ppg": 46,
+        "lovibond": 1
+      }
+    ],
+    "hop_schedule": [],
+    "yeast": "Safale S-05",
+    "notes": "Elderberry Wine Method\n\n1. Heat the water in a pan on the stove, add the sugar and stir to dissolve. Bring to the boil for a minute and then turn off the heat.\n\n2. Take the prepared elderberries and place them in the straining bag inside the sanitised fermenting bucket. Use a potato masher to thoroughly crush the berries. It should be noted they will stain so try not to get any on your clothes. Your straining bag will never be the same colour after making elderberry wine!\n\n3. Pour the boiling water over the crushed elderberries and give them a good stir. Allow to cool for a few hours and then add the yeast nutrient, acid blend and the crushed Campden tablet. Mix thoroughly, cover and fit the airlock and wait for at least 12 hours.\n\n4. After 12 hours add the pectic enzyme mix thoroughly and wait for a further 24 hours.\n\n5. After 24 hours add the yeast onto the surface of the must, there is no need to stir. Cover and fit the airlock and patiently wait for fermentation to begin.\n\n6. Stir the wine daily for the first week of fermentation, after 2 weeks lift out the straining bag and allow the wine to drain from the berries. Avoid squeezing the bag.\n\n7. Leave the wine to settle for a day and then syphon the wine into a demijohn. You may check the gravity now if you have a hydrometer. The wine should be close to, if not fully fermented out.\n\n8. Allow the wine to condition in the demijohn for at least 3 ? 4 months, racking when any sediment builds up. After conditioning for at least 3 ? 4 months you should sample the wine. You may want to back sweeten the wine if you prefer a sweeter taste if so follow this guide before bottling. If not rack straight to bottles and try to keep hold of them for as long as possible.\n\nElderberry wine ages very well and will continually evolve so try and hold onto a few bottles for a year or more. You will be pleasantly surprised at how good an elderberry wine can get."
+  },
+  {
+    "name": "Elderflower Belgian Saison",
+    "grain_bill": [
+      {
+        "type": "Weyermann - Pilsner Malt",
+        "weight": 4082,
+        "ppg": 37,
+        "lovibond": 2
+      },
+      {
+        "type": "Caramel/Crystal Malt - 20L",
+        "weight": 460,
+        "ppg": 34,
+        "lovibond": 20
+      },
+      {
+        "type": "Oats, Flaked",
+        "weight": 114,
+        "ppg": 37,
+        "lovibond": 1
+      },
+      {
+        "type": "Brown Sugar, Light",
+        "weight": 450,
+        "ppg": 46,
+        "lovibond": 8
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Kent Goldings",
+        "weight": 29.0,
+        "time": 60,
+        "alpha_acid": 5.5
+      },
+      {
+        "variety": "Kent Goldings",
+        "weight": 14.0,
+        "time": 30,
+        "alpha_acid": 5.5
+      },
+      {
+        "variety": "Kent Goldings",
+        "weight": 14.0,
+        "time": 10,
+        "alpha_acid": 5.5
+      },
+      {
+        "variety": "Kent Goldings (dry hop)",
+        "weight": 29.0,
+        "time": 0,
+        "alpha_acid": 5.5
+      }
+    ],
+    "yeast": "LalBrew - Belle Saison - Belgian",
+    "notes": ""
+  },
+  {
+    "name": "Elvis juice",
+    "grain_bill": [
+      {
+        "type": "Simpsons - Maris Otter",
+        "weight": 881,
+        "ppg": 37,
+        "lovibond": 3
+      },
+      {
+        "type": "Briess - 2 Row Caramel Malt 30L",
+        "weight": 172,
+        "ppg": 35,
+        "lovibond": 30
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Magnum",
+        "weight": 1.1,
+        "time": 60,
+        "alpha_acid": 13.5
+      },
+      {
+        "variety": "Amarillo",
+        "weight": 2.4,
+        "time": 30,
+        "alpha_acid": 9.5
+      },
+      {
+        "variety": "Simcoe",
+        "weight": 2.4,
+        "time": 30,
+        "alpha_acid": 13.0
+      },
+      {
+        "variety": "Citra",
+        "weight": 4.9,
+        "time": 10,
+        "alpha_acid": 12.0
+      },
+      {
+        "variety": "Amarillo",
+        "weight": 2.4,
+        "time": 10,
+        "alpha_acid": 9.5
+      },
+      {
+        "variety": "Amarillo (dry hop)",
+        "weight": 9.8,
+        "time": 0,
+        "alpha_acid": 9.5
+      },
+      {
+        "variety": "Simcoe",
+        "weight": 2.4,
+        "time": 10,
+        "alpha_acid": 13.0
+      },
+      {
+        "variety": "Citra (dry hop)",
+        "weight": 9.8,
+        "time": 0,
+        "alpha_acid": 12.0
+      },
+      {
+        "variety": "Simcoe (dry hop)",
+        "weight": 9.8,
+        "time": 0,
+        "alpha_acid": 13.0
+      },
+      {
+        "variety": "Mosaic - HBC369",
+        "weight": 4.9,
+        "time": 10,
+        "alpha_acid": 12.5
+      }
+    ],
+    "yeast": "Safale US-05",
+    "notes": "Mashing water profile (Edinburgh): \nCalcium: 119\nMagnesium: 31\nSodium: 27\nSulfate: 129\nChloride:198\nBicarbonate: 97\n\nEstimated Mash pH : 5.27\nAddition for indicated volumes : \n- Mash 4L:\n\tCaSO4, 2H2O: 0.0g\n\tCaCl2: 1.2g\n\tMgSO4, 7H2O: 1.2\n\tNaHCO3: 0.4\n\tCaCO3: 0.4\n\tlactic acid 88%: 1.1mL\n- Sparge 4L:\n\tCaSO4, 2H2O: 00g\n\tCaCl2: 1.2g\n\tMgSO4, 7H2O: 1.2\n\tPhosphoric acid 1%: 18.4mL\n\t\n\n\nAdded dry hops on day 4 for a hazy juice bomb ??\n\nGrapefuit extract : \n- skin of 4 grapefruits (dried 60*C in oven and processed in food processor into small bits) \n- covering with vodka\n- 24h at 4*C\n- Top-up with vodka for covering all the skin bits\n- Incubate 4*C for 4 days\n- filter vodka and discard skin"
+  },
+  {
+    "name": "Galaxy Saison",
+    "grain_bill": [
+      {
+        "type": "Pilsner (2 Row) UK",
+        "weight": 2046,
+        "ppg": 36,
+        "lovibond": 1
+      },
+      {
+        "type": "Briess - Wheat Malt, White",
+        "weight": 682,
+        "ppg": 39,
+        "lovibond": 2
+      },
+      {
+        "type": "Wheat Malt, Dark",
+        "weight": 682,
+        "ppg": 39,
+        "lovibond": 9
+      },
+      {
+        "type": "Weyermann - Dark Wheat Malt",
+        "weight": 682,
+        "ppg": 39,
+        "lovibond": 7
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Galaxy",
+        "weight": 35.9,
+        "time": 5,
+        "alpha_acid": 13.5
+      },
+      {
+        "variety": "Galaxy",
+        "weight": 71.9,
+        "time": 30,
+        "alpha_acid": 13.5
+      }
+    ],
+    "yeast": "Imperial Napoleon B64",
+    "notes": "Water profile\nSan Mateo 2017 (Hoppy Lite)\nCa 81 Mg 15 Na 18 Cl 51 SO 150\nSO/Cl ratio: 2.9\nMash pH: 5.31\n\nUsed : \nMangrove Jack's M29 French Saison Yeast   10g"
+  },
+  {
+    "name": "Ginger beer",
+    "grain_bill": [
+      {
+        "type": "Brown Sugar, Light",
+        "weight": 1750,
+        "ppg": 46,
+        "lovibond": 8
+      },
+      {
+        "type": "Sugar, Table (Sucrose)",
+        "weight": 1000,
+        "ppg": 46,
+        "lovibond": 1
+      }
+    ],
+    "hop_schedule": [],
+    "yeast": "Safale S-05",
+    "notes": "For making the ginger bug, you?ll need a clean Mason jar and then rough chop, 20 grams of ginger skins and all. It?s a good idea to use organic ginger so you can ensure there?s no pesticides on it.\n\nNext, add 30 grams of sugar, any sugar will do, but I?m just using table sugar. Then add 300 milliliters of water to the jar.\n\nshake\n\nbetween day 2-4 add 20g ginger + 30g suggar + shake, everyday until foam | - 2 limes\n- 1 orange\n- 3 cinnamon sticks\n- ale yeast\n\nafter fermentation in bottle, sterelise the bottles.\nlet bottles stand in hot water (180F, cover top of beer in bottle) - leave for 15min - remove and let cool down"
+  },
+  {
+    "name": "Helles",
+    "grain_bill": [
+      {
+        "type": "Briess - Pilsen Malt",
+        "weight": 4400,
+        "ppg": 37,
+        "lovibond": 1
+      },
+      {
+        "type": "Munich Malt - 10L",
+        "weight": 250,
+        "ppg": 35,
+        "lovibond": 10
+      },
+      {
+        "type": "Briess - Caramel Malt 10L",
+        "weight": 150,
+        "ppg": 35,
+        "lovibond": 10
+      },
+      {
+        "type": "Acid Malt",
+        "weight": 250,
+        "ppg": 27,
+        "lovibond": 3
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Perle",
+        "weight": 20.0,
+        "time": 60,
+        "alpha_acid": 7.0
+      },
+      {
+        "variety": "Hersbrucker",
+        "weight": 44.0,
+        "time": 10,
+        "alpha_acid": 3.0
+      }
+    ],
+    "yeast": "Saflager W34/70",
+    "notes": "MgSO4Split into 2 batches after boil, one water adjusted (Munich decatbonated profile) the other not\n\nCa+2=40\nMg+2=20\nSO4-2=52\nNa+=4\nCl-=75\nHCO3-=29\nAlkalinity =24\n\nFor 9L add 1.2g of CaCl2 and 1.2g of MgSO4\nFinal :\nCa+2=47\nMg+2=14\nSO4-2=64\nNa+=5\nCl-=70\nHCO3-=33\nAlkalinity =27\n\n\nFermentation Profile:\nLager\n10 \u00b0C - 4 days - Primary\n13 \u00b0C - 1 days - Primary\n17 \u00b0C - 1 days - Primary\n19 \u00b0C - 1 days - Primary\n5 \u00b0C - 7 days - Cold Crash"
+  },
+  {
+    "name": "Kirsty Gose To Town!",
+    "grain_bill": [
+      {
+        "type": "Acid Malt",
+        "weight": 910,
+        "ppg": 27,
+        "lovibond": 3
+      },
+      {
+        "type": "Wheat Malt, Ger",
+        "weight": 2300,
+        "ppg": 39,
+        "lovibond": 2
+      },
+      {
+        "type": "Pilsner (2 Row) UK",
+        "weight": 1500,
+        "ppg": 36,
+        "lovibond": 1
+      },
+      {
+        "type": "Rice Hulls",
+        "weight": 230,
+        "ppg": 0,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Perle",
+        "weight": 27.0,
+        "time": 15,
+        "alpha_acid": 7.0
+      }
+    ],
+    "yeast": "WLP029 - German Ale/K\u00f6lsch Yeast",
+    "notes": "Ca2+\tMg2+\tSO42-\tNa+\tCl-\tHCO3-\nHome\t10.95\t1.49\t12.09\t5.09\t6.25\t33.47\n\nWater profile close to pilsen (light lager)\n\nRice hull and acidulated malt at the begining of mash\nmash one step of 1h40"
+  },
+  {
+    "name": "La Chouffe",
+    "grain_bill": [
+      {
+        "type": "Briess - Pilsen Malt",
+        "weight": 5720,
+        "ppg": 37,
+        "lovibond": 1
+      },
+      {
+        "type": "Sugar, Table (Sucrose)",
+        "weight": 600,
+        "ppg": 46,
+        "lovibond": 1
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Styrian Goldings",
+        "weight": 15.0,
+        "time": 60,
+        "alpha_acid": 4.5
+      },
+      {
+        "variety": "Cascade",
+        "weight": 10.0,
+        "time": 60,
+        "alpha_acid": 6.0
+      },
+      {
+        "variety": "Styrian Goldings",
+        "weight": 12.0,
+        "time": 30,
+        "alpha_acid": 4.5
+      },
+      {
+        "variety": "Cascade",
+        "weight": 8.0,
+        "time": 30,
+        "alpha_acid": 6.0
+      },
+      {
+        "variety": "Saaz (USA)",
+        "weight": 15.0,
+        "time": 15,
+        "alpha_acid": 3.8
+      }
+    ],
+    "yeast": "M41 - Belgian Ale Yeast",
+    "notes": "Default (Amber/Strong Balanced)\nCa 144 Mg 10 Na 6 Cl 150 SO 161\n\nSO/Cl ratio: 1.1\nMash pH: 5.54\n\nAfter fermenting for two days, add the sugar solution in twice the weight of water."
+  },
+  {
+    "name": "Mandarina",
+    "grain_bill": [
+      {
+        "type": "Pale Malt (2 Row) UK",
+        "weight": 3309,
+        "ppg": 36,
+        "lovibond": 3
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Mandarina bavaria",
+        "weight": 5.8,
+        "time": 60,
+        "alpha_acid": 9.5
+      },
+      {
+        "variety": "Mandarina bavaria",
+        "weight": 2.9,
+        "time": 30,
+        "alpha_acid": 9.5
+      },
+      {
+        "variety": "Mandarina bavaria",
+        "weight": 2.9,
+        "time": 20,
+        "alpha_acid": 9.5
+      },
+      {
+        "variety": "Mandarina bavaria",
+        "weight": 2.9,
+        "time": 15,
+        "alpha_acid": 9.5
+      },
+      {
+        "variety": "Mandarina bavaria",
+        "weight": 2.9,
+        "time": 10,
+        "alpha_acid": 9.5
+      },
+      {
+        "variety": "Mandarina bavaria",
+        "weight": 2.9,
+        "time": 5,
+        "alpha_acid": 9.5
+      },
+      {
+        "variety": "Mandarina bavaria",
+        "weight": 24.5,
+        "time": 10,
+        "alpha_acid": 9.5
+      },
+      {
+        "variety": "Mandarina bavaria (dry hop)",
+        "weight": 97.9,
+        "time": 0,
+        "alpha_acid": 9.5
+      }
+    ],
+    "yeast": "Safale S-05",
+    "notes": "Hop Stand\n10 min hopstand @ 95 \u00b0C\n10 min - 42.5 g - Mandarina Bavaria - 7.8%\n\nCells:\n7 million cells / ml\n\nWater Profile\nAcqua LEONARDO\nCa 65 Mg 2 Na 15 Cl 37 SO 118\nSO/Cl ratio: 3.2\nMash pH: 5.32\n\nThis recipe will give you a nice and clean smash pale ale. The Mandarina Bavaria it's a fantastic hop\nwith a deep aroma combined in citrus, spice, piny. The pale ale Maris Otter instead will support the\nbig hop flavour in mouth with a solid crisp end of the sip."
+  },
+  {
+    "name": "Mango Milkshake NIPA",
+    "grain_bill": [
+      {
+        "type": "Simpsons - Golden Promise",
+        "weight": 5000,
+        "ppg": 37,
+        "lovibond": 2
+      },
+      {
+        "type": "Cara-Pils/Dextrine",
+        "weight": 400,
+        "ppg": 33,
+        "lovibond": 2
+      },
+      {
+        "type": "Oats, Flaked",
+        "weight": 1500,
+        "ppg": 37,
+        "lovibond": 1
+      },
+      {
+        "type": "Milk Sugar (Lactose)",
+        "weight": 450,
+        "ppg": 35,
+        "lovibond": 0
+      },
+      {
+        "type": "Rice Hulls",
+        "weight": 200,
+        "ppg": 0,
+        "lovibond": 0
+      },
+      {
+        "type": "Weyermann - Acidulated Malt",
+        "weight": 150,
+        "ppg": 37,
+        "lovibond": 3
+      },
+      {
+        "type": "Mango (Fruit)",
+        "weight": 1500,
+        "ppg": 8,
+        "lovibond": 0
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Citra",
+        "weight": 42.5,
+        "time": 30,
+        "alpha_acid": 12.0
+      },
+      {
+        "variety": "Mosaic - HBC369",
+        "weight": 42.5,
+        "time": 30,
+        "alpha_acid": 12.5
+      },
+      {
+        "variety": "Nelson Sauvrin",
+        "weight": 42.5,
+        "time": 30,
+        "alpha_acid": 10.7
+      },
+      {
+        "variety": "Sabro",
+        "weight": 42.5,
+        "time": 30,
+        "alpha_acid": 15.6
+      },
+      {
+        "variety": "Citra (dry hop)",
+        "weight": 14.2,
+        "time": 0,
+        "alpha_acid": 12.0
+      },
+      {
+        "variety": "Mosaic - HBC369 (dry hop)",
+        "weight": 14.2,
+        "time": 0,
+        "alpha_acid": 12.5
+      },
+      {
+        "variety": "Nelson Sauvrin (dry hop)",
+        "weight": 14.2,
+        "time": 0,
+        "alpha_acid": 10.7
+      },
+      {
+        "variety": "Sabro (dry hop)",
+        "weight": 14.2,
+        "time": 0,
+        "alpha_acid": 15.6
+      },
+      {
+        "variety": "Citra (dry hop)",
+        "weight": 28.3,
+        "time": 0,
+        "alpha_acid": 12.0
+      },
+      {
+        "variety": "Nelson Sauvrin (dry hop)",
+        "weight": 28.3,
+        "time": 0,
+        "alpha_acid": 10.7
+      },
+      {
+        "variety": "Sabro (dry hop)",
+        "weight": 28.3,
+        "time": 0,
+        "alpha_acid": 15.6
+      },
+      {
+        "variety": "Mosaic - HBC369 (dry hop)",
+        "weight": 28.3,
+        "time": 0,
+        "alpha_acid": 12.5
+      }
+    ],
+    "yeast": "Wyeast - London Ale III",
+    "notes": "NEIPA 100% Mosa\u00efc - https://www.facebook.com/groups/nanobrasseur/permalink/1570080163124202/\nMilkshake IPA aux fraises - https://www.facebook.com/groups/nanobrasseur/permalink/1107916642673892/\nhttps://byo.com/article/new-england-ipa-a-scientific-study/\nWater Profile\nThere?s often a higher balance of chloride to sulphate, which lends a softer mouthfeel and a smoother,\nrounder IPA a water profile high in chloride is noted as contributing to the silky mouthfeel this\nstyle is known for, and there?s some speculation it may also affect the hazy appearance. (2:1 chloride\nto sulfate ratio (200 ppm Cl, 100 ppm SO4)) Hop Schedule - Just after knockout toss in the first set\nof knockout hops and begin the whirlpool process. - After 20 minutes have gone past after knockout,\nreduce wort temperature to 170 \u00b0F (77 \u00b0C) (or 150/66) and then add the second set of hops to the hop\nstand and once again whirlpool. - After 15 more minutes have passed, begin final cooling process.\nFermentation Dry hop is really up to preference. I typically like to do 6oz total broken up into 2\nseparate dry hops (3oz and 3oz). I?ve done 3oz first dry hop and the last in the keg which worked\nwell. Add half of dry hops in 2-3 days, when the krausen is still high. 4-6 days later, when\nfermentation is mostly done, rack into a secondary on top of vanilla bean and fruit puree. Allow to\ncondition on the fruit alone for 4-6 days, then add the rest of the dry hops. Cold crash and package\n4-7 days later.\nHOPS\nSensory differences between the different temperatures showed that beers late-hopped at 203 \u00b0F (95 \u00b0C)\nscored highest for citrusy, spicy, and ester descriptors. The 185 \u00b0F (85 \u00b0C) late hop temperature\nscored higher for floral and herbal descriptors. The 167 \u00b0F (75 \u00b0C) hop addition scored the lowest in\nnearly every category except for the sylvan (woody) characteristic.11 Lowering the temperature of the\nwhirlpool will also lower the isomerization of alpha-acids to iso-alpha-acids, potentially allowing\nfor larger hop additions for flavor vs. bitterness. | Laval St-Rose 2018 (Hoppy NEIPA)\nCa 114 Mg 9 Na 6 Cl 157 SO 83\n\nSO/Cl ratio: 0.5\nMash pH: 5.25\n\n20L\nCaSO4 = 1.8g\nCaCl2 = 6g\nMgSO4 = 1.7g\nNaCl = 0.1g\n\n15L\nCaSO4 = 1.35g\nCaCl2 = 4.5g\nMgSO4 = 1.275g\nNaCl = 0.075g"
+  },
+  {
+    "name": "Mead",
+    "grain_bill": [
+      {
+        "type": "Honey",
+        "weight": 750,
+        "ppg": 34,
+        "lovibond": 1
+      }
+    ],
+    "hop_schedule": [],
+    "yeast": "WLP029 - German Ale/K\u00f6lsch Yeast",
+    "notes": ""
+  },
+  {
+    "name": "Mead 2",
+    "grain_bill": [
+      {
+        "type": "Honey",
+        "weight": 5000,
+        "ppg": 34,
+        "lovibond": 1
+      }
+    ],
+    "hop_schedule": [],
+    "yeast": "Safale S-04",
+    "notes": "Mix 50:50 Orange blossom:Lime blossom (tilleul)\n\nAdd xxmL acid ? ph?"
+  },
+  {
+    "name": "Mojito",
+    "grain_bill": [
+      {
+        "type": "Pale Malt (2 Row) UK",
+        "weight": 5630,
+        "ppg": 36,
+        "lovibond": 3
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Citra",
+        "weight": 12.5,
+        "time": 60,
+        "alpha_acid": 12.0
+      },
+      {
+        "variety": "Citra",
+        "weight": 12.5,
+        "time": 30,
+        "alpha_acid": 12.0
+      },
+      {
+        "variety": "Citra",
+        "weight": 25.0,
+        "time": 15,
+        "alpha_acid": 12.0
+      }
+    ],
+    "yeast": "Wyeast - American Ale",
+    "notes": ""
+  },
+  {
+    "name": "Nutella stout",
+    "grain_bill": [
+      {
+        "type": "Roasted Barley",
+        "weight": 390,
+        "ppg": 25,
+        "lovibond": 300
+      },
+      {
+        "type": "Black (Patent) Malt",
+        "weight": 70,
+        "ppg": 25,
+        "lovibond": 500
+      },
+      {
+        "type": "Briess - Chocolate Malt",
+        "weight": 177,
+        "ppg": 28,
+        "lovibond": 350
+      },
+      {
+        "type": "Weyermann - Chocolate Wheat",
+        "weight": 500,
+        "ppg": 34,
+        "lovibond": 400
+      },
+      {
+        "type": "Pilsner (2 Row) UK",
+        "weight": 5000,
+        "ppg": 36,
+        "lovibond": 1
+      },
+      {
+        "type": "Munich Malt",
+        "weight": 2000,
+        "ppg": 37,
+        "lovibond": 9
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Magnum",
+        "weight": 10.0,
+        "time": 60,
+        "alpha_acid": 13.5
+      },
+      {
+        "variety": "Magnum",
+        "weight": 10.0,
+        "time": 30,
+        "alpha_acid": 13.5
+      },
+      {
+        "variety": "Magnum",
+        "weight": 100.0,
+        "time": 15,
+        "alpha_acid": 13.5
+      },
+      {
+        "variety": "Magnum",
+        "weight": 25.0,
+        "time": 10,
+        "alpha_acid": 13.5
+      },
+      {
+        "variety": "Simcoe",
+        "weight": 10.0,
+        "time": 60,
+        "alpha_acid": 13.0
+      },
+      {
+        "variety": "Simcoe",
+        "weight": 10.0,
+        "time": 30,
+        "alpha_acid": 13.0
+      },
+      {
+        "variety": "Simcoe (dry hop)",
+        "weight": 100.0,
+        "time": 0,
+        "alpha_acid": 13.0
+      }
+    ],
+    "yeast": "WLP300 - Hefeweizen Ale Yeast",
+    "notes": ""
+  },
+  {
+    "name": "Pivo Hoppy Pils",
+    "grain_bill": [
+      {
+        "type": "Weyermann - Bohemian Pilsner Malt",
+        "weight": 4300,
+        "ppg": 37,
+        "lovibond": 2
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Magnum",
+        "weight": 21.0,
+        "time": 60,
+        "alpha_acid": 13.5
+      },
+      {
+        "variety": "Spalt",
+        "weight": 14.0,
+        "time": 30,
+        "alpha_acid": 5.5
+      },
+      {
+        "variety": "German Saphir",
+        "weight": 22.0,
+        "time": 0,
+        "alpha_acid": 3.5
+      },
+      {
+        "variety": "German Saphir (dry hop)",
+        "weight": 22.0,
+        "time": 0,
+        "alpha_acid": 3.5
+      }
+    ],
+    "yeast": "WLP830 - German Lager Yeast",
+    "notes": ""
+  },
+  {
+    "name": "Schneider Weiss AVENTINUS",
+    "grain_bill": [
+      {
+        "type": "Weyermann - Pale Wheat Malt",
+        "weight": 4100,
+        "ppg": 39,
+        "lovibond": 2
+      },
+      {
+        "type": "Weyermann - Pilsner Malt",
+        "weight": 2150,
+        "ppg": 37,
+        "lovibond": 2
+      },
+      {
+        "type": "Caramunich Malt",
+        "weight": 680,
+        "ppg": 33,
+        "lovibond": 56
+      },
+      {
+        "type": "Weyermann - Carafa I",
+        "weight": 150,
+        "ppg": 32,
+        "lovibond": 350
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Hersbrucker",
+        "weight": 18.0,
+        "time": 60,
+        "alpha_acid": 4.9
+      }
+    ],
+    "yeast": "Wyeast - Weihenstephan Weizen",
+    "notes": "Poor grain into 29L of cold water\nwarm up to 35C\nTake away 1/3 of the Volume and bring it to boil\nAdd back the boiled volume to the mash (bring temperature to 55C) = decoction\nIncubate 30min\nTake away 1/3 of the Volume and bring it to boil\nAdd back the boiled volume to the mash (bring temperature to 63C)\nLauter\nSparge\nBoil + hops"
+  },
+  {
+    "name": "Solo's Imperial Stout",
+    "grain_bill": [
+      {
+        "type": "Pale Malt (2 Row) US",
+        "weight": 2369,
+        "ppg": 36,
+        "lovibond": 2
+      },
+      {
+        "type": "Oats, Flaked",
+        "weight": 237,
+        "ppg": 37,
+        "lovibond": 1
+      },
+      {
+        "type": "Briess - Bonlander Munich Malt",
+        "weight": 158,
+        "ppg": 36,
+        "lovibond": 10
+      },
+      {
+        "type": "Roasted Barley",
+        "weight": 118,
+        "ppg": 25,
+        "lovibond": 300
+      },
+      {
+        "type": "Caramel/Crystal Malt - 120L",
+        "weight": 79,
+        "ppg": 33,
+        "lovibond": 120
+      },
+      {
+        "type": "Briess - Chocolate Malt",
+        "weight": 79,
+        "ppg": 28,
+        "lovibond": 350
+      },
+      {
+        "type": "Black (Patent) Malt",
+        "weight": 39,
+        "ppg": 25,
+        "lovibond": 500
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Magnum",
+        "weight": 11.9,
+        "time": 60,
+        "alpha_acid": 13.5
+      },
+      {
+        "variety": "Willamette",
+        "weight": 8.5,
+        "time": 25,
+        "alpha_acid": 5.0
+      },
+      {
+        "variety": "Willamette",
+        "weight": 11.9,
+        "time": 10,
+        "alpha_acid": 5.0
+      }
+    ],
+    "yeast": "Safale S-05",
+    "notes": "Addition of the steeped grains in the last 30min for the b-amylase step\nAddition of the cocoa powder with the last addition of hop 10 min boil.\n\nActual volumes:\n2.1L after mash\n+3.7L after sparge\n+800mL for boil\n=> ~4L  after boil\nOG = 1.104\nBrewhouse efficiency = 51.21%\n\nNot done but could be cool :\nMashing water profile (Black balanced): \nCalcium: 111\nMagnesium: 11\nSodium: 38\nSulfate: 57\nChloride: 51\nBicarbonate: 334\n\nEstimated Mash pH : 5.24\nAddition for indicated volumes : \n- Mash:\n\tCaSO4, 2H2O: 0.1g\n\tCaCl2: 0.4g\n\tMgSO4, 7H2O: 0.6g\n\tMgCl2: 0g\n\tNaCl: 0g\n\tNaHCO3: 0.7g\n\tCaCO3: 1g\n\tPickling lime Ca(OH)2: 0g\n\tlactic acid 88%: 0mL\n- Sparge:\n\tCaSO4, 2H2O: 0g\n\tCaCl2: 0.3g\n\tMgSO4, 7H2O: 0.4g\n\tMgCl2: 0g\n\tNaCl: 0g\n\tPhosphoric acid 1%: 20.6mL"
+  },
+  {
+    "name": "Suicide squeeze",
+    "grain_bill": [
+      {
+        "type": "Pale Malt (2 Row) UK",
+        "weight": 3800,
+        "ppg": 36,
+        "lovibond": 3
+      },
+      {
+        "type": "Caramel/Crystal Malt - 120L",
+        "weight": 113,
+        "ppg": 33,
+        "lovibond": 120
+      },
+      {
+        "type": "Briess - Oat Flakes",
+        "weight": 230,
+        "ppg": 37,
+        "lovibond": 2
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Mosaic - HBC369",
+        "weight": 7.0,
+        "time": 60,
+        "alpha_acid": 11.9
+      },
+      {
+        "variety": "Mosaic - HBC369",
+        "weight": 21.0,
+        "time": 15,
+        "alpha_acid": 11.9
+      },
+      {
+        "variety": "Mosaic - HBC369",
+        "weight": 57.0,
+        "time": 10,
+        "alpha_acid": 11.9
+      },
+      {
+        "variety": "Mosaic - HBC369 (dry hop)",
+        "weight": 71.0,
+        "time": 0,
+        "alpha_acid": 11.9
+      },
+      {
+        "variety": "Citra",
+        "weight": 14.0,
+        "time": 15,
+        "alpha_acid": 12.7
+      },
+      {
+        "variety": "Citra (dry hop)",
+        "weight": 7.0,
+        "time": 0,
+        "alpha_acid": 12.7
+      }
+    ],
+    "yeast": "Wyeast - London ESB Ale",
+    "notes": "Dry hop at the end of fermentation at day 12, for 4 days + 1 day cold crash"
+  },
+  {
+    "name": "Tire Bite Golden Ale",
+    "grain_bill": [
+      {
+        "type": "Pale Malt (2 Row) UK",
+        "weight": 3600,
+        "ppg": 36,
+        "lovibond": 3
+      },
+      {
+        "type": "Briess - Wheat Malt, White",
+        "weight": 450,
+        "ppg": 39,
+        "lovibond": 2
+      },
+      {
+        "type": "Munich Malt",
+        "weight": 280,
+        "ppg": 37,
+        "lovibond": 9
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Perle",
+        "weight": 18.0,
+        "time": 75,
+        "alpha_acid": 7.1
+      },
+      {
+        "variety": "Hallertau",
+        "weight": 14.0,
+        "time": 2,
+        "alpha_acid": 4.5
+      }
+    ],
+    "yeast": "Wyeast - German Ale",
+    "notes": ""
+  },
+  {
+    "name": "White Russian",
+    "grain_bill": [
+      {
+        "type": "Simpsons - Maris Otter",
+        "weight": 4082,
+        "ppg": 37,
+        "lovibond": 3
+      },
+      {
+        "type": "Vienna Malt",
+        "weight": 340,
+        "ppg": 36,
+        "lovibond": 4
+      },
+      {
+        "type": "Briess - Carapils Malt",
+        "weight": 227,
+        "ppg": 34,
+        "lovibond": 1
+      },
+      {
+        "type": "Barley, Flaked",
+        "weight": 454,
+        "ppg": 32,
+        "lovibond": 2
+      },
+      {
+        "type": "Oats, Flaked",
+        "weight": 907,
+        "ppg": 37,
+        "lovibond": 1
+      },
+      {
+        "type": "Smoked Malt",
+        "weight": 340,
+        "ppg": 37,
+        "lovibond": 9
+      }
+    ],
+    "hop_schedule": [
+      {
+        "variety": "Saaz (Czech Republic)",
+        "weight": 57.0,
+        "time": 60,
+        "alpha_acid": 4.5
+      },
+      {
+        "variety": "Fuggles",
+        "weight": 28.0,
+        "time": 60,
+        "alpha_acid": 4.5
+      }
+    ],
+    "yeast": "Safale S-04",
+    "notes": "fuggles can be substitute with willamette"
+  }
+]
