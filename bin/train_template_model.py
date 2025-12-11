@@ -334,7 +334,7 @@ def build_vocabularies(recipes):
 
 def train_model(
     data_file='data/ml/downsampled_training_data.txt',
-    output_file='data/recipe_template_model.pt',
+    output_file='data/model/recipe_template_model.pt',
     num_epochs=50,
     batch_size=32,
     learning_rate=0.001
@@ -384,7 +384,7 @@ def train_model(
             outputs = model(inputs)
             
             # Compute losses
-            # Grain losses (predict first grain type for each position)
+            # Grain losses (predict grain type for each position)
             grain_loss = 0
             for i in range(5):
                 grain_loss += classification_loss(outputs['grain_logits'], targets['grain_indices'][:, i])

@@ -1531,148 +1531,232 @@ def recipe_scaler_page():
 
 
 def generate_recipe_page():
-    """AI-powered recipe generation page using fine-tuned GPT-2 model"""
+    """AI-powered recipe generation page using template-based model"""
     st.header("🤖 AI Recipe Generator")
-    st.markdown("Generate unique homebrew recipes using AI trained on Guy's recipes!")
+    st.markdown("Generate structured homebrew recipes using AI trained on 15,000+ recipes!")
     
     # Check if model is available
     try:
-        from transformers import GPT2LMHeadModel, GPT2Tokenizer
         import torch
+        from bin.train_template_model import RecipeGeneratorModel
         model_available = True
     except ImportError:
         model_available = False
-        st.error("⚠️ Model dependencies not installed. Please install: `pip install transformers torch`")
+        st.error("⚠️ Model dependencies not installed. Please install: `pip install torch`")
         return
     
     # Load model (cached)
     @st.cache_resource
     def load_model():
         try:
-            # TODO: Replace 'yourusername' with actual Hugging Face username after upload
-            model_name = "goldrieve/brew-recipe-generator"
-            model = GPT2LMHeadModel.from_pretrained(model_name)
-            tokenizer = GPT2Tokenizer.from_pretrained(model_name)
-            return model, tokenizer, None
+            model_path = "data/model/recipe_template_model.pt"
+            if not os.path.exists(model_path):
+                return None, None, f"Model not found at {model_path}. Please train the model first."
+            
+            checkpoint = torch.load(model_path, weights_only=False)
+            model = RecipeGeneratorModel(
+                num_styles=checkpoint['num_styles'],
+                num_grains=checkpoint['num_grains'],
+                num_hops=checkpoint['num_hops'],
+                num_yeasts=checkpoint['num_yeasts']
+            )
+            model.load_state_dict(checkpoint['model_state_dict'])
+            model.eval()
+            
+            return model, checkpoint, None
         except Exception as e:
-            # Fallback to local model if available
-            try:
-                model = GPT2LMHeadModel.from_pretrained("recipe_model")
-                tokenizer = GPT2Tokenizer.from_pretrained("recipe_model")
-                return model, tokenizer, None
-            except Exception as e2:
-                return None, None, f"Model not found. Please train and upload the model first.\n\nError: {str(e)}\n\nLocal error: {str(e2)}"
+            return None, None, f"Error loading model: {str(e)}"
     
-    model, tokenizer, error = load_model()
+    model, checkpoint, error = load_model()
     
     if error:
         st.error(error)
         st.info("""
-        **To train and deploy the model:**
+        **To train the model:**
         
-        1. Train locally: `python train_recipe_model.py`
-        2. Test it: `python test_model.py`
-        3. Upload to Hugging Face: `python upload_to_huggingface.py`
-        4. Update the model name in this page
+        1. Ensure training data exists: `data/ml/downsampled_training_data.txt`
+        2. Train locally: `python bin/train_template_model.py`
+        3. Model will be saved to: `data/model/recipe_template_model.pt`
         """)
         return
     
     st.success("✅ Model loaded successfully!")
     
+    # Get available styles from model
+    available_styles = sorted([s for s in checkpoint['idx_to_style'].values() if s != 'Unknown'])
+    
     # Input form
     col1, col2 = st.columns(2)
     
     with col1:
-        recipe_name = st.text_input("Recipe Name", "My New Recipe")
-        style = st.selectbox("Beer Style", [
-            "American IPA",
-            "English IPA", 
-            "Irish Stout",
-            "English Pale Ale",
-            "American Pale Ale",
-            "Porter",
-            "Belgian Tripel",
-            "Wheat Beer",
-            "Lager",
-            "Other"
-        ])
+        style = st.selectbox("Beer Style", available_styles[:50])  # Show top 50 styles
+        abv = st.slider("Target ABV (%)", 3.0, 12.0, 6.5, 0.5)
+        characteristic = st.text_input("Characteristic (optional)", placeholder="e.g., Extra Hoppy, Roasty, Tropical")
         
     with col2:
-        method = st.selectbox("Brewing Method", ["All Grain", "Extract", "Partial Mash"])
-        abv = st.slider("Target ABV (%)", 3.0, 10.0, 5.5, 0.5)
-        batch_size = st.number_input("Batch Size (litres)", 5, 50, 10, 5)
+        batch_size = st.number_input("Batch Size (litres)", 5, 100, 20, 5)
+        og = st.number_input("Target OG", 1.030, 1.120, 1.065, 0.001, format="%.3f")
     
-    # Generation parameters
-    with st.expander("⚙️ Advanced Generation Settings"):
-        temperature = st.slider("Creativity (Temperature)", 0.5, 1.5, 0.8, 0.1, 
-                               help="Higher = more creative but less consistent")
-        max_length = st.slider("Max Recipe Length", 200, 800, 500, 50,
-                              help="Maximum tokens to generate")
+    # Calculate FG from ABV and OG
+    fg = og - (abv / 131.25)
+    st.info(f"📊 Calculated FG: {fg:.3f}")
     
     # Generate button
     if st.button("🎲 Generate Recipe", type="primary"):
         with st.spinner("🍺 Brewing up a new recipe..."):
-            # Create prompt
-            prompt = f"<|startofrecipe|>\nRecipe: {recipe_name}\nStyle: {style}\nMethod: {method}\nBatch Size: {batch_size} litres\nABV: {abv}%\n"
-            
-            # Generate
             try:
-                input_ids = tokenizer.encode(prompt, return_tensors='pt')
+                # Prepare input
+                style_idx = checkpoint['style_to_idx'].get(style, 0)
+                inputs = torch.tensor([[style_idx, abv, og, fg, batch_size]], dtype=torch.float32)
                 
-                # Generate text
-                output = model.generate(
-                    input_ids,
-                    max_length=max_length,
-                    temperature=temperature,
-                    top_p=0.9,
-                    top_k=50,
-                    do_sample=True,
-                    pad_token_id=tokenizer.eos_token_id,
-                    num_return_sequences=1,
-                    early_stopping=True,
-                    no_repeat_ngram_size=3
-                )
+                # Generate predictions
+                with torch.no_grad():
+                    outputs = model(inputs)
                 
-                # Decode
-                generated_text = tokenizer.decode(output[0], skip_special_tokens=False)
-                
-                # Extract recipe (between special tokens)
-                if '<|endofrecipe|>' in generated_text:
-                    recipe_text = generated_text.split('<|startofrecipe|>')[-1].split('<|endofrecipe|>')[0]
+                # Build structured recipe
+                if characteristic:
+                    recipe_name = f"{characteristic} {style}"
                 else:
-                    recipe_text = generated_text.split('<|startofrecipe|>')[-1]
+                    recipe_name = f"{style} Recipe"
                 
-                st.markdown("### Generated Recipe")
-                st.code(recipe_text, language="text")
+                st.markdown("### 🍺 Generated Recipe")
+                st.markdown(f"**{recipe_name}**")
                 
-                # Parse and display in structured format
-                st.markdown("### Formatted View")
-                st.text(recipe_text)
+                # Display parameters
+                col1, col2, col3 = st.columns(3)
+                with col1:
+                    st.metric("Style", style)
+                    st.metric("ABV", f"{abv:.1f}%")
+                with col2:
+                    st.metric("Batch Size", f"{batch_size}L")
+                    st.metric("OG", f"{og:.3f}")
+                with col3:
+                    st.metric("FG", f"{fg:.3f}")
+                    st.metric("Method", "All Grain")
                 
-                # Option to save to recipes
                 st.markdown("---")
-                if st.button("💾 Save to My Recipes"):
-                    st.info("📝 To save, copy the recipe to Recipe Builder and customize it!")
+                
+                # Grain Bill
+                st.markdown("#### 🌾 Grain Bill")
+                grain_weights = outputs['grain_weights'][0].tolist()
+                
+                grains_data = []
+                # Handle both old (tensor) and new (list) model formats
+                if isinstance(outputs['grain_logits'], list):
+                    # New model format - separate predictions per position
+                    for i in range(min(5, len(outputs['grain_logits']))):
+                        if i < len(grain_weights) and grain_weights[i] > 0:
+                            grain_logits_i = outputs['grain_logits'][i][0]  # [num_grains]
+                            top_grain_idx = torch.argmax(grain_logits_i).item()
+                            grain_name = checkpoint['idx_to_grain'].get(top_grain_idx, 'Unknown')
+                            weight = grain_weights[i]
+                            # Convert grams to kg if weight is large (> 1000g)
+                            if weight > 1000:
+                                weight_str = f"{weight/1000:.2f} kg"
+                            else:
+                                weight_str = f"{weight:.0f} g"
+                            grains_data.append({"Grain": grain_name, "Amount": weight_str})
+                else:
+                    # Old model format - single prediction for all positions
+                    st.warning("⚠️ Using old model format. Please retrain the model for better style-specific recipes.")
+                    grain_logits = outputs['grain_logits'][0]
+                    top_grains = torch.topk(grain_logits, k=min(5, len(checkpoint['idx_to_grain'])))
+                    for i, (score, idx) in enumerate(zip(top_grains.values, top_grains.indices)):
+                        if i < len(grain_weights) and grain_weights[i] > 0:
+                            grain_name = checkpoint['idx_to_grain'].get(idx.item(), 'Unknown')
+                            weight = grain_weights[i]
+                            if weight > 1000:
+                                weight_str = f"{weight/1000:.2f} kg"
+                            else:
+                                weight_str = f"{weight:.0f} g"
+                            grains_data.append({"Grain": grain_name, "Amount": weight_str})
+                
+                if grains_data:
+                    st.table(pd.DataFrame(grains_data))
+                else:
+                    st.warning("No grains generated")
+                
+                # Hop Schedule
+                st.markdown("#### 🌿 Hop Schedule")
+                hop_weights = outputs['hop_weights'][0].tolist()
+                hop_times = outputs['hop_times'][0].tolist()
+                
+                hops_data = []
+                # Handle both old (tensor) and new (list) model formats
+                if isinstance(outputs['hop_logits'], list):
+                    # New model format - separate predictions per position
+                    for i in range(min(4, len(outputs['hop_logits']))):
+                        if i < len(hop_weights) and hop_weights[i] > 0:
+                            hop_logits_i = outputs['hop_logits'][i][0]  # [num_hops]
+                            top_hop_idx = torch.argmax(hop_logits_i).item()
+                            hop_name = checkpoint['idx_to_hop'].get(top_hop_idx, 'Unknown')
+                            weight = hop_weights[i]
+                            time = max(0, hop_times[i])
+                            hops_data.append({
+                                "Hop": hop_name, 
+                                "Amount": f"{weight:.0f} g",
+                                "Time": f"{time:.0f} min"
+                            })
+                else:
+                    # Old model format - single prediction for all positions
+                    hop_logits = outputs['hop_logits'][0]
+                    top_hops = torch.topk(hop_logits, k=min(4, len(checkpoint['idx_to_hop'])))
+                    for i, (score, idx) in enumerate(zip(top_hops.values, top_hops.indices)):
+                        if i < len(hop_weights) and hop_weights[i] > 0:
+                            hop_name = checkpoint['idx_to_hop'].get(idx.item(), 'Unknown')
+                            weight = hop_weights[i]
+                            time = max(0, hop_times[i])
+                            hops_data.append({
+                                "Hop": hop_name, 
+                                "Amount": f"{weight:.0f} g",
+                                "Time": f"{time:.0f} min"
+                            })
+                
+                if hops_data:
+                    st.table(pd.DataFrame(hops_data))
+                else:
+                    st.warning("No hops generated")
+                
+                # Yeast
+                st.markdown("#### 🧫 Yeast")
+                yeast_idx = torch.argmax(outputs['yeast_logits'], dim=1).item()
+                yeast_name = checkpoint['idx_to_yeast'].get(yeast_idx, 'Unknown')
+                st.write(f"**{yeast_name}**")
+                
+                # Add characteristic notes if provided
+                if characteristic:
+                    st.markdown("#### 📝 Notes")
+                    st.info(f"This recipe emphasizes {characteristic.lower()} characteristics.")
+                
+                # Option to save
+                st.markdown("---")
+                st.info("💡 To save this recipe, copy the details to Recipe Builder and customize!")
                     
             except Exception as e:
                 st.error(f"Generation failed: {str(e)}")
+                st.exception(e)
     
     # Info section
     st.markdown("---")
     st.markdown("""
     ### 📚 How it works
     
-    This AI model was fine-tuned on Guy's collection of homebrew recipes. It learns patterns in:
-    - Grain bills for different styles
-    - Hop schedules and varieties
-    - Yeast selections
-    - Recipe structure and proportions
+    This AI model uses a template-based neural network trained on 15,000+ recipes to predict:
+    - **Grain bill** - Types and amounts based on style and target gravity
+    - **Hop schedule** - Varieties, amounts, and timing
+    - **Yeast selection** - Appropriate strain for the style
+    
+    **Benefits of template-based generation:**
+    - ✅ Always produces complete, structured recipes
+    - ✅ Consistent formatting
+    - ✅ Fast generation (~1 second)
+    - ✅ Based on actual recipe patterns from the dataset
     
     **Tips for best results:**
-    - Use traditional beer styles for more accurate recipes
-    - Lower temperature (0.6-0.8) = more consistent recipes
-    - Higher temperature (0.9-1.2) = more creative/experimental recipes
-    - The model generates suggestions - always review and adjust to your preferences!
+    - Choose traditional styles for more accurate predictions
+    - Adjust ABV and OG to match your target beer profile
+    - The model learns from top-rated recipes in each style
+    - Review and adjust amounts to your brewing system and preferences
     """)
 
 
