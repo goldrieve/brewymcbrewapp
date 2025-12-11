@@ -42,7 +42,6 @@ recipe_model/
 training_data.txt
 *.bin
 *.h5
-*.pt
 *.pth
 
 # Logs
