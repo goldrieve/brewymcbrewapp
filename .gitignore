@@ -48,3 +48,5 @@ training_data.txt
 # Logs
 *.log
 logs/
+
+data/ml/
